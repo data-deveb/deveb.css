@@ -1,0 +1,112 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                               //
+//   DEVEB SINAMA CSSİ                                                                           //
+//   https://data-deveb.github.io/                                                               //
+//   https://github.com/data-deveb/deveb.css/                                                    //
+//                                                                                               //
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+@use "diller/tr" as *;
+@use "ayarlar" as *;
+
+.divler{
+    border:1px solid red;
+    min-height: 15px;
+}
+
+ul.genişlik-sergisi{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul.genişlik-sergisi li{
+    list-style: none;
+}
+// Ekran Genişliği: 0 ≤ ... ≤ ∞
+@media screen and (min-width:$gnl-ekran) {
+    .gnl{
+        color:green;
+        font-weight: 700;
+    }
+    .kçk, .ort, .byk, .kcm, .ulu{
+        display: none;
+        color:gray;
+    }
+}
+// Ekran Genişliği: 300px ≤ ... ≤ ∞
+@media screen and (min-width:$kçk-ekran) {
+    .gnl{
+        display: none;
+        color:red;
+    }
+    .kçk{
+        display: block;
+        color:green;
+        font-weight: 700;
+    }
+    .ort, .byk, .kcm, .ulu{
+        color:gray;
+    }
+}
+
+// Ekran Genişliği: 768px ≤ ... ≤ ∞
+@media screen and (min-width:$ort-ekran) {
+    .gnl, .kçk{
+        display: none;
+        color:red;
+    }
+    .ort{
+        display: block;
+        color:green;
+        font-weight: 700;
+    }
+    .byk, .kcm, .ulu{
+        color:gray;
+    }
+}
+
+// Ekran Genişliği: 992px ≤ ... ≤ ∞
+@media screen and (min-width:$byk-ekran) {
+    .gnl, .kçk, .ort{
+        display: none;
+        color:red;
+    }
+    .byk{
+        display: block;
+        color:green;
+        font-weight: 700;
+    }
+    .kcm, .ulu{
+        color:gray;
+    }
+}
+
+// Ekran Genişliği: 1200px ≤ ... ≤ ∞
+@media screen and (min-width:$kcm-ekran) {
+    .gnl, .kçk, .ort, .byk{
+        display: none;
+        color:red;
+    }
+    .kcm{
+        display: block;
+        color:green;
+        font-weight: 700;
+    }
+    .ulu{
+        color:gray;
+    }
+}
+
+// Ekran Genişliği: 1900px ≤ ... ≤ ∞
+@media screen and (min-width:$ulu-ekran) {
+    .gnl, .kçk, .ort, .byk, .kcm{
+        display: none;
+        color:red;
+    }
+    .ulu{
+        display: block;
+        color:green;
+        font-weight: 700;
+    }
+}
+  

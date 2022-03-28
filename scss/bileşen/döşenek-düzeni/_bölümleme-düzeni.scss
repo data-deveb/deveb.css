@@ -1,0 +1,113 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//    BÖLÜMLEME DÜZENİ
+//
+//    Bölümleme düzeni 1 ile 24 arasında olan tüm bölümleri bir arada sunmak için geliştirildi.
+//    Matematik yöntemlerinden yararlanıp yalın CSS satırları yazıldı.
+//
+//    1 ile 24 ölçeklerindeki dilediğimiz ölçülerde bölümleri oluşturmak için bir denklem gerekir.
+
+
+//    Değişkenler: a, b, c, d
+//    Denklemler: (a * 4 - c), (b * 4 - d)
+//
+//    a ve b değişkenlerine [1,2,3,4,5,6] değerlerinden biri atanır.
+//    c ve d değişkenlerine [0,1,2,3] değerlerinden biri atanır.
+//
+//    Bölüm belirten sayıya erişmek için (a * 4 - c) denklemi kullanılır.
+//    Bölümlük belirten sayıya erişmek için (b * 4 - d) denklemi kullanılır.
+//
+//    Genişliği belirlemek için denklem şöyledir;
+//    (100% / (var(--b) * 4 - var(--d)) * (var(--a) * 4 - var(--c)))
+//
+//    Not: Bu yöntemle daha önceden 24 satır bölüm, 24 satır bölümlük ve 1 satırda genişlik
+//    saydırmak için toplamda 49 satır CSS alanı kullanılırdı. Her ekran aralığı için bu
+//    satırlar yeniden oluşturulur ve 343 satır gibi bir alan kullanılmış olurdu. Bu durum
+//    yeni yöntemle 49 satıdan 19 satıra indirgendi. Böylelikle toplamda 343 satır yerine
+//    133 satır ile yerden kazanç sağlandı.
+//
+@use "../../ayarlar" as *;
+
+@mixin bölümleme-düzeni($ekran){
+    $i: 1;  
+    $j: 0;
+
+    // PAYLIK BÖLÜM
+    @while $i <= $payda {
+    
+        [#{$ön_ek}#{$ekran}~="#{$i}"], [#{$ön_ek}#{$ekran}~="#{$i+1}"], [#{$ön_ek}#{$ekran}~="#{$i+2}"], [#{$ön_ek}#{$ekran}~="#{$i+3}"]{
+            --a: #{$j+1};
+            --c: 0;
+        }
+
+        $i: $i + 4;    
+        $j: $j + 1;
+    }
+    
+    %#{$ekran}c-3 {
+        --c: 3;
+    }
+    %#{$ekran}c-2 {
+        --c: 2;
+    }
+    %#{$ekran}c-1 {
+        --c: 1;
+    }
+    
+    $i: 1;
+    @while $i <= $payda {
+        [#{$ön_ek}#{$ekran}~="#{$i}"]{
+            @extend %#{$ekran}c-3;
+        }
+        [#{$ön_ek}#{$ekran}~="#{$i+1}"]{
+            @extend %#{$ekran}c-2;
+        }
+        [#{$ön_ek}#{$ekran}~="#{$i+2}"]{
+            @extend %#{$ekran}c-1;
+        }
+        $i: $i + 4;
+    }
+    
+    // PAYDALIK BÖLÜM    
+    $i: 1;  
+    $j: 0;
+    @while $i <= $payda {
+    
+        [#{$ön_ek}#{$ekran}~="/#{$i}"], [#{$ön_ek}#{$ekran}~="/#{$i+1}"], [#{$ön_ek}#{$ekran}~="/#{$i+2}"], [#{$ön_ek}#{$ekran}~="/#{$i+3}"]{
+            --b: #{$j+1};
+            --d: 0;
+        }
+    
+        $i: $i + 4;
+        $j: $j + 1;
+    }
+    
+    %#{$ekran}d-3 {
+        --d: 3;
+    }
+    %#{$ekran}d-2 {
+        --d: 2;
+    }
+    %#{$ekran}d-1 {
+        --d: 1;
+    }
+    
+    $i: 1;
+    @while $i <= $payda {
+        [#{$ön_ek}#{$ekran}~="/#{$i}"]{
+            @extend %#{$ekran}d-3;
+        }
+        [#{$ön_ek}#{$ekran}~="/#{$i+1}"]{
+            @extend %#{$ekran}d-2;
+        }
+        [#{$ön_ek}#{$ekran}~="/#{$i+2}"]{
+            @extend %#{$ekran}d-1;
+        }
+        $i: $i + 4;
+    }
+    
+    [#{$ön_ek}#{$ekran}]{
+        flex: 0 0 calc(100% / (var(--b) * 4 - var(--d)) * (var(--a) * 4 - var(--c)));
+    }
+}
+    

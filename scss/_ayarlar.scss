@@ -1,0 +1,29 @@
+
+@use "diller/Türkçe-SCSS" as *; // SASS'ı Türkçe kullanabilmek için
+@use "diller/tr" as *; // deveb'in Türkçe dili dosyası
+
+// Dil ayarları
+// tr (Türkçe), 
+// en (İngilizce, English), 
+// fr (Fransızca, Français)
+$dil: tr;
+
+// "data-" ön ekini dilediğiniz gibi değiştirebilirsiniz.
+// Örnek: data-gnl adını veri-gnl olarak kullanabilmek için, "data-" yerine "veri-" yazmak yeterlidir.
+// Dilerseniz ön ek değerini boş bırakabilirsiniz. (ÖNERİLMEZ)
+$ön_ek: "data-";
+
+// Deveb'de kullanılacak en büyük bölüm paydası $payda değişkenine tanımlanır.
+// !UYARI! 24'den büyük ölçek CSS boyutunu istemediğiniz ölçüde şişirebilir.
+$payda: 24;
+
+// Sıralamada kaç sıralamaya kadar tanımlama yapılabileceğini buradan ayarlayabilirsiniz. Sayı arttıkça CSS büyür.
+$sıralık: 10;
+
+// Ekran boyutu ayarları
+$gnl-ekran: 0;
+$kçk-ekran: 300px;
+$ort-ekran: 768px;
+$byk-ekran: 992px;
+$kcm-ekran: 1200px;
+$ulu-ekran: 1900px;

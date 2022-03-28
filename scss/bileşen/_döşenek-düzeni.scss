@@ -1,0 +1,86 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                               //
+//   DÖŞENEK DÜZENİ 1.2 SÜRÜMÜ                                                                   //
+//                                                                                               //
+//   Döşenek düzeni aşağıdaki düzenlerin derilmesi ile oluşur.                                   //
+//      - Bölümleme Düzeni                                                                       //
+//      - Esnetme Düzeni                                                                         //
+//      - Sıralama Düzeni                                                                        //
+//      - Aralama Düzeni                                                                         //
+//      - Yineleme Düzeni                                                                        //
+//      - Konumlama Düzeni                                                                       //
+//      - Biçimleme Düzeni                                                                       //
+//                                                                                               //
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@use "../diller/tr" as *;
+@use "../ayarlar" as *;
+@use "döşenek-düzeni/bölümleme-düzeni" as *;
+@use "döşenek-düzeni/esnetme-düzeni" as *;
+@use "döşenek-düzeni/sıralama-düzeni" as *;
+
+// Döşenek düzenini oluşturan bileşenlerin birleşimi.
+////////////////////////////////////////////////////
+@mixin döşenek-düzeni($ekran){
+    @include bölümleme-düzeni($ekran);
+    @include esnetme-düzeni($ekran);
+    @include sıralama-düzeni($ekran); 
+}
+/////////////////////////////////////////////////// 
+
+// Ekran Genişliği: 0 ≤ ... ≤ ∞
+@media screen and (min-width:$gnl-ekran) {
+    [#{$ön_ek}#{$gnl}],
+    [#{$ön_ek}#{$kçk}],
+    [#{$ön_ek}#{$ort}],
+    [#{$ön_ek}#{$byk}],
+    [#{$ön_ek}#{$kcm}]{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .block{
+        display: block;
+        width: calc(100% / (var(--b) * 4 - var(--d)) * (var(--a) * 4 - var(--c)));
+    }
+
+    @supports (-ms-ime-align:auto) {
+        [#{$ön_ek}#{$gnl}],
+        [#{$ön_ek}#{$kçk}],
+        [#{$ön_ek}#{$ort}],
+        [#{$ön_ek}#{$byk}],
+        [#{$ön_ek}#{$kcm}] {
+            width: calc((100% / (var(--b) * 4 - var(--d)) * (var(--a) * 4 - var(--c))) - 0.009999%); // Bölümleme düzeni sayıştırma ayarları.
+            max-width: calc((100% / (var(--b) * 4 - var(--d)) * (var(--a) * 4 - var(--c))) - 0.009999%); // Bölümleme düzeni sayıştırma ayarları.
+        }
+    }
+
+    @include döşenek-düzeni($gnl);
+}
+
+// Ekran Genişliği: 300px ≤ ... ≤ ∞
+@media screen and (min-width:$kçk-ekran) {
+    @include döşenek-düzeni($kçk);
+}
+
+// Ekran Genişliği: 768px ≤ ... ≤ ∞
+@media screen and (min-width:$ort-ekran) {
+    @include döşenek-düzeni($ort);
+}
+
+// Ekran Genişliği: 992px ≤ ... ≤ ∞
+@media screen and (min-width:$byk-ekran) {
+    @include döşenek-düzeni($byk);
+}
+
+// Ekran Genişliği: 1200px ≤ ... ≤ ∞
+@media screen and (min-width:$kcm-ekran) {
+    @include döşenek-düzeni($kcm);
+}
+
+// Ekran Genişliği: 1900px ≤ ... ≤ ∞
+@media screen and (min-width:$ulu-ekran) {
+    @include döşenek-düzeni($ulu);
+}
+
+
