@@ -1,16 +1,9 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                               //
-//   DEVEB 1.1 Sürümü                                                                            //
-//   https://data-deveb.github.io/                                                               //
-//   https://github.com/data-deveb/deveb.css/                                                    //
-//                                                                                               //
-///////////////////////////////////////////////////////////////////////////////////////////////////
+@use "kök" as *;
 
-@use "diller/Türkçe-SCSS" as *;
-@use "diller/tr" as *;
-@use "ayarlar" as *;
-@use "bileşen/alt-yapı";
-@use "bileşen/ana-yapı";
-@use "bileşen/döşenek-düzeni";
 
-  
+div{
+    box-sizing: border-box; 
+    border: 1px solid orangered;
+}
+
+@include ekranlar($ekranlar);
