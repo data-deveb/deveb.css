@@ -1,9 +1,3 @@
 @use "kök" as *;
 
-
-div{
-    box-sizing: border-box; 
-    border: 1px solid orangered;
-}
-
-@include ekranlar($ekranlar);
+@include germeler($germeler);

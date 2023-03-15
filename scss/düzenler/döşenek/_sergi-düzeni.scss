@@ -1,6 +1,6 @@
 @use "../../ayarlar" as *;
 
-@mixin sergi-düzeni($ekran){
-    [#{$ekran}*="esnek"]{display: flex; flex-wrap: wrap;}
-    [#{$ekran}*="block"]{display: block}    
+@mixin sergi-düzeni($germe){
+    [#{$germe}*="esnek"]{display: flex; flex-wrap: wrap;}
+    [#{$germe}*="block"]{display: block}    
 }
