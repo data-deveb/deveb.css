@@ -1,6 +1,6 @@
 @use "../../ayarlar" as *;
 
-@mixin sergi-düzeni($germe){
-    [#{$germe}*="esnek"]{display: flex; flex-wrap: wrap;}
-    [#{$germe}*="block"]{display: block}    
+@mixin sergi-düzeni($germeAdı){
+    [#{$germeAdı}*="esnek"]{display: flex; flex-wrap: wrap;}
+    [#{$germeAdı}*="block"]{display: block}    
 }

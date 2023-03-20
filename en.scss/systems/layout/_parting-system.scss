@@ -1,0 +1,85 @@
+@use "../../settings" as *;
+
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//    BÖLME DÜZENİ 2.0 🍇
+//
+//    Bölme düzeni 1/1 ile 100/100 arasında olan tüm bölümleri sunabilir.
+//    Matematik yöntemleri ile CSS satırları yazıldı. Bu ölçüler için şu denklem kullanıldı.
+//
+//    HTML'de 👉(pay/payda)👈 biçiminde yazılacak genişlik değerleri, CSS'de birler basamağı ve onlar basamağı olarak
+//    pay ve payda için işlendi. En az satırda işlemler bitirildi. 
+
+@mixin parting-system($screenName){
+    // PAY
+    [#{$screenName}*="/"]{--b: 0; --i: 0; --o: 0; --n: 0}
+    [#{$screenName}*="1/"]{--b: 1}
+    [#{$screenName}*="2/"]{--b: 2}
+    [#{$screenName}*="3/"]{--b: 3}
+    [#{$screenName}*="4/"]{--b: 4}
+    [#{$screenName}*="5/"]{--b: 5} 
+    [#{$screenName}*="6/"]{--b: 6}
+    [#{$screenName}*="7/"]{--b: 7}
+    [#{$screenName}*="8/"]{--b: 8}
+    [#{$screenName}*="9/"]{--b: 9}
+
+    [#{$screenName}*="(1"]:not([#{$screenName}*="(1/"]){--o: 1}
+    [#{$screenName}*="(2"]:not([#{$screenName}*="(2/"]){--o: 2}
+    [#{$screenName}*="(3"]:not([#{$screenName}*="(3/"]){--o: 3}
+    [#{$screenName}*="(4"]:not([#{$screenName}*="(4/"]){--o: 4}
+    [#{$screenName}*="(5"]:not([#{$screenName}*="(5/"]){--o: 5}
+    [#{$screenName}*="(6"]:not([#{$screenName}*="(6/"]){--o: 6}
+    [#{$screenName}*="(7"]:not([#{$screenName}*="(7/"]){--o: 7}
+    [#{$screenName}*="(8"]:not([#{$screenName}*="(8/"]){--o: 8}
+    [#{$screenName}*="(9"]:not([#{$screenName}*="(9/"]){--o: 9}
+    [#{$screenName}*="100/"]{--o: 10}
+
+    // PAYDA
+    [#{$screenName}*="1)"]{--i: 1}
+    [#{$screenName}*="2)"]{--i: 2}
+    [#{$screenName}*="3)"]{--i: 3}
+    [#{$screenName}*="4)"]{--i: 4}
+    [#{$screenName}*="5)"]{--i: 5} 
+    [#{$screenName}*="6)"]{--i: 6}
+    [#{$screenName}*="7)"]{--i: 7}
+    [#{$screenName}*="8)"]{--i: 8}
+    [#{$screenName}*="9)"]{--i: 9}
+    [#{$screenName}*="/100"]{--i: 90}
+
+    [#{$screenName}*="/1"]:not([#{$screenName}*="/1)"]){--n: 1}
+    [#{$screenName}*="/2"]:not([#{$screenName}*="/2)"]){--n: 2}
+    [#{$screenName}*="/3"]:not([#{$screenName}*="/3)"]){--n: 3}
+    [#{$screenName}*="/4"]:not([#{$screenName}*="/4)"]){--n: 4}
+    [#{$screenName}*="/5"]:not([#{$screenName}*="/5)"]){--n: 5}
+    [#{$screenName}*="/6"]:not([#{$screenName}*="/6)"]){--n: 6}
+    [#{$screenName}*="/7"]:not([#{$screenName}*="/7)"]){--n: 7}
+    [#{$screenName}*="/8"]:not([#{$screenName}*="/8)"]){--n: 8}
+    [#{$screenName}*="/9"]:not([#{$screenName}*="/9)"]){--n: 9}
+}
+
+@mixin parting-system-foot($screenName){
+    /////////////////////////
+    %parting-system-width {
+        float: left;
+        width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+    }
+    [#{$screenName}*="/"]{
+        @extend %parting-system-width;
+    }
+    /////////////////////////
+    %flex-system-width {
+        flex: calc(100% * (var(--o) * 10 + var(--b)));
+    }    
+    [#{$screenName}*="("][#{$screenName}*=")"]:not([#{$screenName}*="/"]){
+        @extend %flex-system-width;
+    }
+    /////////////////////////
+    %auto-width {
+        flex-basis: auto;
+        max-width: none;
+        width: auto;
+    }
+    [#{$screenName}*="(0)"]{
+        @extend %auto-width;
+    }
+}

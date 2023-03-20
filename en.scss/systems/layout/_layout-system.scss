@@ -1,0 +1,22 @@
+@use "../../settings" as *;
+@use "parting-system" as *;
+@use "flexing-system" as *;
+@use "ordering-system" as *;
+@use "hiding-system" as *;
+@use "display-system" as *;
+
+@mixin layout-system-head($screenName) {
+
+}
+
+@mixin layout-system($screenName){
+    @include parting-system($screenName);
+//  @include hiding-system($screenName);
+//  @include display-system($screenName);
+//  @include flexing-system($screenName);
+//  @include ordering-system($screenName); 
+}
+
+@mixin layout-system-foot($screenName){
+    @include parting-system-foot($screenName);
+}

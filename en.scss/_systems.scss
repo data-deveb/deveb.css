@@ -1,0 +1,18 @@
+@use "settings" as *;
+@use "systems/layout/layout-system" as *;
+
+@mixin screens($screens){
+    @each $screenName, $screenWidth in $screens {
+        // CSS Başı
+
+        @include layout-system-head($screenName);
+
+        // CSS Gövdesi
+        @media screen and (min-width:$screenWidth) {
+            @include layout-system($screenName);
+        }
+
+        // CSS Ayağı
+        @include layout-system-foot($screenName);
+    }
+}

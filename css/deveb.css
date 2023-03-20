@@ -120,14 +120,6 @@
   [class*="/100"] {
     --n: 10;
   }
-  [class~=ortalı-yazı] {
-    text-align: center;
-  }
-  [class~=ortalı] {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
   [class*=görünür] {
     display: inherit;
   }
@@ -277,14 +269,6 @@
   }
   [\-küçük*="/100"] {
     --n: 10;
-  }
-  [\-küçük~=ortalı-yazı] {
-    text-align: center;
-  }
-  [\-küçük~=ortalı] {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
   }
   [\-küçük*=görünür] {
     display: inherit;
@@ -436,14 +420,6 @@
   [\-orta*="/100"] {
     --n: 10;
   }
-  [\-orta~=ortalı-yazı] {
-    text-align: center;
-  }
-  [\-orta~=ortalı] {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
   [\-orta*=görünür] {
     display: inherit;
   }
@@ -594,14 +570,6 @@
   [\-büyük*="/100"] {
     --n: 10;
   }
-  [\-büyük~=ortalı-yazı] {
-    text-align: center;
-  }
-  [\-büyük~=ortalı] {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-  }
   [\-büyük*=görünür] {
     display: inherit;
   }
@@ -751,14 +719,6 @@
   }
   [\-koca*="/100"] {
     --n: 10;
-  }
-  [\-koca~=ortalı-yazı] {
-    text-align: center;
-  }
-  [\-koca~=ortalı] {
-    justify-content: center;
-    align-content: center;
-    align-items: center;
   }
   [\-koca*=görünür] {
     display: inherit;

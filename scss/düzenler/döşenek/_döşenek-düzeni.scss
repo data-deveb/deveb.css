@@ -5,18 +5,18 @@
 @use "gizleme-düzeni" as *;
 @use "sergi-düzeni" as *;
 
-@mixin döşenek-düzeni-başı($ekranAdı) {
+@mixin döşenek-düzeni-başı($germeAdı) {
 
 }
 
-@mixin döşenek-düzeni($ekranAdı){
-    @include bölme-düzeni($ekranAdı);
-    @include gizleme-düzeni($ekranAdı);
-    @include sergi-düzeni($ekranAdı);
+@mixin döşenek-düzeni($germeAdı){
+    @include bölme-düzeni($germeAdı);
+    @include gizleme-düzeni($germeAdı);
+    @include sergi-düzeni($germeAdı);
    // @include esneme-düzeni($ekran);
    // @include sıralama-düzeni($ekran); 
 }
 
-@mixin döşenek-düzeni-ayağı($ekranAdı){
-    @include bölme-düzeni-ayağı($ekranAdı);
+@mixin döşenek-düzeni-ayağı($germeAdı){
+    @include bölme-düzeni-ayağı($germeAdı);
 }
