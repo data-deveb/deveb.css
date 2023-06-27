@@ -13,10 +13,11 @@
     @include bölme-düzeni($germeAdı);
     @include gizleme-düzeni($germeAdı);
     @include sergi-düzeni($germeAdı);
-   // @include esneme-düzeni($ekran);
-   // @include sıralama-düzeni($ekran); 
+//  @include esneme-düzeni($germeAdı);
+//  @include sıralama-düzeni($germeAdı); 
 }
 
-@mixin döşenek-düzeni-ayağı($germeAdı){
-    @include bölme-düzeni-ayağı($germeAdı);
+@mixin döşenek-düzeni-ayağı($germeler){
+    @include bölme-düzeni-ayağı($germeler);
+    @include esneme-düzeni-ayağı($germeler);
 }

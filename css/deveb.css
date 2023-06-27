@@ -1,4 +1,244 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap"); /* https://data-deveb.github.io/
+   1.0srmü
+*/
+html {
+  line-height: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "DM Sans", sans-serif;
+  background-color: #f3f6fd;
+}
+
+bet {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto 20fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px 24px;
+  padding: 24px;
+  grid-auto-flow: row;
+  grid-template-areas: "bölüm-sol bölüm-üst bölüm-üst" "bölüm-sol bölüm-orta bölüm-sağ" "bölüm-sol bölüm-alt bölüm-alt";
+}
+
+bölüm#sol {
+  grid-area: bölüm-sol;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+bölüm#üst {
+  grid-area: bölüm-üst;
+}
+
+bölüm#orta {
+  grid-area: bölüm-orta;
+}
+
+bölüm#sağ {
+  grid-area: bölüm-sağ;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+bölüm#alt {
+  grid-area: bölüm-alt;
+}
+
+.alan {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.üyelik {
+  align-items: center;
+  gap: 10px;
+}
+
+.üyelik > img {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo > p {
+  color: #1f1c2e;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 0 32px;
+}
+
+.dizme {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(5, auto) repeat(1, 1fr);
+  grid-gap: 0px;
+  padding: 0px;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+}
+
+.dizme > div {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.dizme > [başlık] {
+  background-color: turquoise;
+  border: 1px solid black;
+  border-right: 0px solid black;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.dizme > [başlık]:nth-child(n-1) {
+  border-right: 1px solid black;
+}
+
+.bilgi-1 {
+  margin-bottom: 12px;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: ghostwhite;
+}
+
+.bilgi-1 .düğmeler {
+  margin-left: auto;
+  gap: 12px;
+  align-items: center;
+}
+
+button {
+  outline: none;
+  text-align: center;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #3e64ff;
+  color: #3e64ff;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 4px 8px;
+}
+
+label:hover > button, button:hover {
+  color: white;
+  background: #3e64ff;
+}
+
+button:active {
+  letter-spacing: 2px;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bilgi-1 .onaylı {
+  color: green;
+  font-weight: 700;
+}
+
+.bilgi-1 .icerik {
+  gap: 5px;
+}
+
+.bilgi-1 .ek {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bilgi-1 .ek .içerik {
+  background-color: black;
+  color: white;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.bilgi-1 .ek .id {
+  color: darkgray;
+}
+
+.bilgi-1 .ek .sürüm {
+  font-size: 11pt;
+  color: cadetblue;
+}
+
+.ekleme-bilgileri {
+  gap: 5px 10px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.ekleme-bilgileri .ekleyen {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ekleme-bilgileri .ekleyen img {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/************************************************************************
+╔═══════════════════════════════════════════════════════════════════════╗
+║ BASMACA 1.0                                                           ║
+║ https://data-deveb.github.io/basmaca                                  ║
+║ https://github.com/data-deveb/basmaca                                 ║
+╚═══════════════════════════════════════════════════════════════════════╝
+************************************************************************/
+input[id*=-basmacayı-],
+input[id*=-basmacayı-]:checked + *,
+input[id*=-basmacayı-]:not(:checked) + label + label[for$=-basmacayı-kapa] {
+  /* <input> hep görünmez tutulur. */
+  display: none;
+}
+
+input[id$=-basmacayı-aç] + label,
+input[id$=-basmacayı-aç] + * + label {
+  /* Tıklar iken yazılar seçilmemeli */
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+input[id$=-basmacayı-aç] + label > button,
+input[id$=-basmacayı-aç] + * + label > button {
+  /* Kolanlar bir düğme barındırır iken işlemesi için tanımlandı. */
+  pointer-events: none;
+}
+
 @media screen and (min-width: 0) {
   [class*="/"] {
     --b: 0;
@@ -33,6 +273,9 @@
   [class*="9/"] {
     --b: 9;
   }
+  [class*="100/"] {
+    --b: 90;
+  }
   [class*="(1"]:not([class*="(1/"]) {
     --o: 1;
   }
@@ -59,9 +302,6 @@
   }
   [class*="(9"]:not([class*="(9/"]) {
     --o: 9;
-  }
-  [class*="100/"] {
-    --o: 10;
   }
   [class*="1)"] {
     --i: 1;
@@ -90,6 +330,9 @@
   [class*="9)"] {
     --i: 9;
   }
+  [class*="/100"] {
+    --i: 90;
+  }
   [class*="/1"]:not([class*="/1)"]) {
     --n: 1;
   }
@@ -117,9 +360,6 @@
   [class*="/9"]:not([class*="/9)"]) {
     --n: 9;
   }
-  [class*="/100"] {
-    --n: 10;
-  }
   [class*=görünür] {
     display: inherit;
   }
@@ -134,21 +374,6 @@
     display: block;
   }
 }
-[\-koca*="/"], [\-büyük*="/"], [\-orta*="/"], [\-küçük*="/"], [class*="/"] {
-  float: left;
-  width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-}
-
-[\-koca*="("][\-koca*=")"]:not([\-koca*="/"]), [\-büyük*="("][\-büyük*=")"]:not([\-büyük*="/"]), [\-orta*="("][\-orta*=")"]:not([\-orta*="/"]), [\-küçük*="("][\-küçük*=")"]:not([\-küçük*="/"]), [class*="("][class*=")"]:not([class*="/"]) {
-  flex: calc(100% * (var(--o) * 10 + var(--b)));
-}
-
-[\-koca*="(0)"], [\-büyük*="(0)"], [\-orta*="(0)"], [\-küçük*="(0)"], [class*="(0)"] {
-  flex-basis: auto;
-  max-width: none;
-  width: auto;
-}
-
 @media screen and (min-width: 576px) {
   [\-küçük*="/"] {
     --b: 0;
@@ -183,6 +408,9 @@
   [\-küçük*="9/"] {
     --b: 9;
   }
+  [\-küçük*="100/"] {
+    --b: 90;
+  }
   [\-küçük*="(1"]:not([\-küçük*="(1/"]) {
     --o: 1;
   }
@@ -209,9 +437,6 @@
   }
   [\-küçük*="(9"]:not([\-küçük*="(9/"]) {
     --o: 9;
-  }
-  [\-küçük*="100/"] {
-    --o: 10;
   }
   [\-küçük*="1)"] {
     --i: 1;
@@ -240,6 +465,9 @@
   [\-küçük*="9)"] {
     --i: 9;
   }
+  [\-küçük*="/100"] {
+    --i: 90;
+  }
   [\-küçük*="/1"]:not([\-küçük*="/1)"]) {
     --n: 1;
   }
@@ -267,9 +495,6 @@
   [\-küçük*="/9"]:not([\-küçük*="/9)"]) {
     --n: 9;
   }
-  [\-küçük*="/100"] {
-    --n: 10;
-  }
   [\-küçük*=görünür] {
     display: inherit;
   }
@@ -284,171 +509,141 @@
     display: block;
   }
 }
-[\-koca*="/"], [\-büyük*="/"], [\-orta*="/"], [\-küçük*="/"], [class*="/"] {
-  float: left;
-  width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-}
-
-[\-koca*="("][\-koca*=")"]:not([\-koca*="/"]), [\-büyük*="("][\-büyük*=")"]:not([\-büyük*="/"]), [\-orta*="("][\-orta*=")"]:not([\-orta*="/"]), [\-küçük*="("][\-küçük*=")"]:not([\-küçük*="/"]), [class*="("][class*=")"]:not([class*="/"]) {
-  flex: calc(100% * (var(--o) * 10 + var(--b)));
-}
-
-[\-koca*="(0)"], [\-büyük*="(0)"], [\-orta*="(0)"], [\-küçük*="(0)"], [class*="(0)"] {
-  flex-basis: auto;
-  max-width: none;
-  width: auto;
-}
-
 @media screen and (min-width: 768px) {
-  [\-orta*="/"] {
+  [\-ortanca*="/"] {
     --b: 0;
     --i: 0;
     --o: 0;
     --n: 0;
   }
-  [\-orta*="1/"] {
+  [\-ortanca*="1/"] {
     --b: 1;
   }
-  [\-orta*="2/"] {
+  [\-ortanca*="2/"] {
     --b: 2;
   }
-  [\-orta*="3/"] {
+  [\-ortanca*="3/"] {
     --b: 3;
   }
-  [\-orta*="4/"] {
+  [\-ortanca*="4/"] {
     --b: 4;
   }
-  [\-orta*="5/"] {
+  [\-ortanca*="5/"] {
     --b: 5;
   }
-  [\-orta*="6/"] {
+  [\-ortanca*="6/"] {
     --b: 6;
   }
-  [\-orta*="7/"] {
+  [\-ortanca*="7/"] {
     --b: 7;
   }
-  [\-orta*="8/"] {
+  [\-ortanca*="8/"] {
     --b: 8;
   }
-  [\-orta*="9/"] {
+  [\-ortanca*="9/"] {
     --b: 9;
   }
-  [\-orta*="(1"]:not([\-orta*="(1/"]) {
+  [\-ortanca*="100/"] {
+    --b: 90;
+  }
+  [\-ortanca*="(1"]:not([\-ortanca*="(1/"]) {
     --o: 1;
   }
-  [\-orta*="(2"]:not([\-orta*="(2/"]) {
+  [\-ortanca*="(2"]:not([\-ortanca*="(2/"]) {
     --o: 2;
   }
-  [\-orta*="(3"]:not([\-orta*="(3/"]) {
+  [\-ortanca*="(3"]:not([\-ortanca*="(3/"]) {
     --o: 3;
   }
-  [\-orta*="(4"]:not([\-orta*="(4/"]) {
+  [\-ortanca*="(4"]:not([\-ortanca*="(4/"]) {
     --o: 4;
   }
-  [\-orta*="(5"]:not([\-orta*="(5/"]) {
+  [\-ortanca*="(5"]:not([\-ortanca*="(5/"]) {
     --o: 5;
   }
-  [\-orta*="(6"]:not([\-orta*="(6/"]) {
+  [\-ortanca*="(6"]:not([\-ortanca*="(6/"]) {
     --o: 6;
   }
-  [\-orta*="(7"]:not([\-orta*="(7/"]) {
+  [\-ortanca*="(7"]:not([\-ortanca*="(7/"]) {
     --o: 7;
   }
-  [\-orta*="(8"]:not([\-orta*="(8/"]) {
+  [\-ortanca*="(8"]:not([\-ortanca*="(8/"]) {
     --o: 8;
   }
-  [\-orta*="(9"]:not([\-orta*="(9/"]) {
+  [\-ortanca*="(9"]:not([\-ortanca*="(9/"]) {
     --o: 9;
   }
-  [\-orta*="100/"] {
-    --o: 10;
-  }
-  [\-orta*="1)"] {
+  [\-ortanca*="1)"] {
     --i: 1;
   }
-  [\-orta*="2)"] {
+  [\-ortanca*="2)"] {
     --i: 2;
   }
-  [\-orta*="3)"] {
+  [\-ortanca*="3)"] {
     --i: 3;
   }
-  [\-orta*="4)"] {
+  [\-ortanca*="4)"] {
     --i: 4;
   }
-  [\-orta*="5)"] {
+  [\-ortanca*="5)"] {
     --i: 5;
   }
-  [\-orta*="6)"] {
+  [\-ortanca*="6)"] {
     --i: 6;
   }
-  [\-orta*="7)"] {
+  [\-ortanca*="7)"] {
     --i: 7;
   }
-  [\-orta*="8)"] {
+  [\-ortanca*="8)"] {
     --i: 8;
   }
-  [\-orta*="9)"] {
+  [\-ortanca*="9)"] {
     --i: 9;
   }
-  [\-orta*="/1"]:not([\-orta*="/1)"]) {
+  [\-ortanca*="/100"] {
+    --i: 90;
+  }
+  [\-ortanca*="/1"]:not([\-ortanca*="/1)"]) {
     --n: 1;
   }
-  [\-orta*="/2"]:not([\-orta*="/2)"]) {
+  [\-ortanca*="/2"]:not([\-ortanca*="/2)"]) {
     --n: 2;
   }
-  [\-orta*="/3"]:not([\-orta*="/3)"]) {
+  [\-ortanca*="/3"]:not([\-ortanca*="/3)"]) {
     --n: 3;
   }
-  [\-orta*="/4"]:not([\-orta*="/4)"]) {
+  [\-ortanca*="/4"]:not([\-ortanca*="/4)"]) {
     --n: 4;
   }
-  [\-orta*="/5"]:not([\-orta*="/5)"]) {
+  [\-ortanca*="/5"]:not([\-ortanca*="/5)"]) {
     --n: 5;
   }
-  [\-orta*="/6"]:not([\-orta*="/6)"]) {
+  [\-ortanca*="/6"]:not([\-ortanca*="/6)"]) {
     --n: 6;
   }
-  [\-orta*="/7"]:not([\-orta*="/7)"]) {
+  [\-ortanca*="/7"]:not([\-ortanca*="/7)"]) {
     --n: 7;
   }
-  [\-orta*="/8"]:not([\-orta*="/8)"]) {
+  [\-ortanca*="/8"]:not([\-ortanca*="/8)"]) {
     --n: 8;
   }
-  [\-orta*="/9"]:not([\-orta*="/9)"]) {
+  [\-ortanca*="/9"]:not([\-ortanca*="/9)"]) {
     --n: 9;
   }
-  [\-orta*="/100"] {
-    --n: 10;
-  }
-  [\-orta*=görünür] {
+  [\-ortanca*=görünür] {
     display: inherit;
   }
-  [\-orta*=gizli] {
+  [\-ortanca*=gizli] {
     display: none;
   }
-  [\-orta*=esnek] {
+  [\-ortanca*=esnek] {
     display: flex;
     flex-wrap: wrap;
   }
-  [\-orta*=block] {
+  [\-ortanca*=block] {
     display: block;
   }
 }
-[\-koca*="/"], [\-büyük*="/"], [\-orta*="/"], [class*="/"], [\-küçük*="/"] {
-  float: left;
-  width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-}
-
-[\-koca*="("][\-koca*=")"]:not([\-koca*="/"]), [\-büyük*="("][\-büyük*=")"]:not([\-büyük*="/"]), [\-orta*="("][\-orta*=")"]:not([\-orta*="/"]), [class*="("][class*=")"]:not([class*="/"]), [\-küçük*="("][\-küçük*=")"]:not([\-küçük*="/"]) {
-  flex: calc(100% * (var(--o) * 10 + var(--b)));
-}
-
-[\-koca*="(0)"], [\-büyük*="(0)"], [\-orta*="(0)"], [class*="(0)"], [\-küçük*="(0)"] {
-  flex-basis: auto;
-  max-width: none;
-  width: auto;
-}
-
 @media screen and (min-width: 992px) {
   [\-büyük*="/"] {
     --b: 0;
@@ -483,6 +678,9 @@
   [\-büyük*="9/"] {
     --b: 9;
   }
+  [\-büyük*="100/"] {
+    --b: 90;
+  }
   [\-büyük*="(1"]:not([\-büyük*="(1/"]) {
     --o: 1;
   }
@@ -509,9 +707,6 @@
   }
   [\-büyük*="(9"]:not([\-büyük*="(9/"]) {
     --o: 9;
-  }
-  [\-büyük*="100/"] {
-    --o: 10;
   }
   [\-büyük*="1)"] {
     --i: 1;
@@ -540,6 +735,9 @@
   [\-büyük*="9)"] {
     --i: 9;
   }
+  [\-büyük*="/100"] {
+    --i: 90;
+  }
   [\-büyük*="/1"]:not([\-büyük*="/1)"]) {
     --n: 1;
   }
@@ -567,9 +765,6 @@
   [\-büyük*="/9"]:not([\-büyük*="/9)"]) {
     --n: 9;
   }
-  [\-büyük*="/100"] {
-    --n: 10;
-  }
   [\-büyük*=görünür] {
     display: inherit;
   }
@@ -584,21 +779,6 @@
     display: block;
   }
 }
-[\-koca*="/"], [\-büyük*="/"], [class*="/"], [\-küçük*="/"], [\-orta*="/"] {
-  float: left;
-  width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-}
-
-[\-koca*="("][\-koca*=")"]:not([\-koca*="/"]), [\-büyük*="("][\-büyük*=")"]:not([\-büyük*="/"]), [class*="("][class*=")"]:not([class*="/"]), [\-küçük*="("][\-küçük*=")"]:not([\-küçük*="/"]), [\-orta*="("][\-orta*=")"]:not([\-orta*="/"]) {
-  flex: calc(100% * (var(--o) * 10 + var(--b)));
-}
-
-[\-koca*="(0)"], [\-büyük*="(0)"], [class*="(0)"], [\-küçük*="(0)"], [\-orta*="(0)"] {
-  flex-basis: auto;
-  max-width: none;
-  width: auto;
-}
-
 @media screen and (min-width: 1200px) {
   [\-koca*="/"] {
     --b: 0;
@@ -633,6 +813,9 @@
   [\-koca*="9/"] {
     --b: 9;
   }
+  [\-koca*="100/"] {
+    --b: 90;
+  }
   [\-koca*="(1"]:not([\-koca*="(1/"]) {
     --o: 1;
   }
@@ -659,9 +842,6 @@
   }
   [\-koca*="(9"]:not([\-koca*="(9/"]) {
     --o: 9;
-  }
-  [\-koca*="100/"] {
-    --o: 10;
   }
   [\-koca*="1)"] {
     --i: 1;
@@ -690,6 +870,9 @@
   [\-koca*="9)"] {
     --i: 9;
   }
+  [\-koca*="/100"] {
+    --i: 90;
+  }
   [\-koca*="/1"]:not([\-koca*="/1)"]) {
     --n: 1;
   }
@@ -717,9 +900,6 @@
   [\-koca*="/9"]:not([\-koca*="/9)"]) {
     --n: 9;
   }
-  [\-koca*="/100"] {
-    --n: 10;
-  }
   [\-koca*=görünür] {
     display: inherit;
   }
@@ -734,17 +914,36 @@
     display: block;
   }
 }
-[\-koca*="/"], [class*="/"], [\-küçük*="/"], [\-orta*="/"], [\-büyük*="/"] {
-  float: left;
+[\-koca*="/"], [\-büyük*="/"], [\-ortanca*="/"], [\-küçük*="/"], [class*="/"] {
   width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
 }
 
-[\-koca*="("][\-koca*=")"]:not([\-koca*="/"]), [class*="("][class*=")"]:not([class*="/"]), [\-küçük*="("][\-küçük*=")"]:not([\-küçük*="/"]), [\-orta*="("][\-orta*=")"]:not([\-orta*="/"]), [\-büyük*="("][\-büyük*=")"]:not([\-büyük*="/"]) {
-  flex: calc(100% * (var(--o) * 10 + var(--b)));
+[\-koca*="/)"], [\-büyük*="/)"], [\-ortanca*="/)"], [\-küçük*="/)"], [class*="/)"] {
+  flex: calc(var(--o) * 10 + var(--b));
 }
 
-[\-koca*="(0)"], [class*="(0)"], [\-küçük*="(0)"], [\-orta*="(0)"], [\-büyük*="(0)"] {
+[\-koca*="(0)"], [\-büyük*="(0)"], [\-ortanca*="(0)"], [\-küçük*="(0)"], [class*="(0)"] {
   flex-basis: auto;
   max-width: none;
   width: auto;
+}
+
+[class*=sağlı] {
+  margin-left: auto;
+}
+
+[\-küçük*=sağlı] {
+  margin-left: auto;
+}
+
+[\-ortanca*=sağlı] {
+  margin-left: auto;
+}
+
+[\-büyük*=sağlı] {
+  margin-left: auto;
+}
+
+[\-koca*=sağlı] {
+  margin-left: auto;
 }/*# sourceMappingURL=deveb.css.map */

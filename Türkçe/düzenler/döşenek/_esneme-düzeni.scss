@@ -1,0 +1,26 @@
+@use "../../ayarlar" as *;
+
+// bölme düzeni kullanılıp elde edilen değerler ile esneme düzeni oluşturulur.
+@mixin esneme-düzeni-ayağı($germeler){
+
+    /////////////////////////
+    %esneme-düzeni-genişliği {
+        #{$esneklik}: calc(var(--o) * 10 + var(--b));
+    }    
+    @each $germeAdı, $germeGenişliği in $germeler {
+        [#{$germeAdı}*="/)"]{
+            @extend %esneme-düzeni-genişliği;
+        }
+    }
+    /////////////////////////
+    %kendince-genişlik {
+        flex-basis: auto;
+        max-width: none;
+        width: auto;
+    }
+    @each $germeAdı, $germeGenişliği in $germeler {
+        [#{$germeAdı}*="(0)"]{
+            @extend %kendince-genişlik;
+        }
+    }
+}

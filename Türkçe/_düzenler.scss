@@ -1,0 +1,28 @@
+@use "ayarlar" as *;
+@use "düzenler/döşenek/döşenek-düzeni" as *;
+@use "düzenler/döşenek/konma-düzeni" as *;
+@forward "düzenler/düzenleme/düzelten";
+@forward "tasarımlar/baş-tasarım";
+
+@mixin germeler($germeler) {
+
+    // CSS Başı
+
+    @include döşenek-düzeni-başı($germeler);
+
+    // CSS Gövdesi
+    @each $germeAdı,
+    $germeGenişliği in $germeler {
+ 
+        @media screen and (min-width:$germeGenişliği) {
+            @include döşenek-düzeni($germeAdı);
+        }
+ 
+    }
+
+    // CSS Ayağı
+    @include döşenek-düzeni-ayağı($germeler);
+    @include konma-düzeni($germeler);
+
+
+}

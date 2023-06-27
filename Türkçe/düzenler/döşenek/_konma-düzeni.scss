@@ -1,0 +1,10 @@
+@use "../../ayarlar" as *;
+
+@mixin konma-düzeni($germeler){
+    @each $germeAdı, $germeGenişliği in $germeler {
+    [#{$germeAdı}*="ortalı"]{}
+    [#{$germeAdı}*="sollu"]{}    
+    [#{$germeAdı}*="sağlı"]{margin-left:auto;}    
+    [#{$germeAdı}*="sollu"]{}
+    }
+}

@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "DM Sans", sans-serif;
+    background-color: #f3f6fd;
+}
+
+bet {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto 20fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 12px 24px;
+    padding: 24px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "bölüm-sol bölüm-üst bölüm-üst"
+        "bölüm-sol bölüm-orta bölüm-sağ"
+        "bölüm-sol bölüm-alt bölüm-alt";
+}
+
+bölüm#sol {
+    grid-area: bölüm-sol;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+bölüm#üst {
+    grid-area: bölüm-üst;
+}
+
+bölüm#orta {
+    grid-area: bölüm-orta;
+}
+
+bölüm#sağ {
+    grid-area: bölüm-sağ;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+bölüm#alt {
+    grid-area: bölüm-alt;
+}
+
+.alan {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 24px;
+}
+
+.üyelik {
+    align-items: center;
+    gap: 10px;
+}
+
+.üyelik>img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+}
+
+.logo>p {
+    color: #1f1c2e;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 0 32px;
+}
+
+
+.dizme {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(5, auto) repeat(1, 1fr);
+    grid-gap: 0px;
+    padding: 0px;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+
+}
+
+.dizme>div {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.dizme>[başlık] {
+    background-color: turquoise;
+    border: 1px solid black;
+    border-right: 0px solid black;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.dizme>[başlık]:nth-child(n-1) {
+    border-right: 1px solid black;
+}
+
+.bilgi-1 {
+    margin-bottom: 12px;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: ghostwhite;
+}
+
+.bilgi-1 .düğmeler {
+    margin-left: auto;
+    gap: 12px;
+    align-items: center;
+}
+
+button {
+    outline: none;
+    text-align: center;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #3e64ff;
+    color: #3e64ff;
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+    padding: 4px 8px;
+}
+
+label:hover > button, button:hover{
+    color: white;
+    background: #3e64ff;
+}
+
+button:active {
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+@-webkit-keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+.bilgi-1 .onaylı {
+    color: green;
+    font-weight: 700;
+}
+
+.bilgi-1 .icerik {
+    gap: 5px;
+}
+
+.bilgi-1 .ek {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+
+
+}
+
+.bilgi-1 .ek .içerik {
+    background-color: black;
+    color: white;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.bilgi-1 .ek .id {
+    color: darkgray;
+}
+
+.bilgi-1 .ek .sürüm{
+    font-size: 11pt;
+    color:cadetblue;
+}
+
+.ekleme-bilgileri {
+    gap: 5px 10px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.ekleme-bilgileri .ekleyen {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.ekleme-bilgileri .ekleyen img {
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    object-fit: cover;
+
+}
+
+/************************************************************************
+╔═══════════════════════════════════════════════════════════════════════╗
+║ BASMACA 1.0                                                           ║
+║ https://data-deveb.github.io/basmaca                                  ║
+║ https://github.com/data-deveb/basmaca                                 ║
+╚═══════════════════════════════════════════════════════════════════════╝
+************************************************************************/
+
+input[id*="-basmacayı-"],
+input[id*="-basmacayı-"]:checked+*,
+input[id*="-basmacayı-"]:not(:checked)+label+label[for$="-basmacayı-kapa"] {
+    /* <input> hep görünmez tutulur. */
+    display: none;
+}
+
+input[id$="-basmacayı-aç"]+label,
+input[id$="-basmacayı-aç"]+*+label {
+    /* Tıklar iken yazılar seçilmemeli */
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+input[id$="-basmacayı-aç"]+label>button,
+input[id$="-basmacayı-aç"]+*+label>button {
+    /* Kolanlar bir düğme barındırır iken işlemesi için tanımlandı. */
+    pointer-events: none;
+}

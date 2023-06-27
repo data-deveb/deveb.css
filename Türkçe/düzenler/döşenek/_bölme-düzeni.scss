@@ -22,6 +22,7 @@
     [#{$germeAdı}*="7/"]{--b: 7}
     [#{$germeAdı}*="8/"]{--b: 8}
     [#{$germeAdı}*="9/"]{--b: 9}
+    [#{$germeAdı}*="100/"]{--b: 90}
 
     [#{$germeAdı}*="(1"]:not([#{$germeAdı}*="(1/"]){--o: 1}
     [#{$germeAdı}*="(2"]:not([#{$germeAdı}*="(2/"]){--o: 2}
@@ -32,7 +33,7 @@
     [#{$germeAdı}*="(7"]:not([#{$germeAdı}*="(7/"]){--o: 7}
     [#{$germeAdı}*="(8"]:not([#{$germeAdı}*="(8/"]){--o: 8}
     [#{$germeAdı}*="(9"]:not([#{$germeAdı}*="(9/"]){--o: 9}
-    [#{$germeAdı}*="100/"]{--o: 10}
+    
 
     // PAYDA
     [#{$germeAdı}*="1)"]{--i: 1}
@@ -44,6 +45,7 @@
     [#{$germeAdı}*="7)"]{--i: 7}
     [#{$germeAdı}*="8)"]{--i: 8}
     [#{$germeAdı}*="9)"]{--i: 9}
+    [#{$germeAdı}*="/100"]{--i: 90}
 
     [#{$germeAdı}*="/1"]:not([#{$germeAdı}*="/1)"]){--n: 1}
     [#{$germeAdı}*="/2"]:not([#{$germeAdı}*="/2)"]){--n: 2}
@@ -54,32 +56,16 @@
     [#{$germeAdı}*="/7"]:not([#{$germeAdı}*="/7)"]){--n: 7}
     [#{$germeAdı}*="/8"]:not([#{$germeAdı}*="/8)"]){--n: 8}
     [#{$germeAdı}*="/9"]:not([#{$germeAdı}*="/9)"]){--n: 9}
-    [#{$germeAdı}*="/100"]{--n: 10}
 }
 
-@mixin bölme-düzeni-ayağı($germeAdı){
+@mixin bölme-düzeni-ayağı($germeler){
     /////////////////////////
     %bölme-düzeni-genişliği {
-        float: $sol;
         #{$genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
     }
-    [#{$germeAdı}*="/"]{
-        @extend %bölme-düzeni-genişliği;
-    }
-    /////////////////////////
-    %esneme-düzeni-genişliği {
-        #{$esneklik}: calc(100% * (var(--o) * 10 + var(--b)));
-    }    
-    [#{$germeAdı}*="("][#{$germeAdı}*=")"]:not([#{$germeAdı}*="/"]){
-        @extend %esneme-düzeni-genişliği;
-    }
-    /////////////////////////
-    %kendince-genişlik {
-        flex-basis: auto;
-        max-width: none;
-        width: auto;
-    }
-    [#{$germeAdı}*="(0)"]{
-        @extend %kendince-genişlik;
+    @each $germeAdı, $germeGenişliği in $germeler {
+        [#{$germeAdı}*="/"]{
+            @extend %bölme-düzeni-genişliği;
+        }
     }
 }
