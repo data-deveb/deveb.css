@@ -244,11 +244,11 @@ input[id$=-basmacayı-aç] + * + label > button {
   pointer-events: none;
 }
 
-[\-koca*="/"], [\-büyük*="/"], [\-orta*="/"], [\-küçük*="/"], [class*="/"] {
+[koca*="/"], [büyük*="/"], [orta*="/"], [küçük*="/"], [class*="/"] {
   width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
 }
 
-[\-koca*="//"], [\-koca*="/"], [\-büyük*="//"], [\-büyük*="/"], [\-orta*="//"], [\-orta*="/"], [\-küçük*="//"], [\-küçük*="/"], [class*="//"], [class*="/"] {
+[koca*="//"], [koca*="/"], [büyük*="//"], [büyük*="/"], [orta*="//"], [orta*="/"], [küçük*="//"], [küçük*="/"], [class*="//"], [class*="/"] {
   display: flex;
   flex-wrap: wrap;
 }
@@ -410,634 +410,634 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
 }
 @media screen and (min-width: 576px) {
-  [\-küçük*="/"] {
+  [küçük*="/"] {
     --b: 0;
     --i: 0;
     --o: 0;
     --n: 0;
   }
-  [\-küçük*="1/"] {
+  [küçük*="1/"] {
     --b: 1;
   }
-  [\-küçük*="2/"] {
+  [küçük*="2/"] {
     --b: 2;
   }
-  [\-küçük*="3/"] {
+  [küçük*="3/"] {
     --b: 3;
   }
-  [\-küçük*="4/"] {
+  [küçük*="4/"] {
     --b: 4;
   }
-  [\-küçük*="5/"] {
+  [küçük*="5/"] {
     --b: 5;
   }
-  [\-küçük*="6/"] {
+  [küçük*="6/"] {
     --b: 6;
   }
-  [\-küçük*="7/"] {
+  [küçük*="7/"] {
     --b: 7;
   }
-  [\-küçük*="8/"] {
+  [küçük*="8/"] {
     --b: 8;
   }
-  [\-küçük*="9/"] {
+  [küçük*="9/"] {
     --b: 9;
   }
-  [\-küçük*="100/"] {
+  [küçük*="100/"] {
     --b: 90;
   }
-  [\-küçük*="(1"]:not([\-küçük*="(1/"]) {
+  [küçük*="(1"]:not([küçük*="(1/"]) {
     --o: 1;
   }
-  [\-küçük*="(2"]:not([\-küçük*="(2/"]) {
+  [küçük*="(2"]:not([küçük*="(2/"]) {
     --o: 2;
   }
-  [\-küçük*="(3"]:not([\-küçük*="(3/"]) {
+  [küçük*="(3"]:not([küçük*="(3/"]) {
     --o: 3;
   }
-  [\-küçük*="(4"]:not([\-küçük*="(4/"]) {
+  [küçük*="(4"]:not([küçük*="(4/"]) {
     --o: 4;
   }
-  [\-küçük*="(5"]:not([\-küçük*="(5/"]) {
+  [küçük*="(5"]:not([küçük*="(5/"]) {
     --o: 5;
   }
-  [\-küçük*="(6"]:not([\-küçük*="(6/"]) {
+  [küçük*="(6"]:not([küçük*="(6/"]) {
     --o: 6;
   }
-  [\-küçük*="(7"]:not([\-küçük*="(7/"]) {
+  [küçük*="(7"]:not([küçük*="(7/"]) {
     --o: 7;
   }
-  [\-küçük*="(8"]:not([\-küçük*="(8/"]) {
+  [küçük*="(8"]:not([küçük*="(8/"]) {
     --o: 8;
   }
-  [\-küçük*="(9"]:not([\-küçük*="(9/"]) {
+  [küçük*="(9"]:not([küçük*="(9/"]) {
     --o: 9;
   }
-  [\-küçük*="1)"] {
+  [küçük*="1)"] {
     --i: 1;
   }
-  [\-küçük*="2)"] {
+  [küçük*="2)"] {
     --i: 2;
   }
-  [\-küçük*="3)"] {
+  [küçük*="3)"] {
     --i: 3;
   }
-  [\-küçük*="4)"] {
+  [küçük*="4)"] {
     --i: 4;
   }
-  [\-küçük*="5)"] {
+  [küçük*="5)"] {
     --i: 5;
   }
-  [\-küçük*="6)"] {
+  [küçük*="6)"] {
     --i: 6;
   }
-  [\-küçük*="7)"] {
+  [küçük*="7)"] {
     --i: 7;
   }
-  [\-küçük*="8)"] {
+  [küçük*="8)"] {
     --i: 8;
   }
-  [\-küçük*="9)"] {
+  [küçük*="9)"] {
     --i: 9;
   }
-  [\-küçük*="/100"] {
+  [küçük*="/100"] {
     --i: 90;
   }
-  [\-küçük*="/1"]:not([\-küçük*="/1)"]) {
+  [küçük*="/1"]:not([küçük*="/1)"]) {
     --n: 1;
   }
-  [\-küçük*="/2"]:not([\-küçük*="/2)"]) {
+  [küçük*="/2"]:not([küçük*="/2)"]) {
     --n: 2;
   }
-  [\-küçük*="/3"]:not([\-küçük*="/3)"]) {
+  [küçük*="/3"]:not([küçük*="/3)"]) {
     --n: 3;
   }
-  [\-küçük*="/4"]:not([\-küçük*="/4)"]) {
+  [küçük*="/4"]:not([küçük*="/4)"]) {
     --n: 4;
   }
-  [\-küçük*="/5"]:not([\-küçük*="/5)"]) {
+  [küçük*="/5"]:not([küçük*="/5)"]) {
     --n: 5;
   }
-  [\-küçük*="/6"]:not([\-küçük*="/6)"]) {
+  [küçük*="/6"]:not([küçük*="/6)"]) {
     --n: 6;
   }
-  [\-küçük*="/7"]:not([\-küçük*="/7)"]) {
+  [küçük*="/7"]:not([küçük*="/7)"]) {
     --n: 7;
   }
-  [\-küçük*="/8"]:not([\-küçük*="/8)"]) {
+  [küçük*="/8"]:not([küçük*="/8)"]) {
     --n: 8;
   }
-  [\-küçük*="/9"]:not([\-küçük*="/9)"]) {
+  [küçük*="/9"]:not([küçük*="/9)"]) {
     --n: 9;
   }
-  [\-küçük*=görünür] {
+  [küçük*=görünür] {
     display: inherit;
   }
-  [\-küçük*=gizli] {
+  [küçük*=gizli] {
     display: none;
   }
-  [\-küçük*=esnek] {
+  [küçük*=esnek] {
     display: flex;
     flex-wrap: wrap;
   }
-  [\-küçük*=block] {
+  [küçük*=block] {
     display: block;
   }
-  [\-küçük*="ortalı yazı"] {
+  [küçük*="ortalı yazı"] {
     text-align: center;
   }
-  [\-küçük*="başuçlu yazı"] {
+  [küçük*="başuçlu yazı"] {
     text-align: start;
   }
-  [\-küçük*="sollu yazı"] {
+  [küçük*="sollu yazı"] {
     text-align: left;
   }
-  [\-küçük*="ayakuçlu yazı"] {
+  [küçük*="ayakuçlu yazı"] {
     text-align: end;
   }
-  [\-küçük*="sağlı yazı"] {
+  [küçük*="sağlı yazı"] {
     text-align: right;
   }
-  [\-küçük*="yazıyı yasa"] {
+  [küçük*="yazıyı yasa"] {
     text-align: justify;
   }
-  [\-küçük*=ortalı] {
+  [küçük*=ortalı] {
     justify-content: center;
   }
 }
 @media screen and (min-width: 768px) {
-  [\-orta*="/"] {
+  [orta*="/"] {
     --b: 0;
     --i: 0;
     --o: 0;
     --n: 0;
   }
-  [\-orta*="1/"] {
+  [orta*="1/"] {
     --b: 1;
   }
-  [\-orta*="2/"] {
+  [orta*="2/"] {
     --b: 2;
   }
-  [\-orta*="3/"] {
+  [orta*="3/"] {
     --b: 3;
   }
-  [\-orta*="4/"] {
+  [orta*="4/"] {
     --b: 4;
   }
-  [\-orta*="5/"] {
+  [orta*="5/"] {
     --b: 5;
   }
-  [\-orta*="6/"] {
+  [orta*="6/"] {
     --b: 6;
   }
-  [\-orta*="7/"] {
+  [orta*="7/"] {
     --b: 7;
   }
-  [\-orta*="8/"] {
+  [orta*="8/"] {
     --b: 8;
   }
-  [\-orta*="9/"] {
+  [orta*="9/"] {
     --b: 9;
   }
-  [\-orta*="100/"] {
+  [orta*="100/"] {
     --b: 90;
   }
-  [\-orta*="(1"]:not([\-orta*="(1/"]) {
+  [orta*="(1"]:not([orta*="(1/"]) {
     --o: 1;
   }
-  [\-orta*="(2"]:not([\-orta*="(2/"]) {
+  [orta*="(2"]:not([orta*="(2/"]) {
     --o: 2;
   }
-  [\-orta*="(3"]:not([\-orta*="(3/"]) {
+  [orta*="(3"]:not([orta*="(3/"]) {
     --o: 3;
   }
-  [\-orta*="(4"]:not([\-orta*="(4/"]) {
+  [orta*="(4"]:not([orta*="(4/"]) {
     --o: 4;
   }
-  [\-orta*="(5"]:not([\-orta*="(5/"]) {
+  [orta*="(5"]:not([orta*="(5/"]) {
     --o: 5;
   }
-  [\-orta*="(6"]:not([\-orta*="(6/"]) {
+  [orta*="(6"]:not([orta*="(6/"]) {
     --o: 6;
   }
-  [\-orta*="(7"]:not([\-orta*="(7/"]) {
+  [orta*="(7"]:not([orta*="(7/"]) {
     --o: 7;
   }
-  [\-orta*="(8"]:not([\-orta*="(8/"]) {
+  [orta*="(8"]:not([orta*="(8/"]) {
     --o: 8;
   }
-  [\-orta*="(9"]:not([\-orta*="(9/"]) {
+  [orta*="(9"]:not([orta*="(9/"]) {
     --o: 9;
   }
-  [\-orta*="1)"] {
+  [orta*="1)"] {
     --i: 1;
   }
-  [\-orta*="2)"] {
+  [orta*="2)"] {
     --i: 2;
   }
-  [\-orta*="3)"] {
+  [orta*="3)"] {
     --i: 3;
   }
-  [\-orta*="4)"] {
+  [orta*="4)"] {
     --i: 4;
   }
-  [\-orta*="5)"] {
+  [orta*="5)"] {
     --i: 5;
   }
-  [\-orta*="6)"] {
+  [orta*="6)"] {
     --i: 6;
   }
-  [\-orta*="7)"] {
+  [orta*="7)"] {
     --i: 7;
   }
-  [\-orta*="8)"] {
+  [orta*="8)"] {
     --i: 8;
   }
-  [\-orta*="9)"] {
+  [orta*="9)"] {
     --i: 9;
   }
-  [\-orta*="/100"] {
+  [orta*="/100"] {
     --i: 90;
   }
-  [\-orta*="/1"]:not([\-orta*="/1)"]) {
+  [orta*="/1"]:not([orta*="/1)"]) {
     --n: 1;
   }
-  [\-orta*="/2"]:not([\-orta*="/2)"]) {
+  [orta*="/2"]:not([orta*="/2)"]) {
     --n: 2;
   }
-  [\-orta*="/3"]:not([\-orta*="/3)"]) {
+  [orta*="/3"]:not([orta*="/3)"]) {
     --n: 3;
   }
-  [\-orta*="/4"]:not([\-orta*="/4)"]) {
+  [orta*="/4"]:not([orta*="/4)"]) {
     --n: 4;
   }
-  [\-orta*="/5"]:not([\-orta*="/5)"]) {
+  [orta*="/5"]:not([orta*="/5)"]) {
     --n: 5;
   }
-  [\-orta*="/6"]:not([\-orta*="/6)"]) {
+  [orta*="/6"]:not([orta*="/6)"]) {
     --n: 6;
   }
-  [\-orta*="/7"]:not([\-orta*="/7)"]) {
+  [orta*="/7"]:not([orta*="/7)"]) {
     --n: 7;
   }
-  [\-orta*="/8"]:not([\-orta*="/8)"]) {
+  [orta*="/8"]:not([orta*="/8)"]) {
     --n: 8;
   }
-  [\-orta*="/9"]:not([\-orta*="/9)"]) {
+  [orta*="/9"]:not([orta*="/9)"]) {
     --n: 9;
   }
-  [\-orta*=görünür] {
+  [orta*=görünür] {
     display: inherit;
   }
-  [\-orta*=gizli] {
+  [orta*=gizli] {
     display: none;
   }
-  [\-orta*=esnek] {
+  [orta*=esnek] {
     display: flex;
     flex-wrap: wrap;
   }
-  [\-orta*=block] {
+  [orta*=block] {
     display: block;
   }
-  [\-orta*="ortalı yazı"] {
+  [orta*="ortalı yazı"] {
     text-align: center;
   }
-  [\-orta*="başuçlu yazı"] {
+  [orta*="başuçlu yazı"] {
     text-align: start;
   }
-  [\-orta*="sollu yazı"] {
+  [orta*="sollu yazı"] {
     text-align: left;
   }
-  [\-orta*="ayakuçlu yazı"] {
+  [orta*="ayakuçlu yazı"] {
     text-align: end;
   }
-  [\-orta*="sağlı yazı"] {
+  [orta*="sağlı yazı"] {
     text-align: right;
   }
-  [\-orta*="yazıyı yasa"] {
+  [orta*="yazıyı yasa"] {
     text-align: justify;
   }
-  [\-orta*=ortalı] {
+  [orta*=ortalı] {
     justify-content: center;
   }
 }
 @media screen and (min-width: 992px) {
-  [\-büyük*="/"] {
+  [büyük*="/"] {
     --b: 0;
     --i: 0;
     --o: 0;
     --n: 0;
   }
-  [\-büyük*="1/"] {
+  [büyük*="1/"] {
     --b: 1;
   }
-  [\-büyük*="2/"] {
+  [büyük*="2/"] {
     --b: 2;
   }
-  [\-büyük*="3/"] {
+  [büyük*="3/"] {
     --b: 3;
   }
-  [\-büyük*="4/"] {
+  [büyük*="4/"] {
     --b: 4;
   }
-  [\-büyük*="5/"] {
+  [büyük*="5/"] {
     --b: 5;
   }
-  [\-büyük*="6/"] {
+  [büyük*="6/"] {
     --b: 6;
   }
-  [\-büyük*="7/"] {
+  [büyük*="7/"] {
     --b: 7;
   }
-  [\-büyük*="8/"] {
+  [büyük*="8/"] {
     --b: 8;
   }
-  [\-büyük*="9/"] {
+  [büyük*="9/"] {
     --b: 9;
   }
-  [\-büyük*="100/"] {
+  [büyük*="100/"] {
     --b: 90;
   }
-  [\-büyük*="(1"]:not([\-büyük*="(1/"]) {
+  [büyük*="(1"]:not([büyük*="(1/"]) {
     --o: 1;
   }
-  [\-büyük*="(2"]:not([\-büyük*="(2/"]) {
+  [büyük*="(2"]:not([büyük*="(2/"]) {
     --o: 2;
   }
-  [\-büyük*="(3"]:not([\-büyük*="(3/"]) {
+  [büyük*="(3"]:not([büyük*="(3/"]) {
     --o: 3;
   }
-  [\-büyük*="(4"]:not([\-büyük*="(4/"]) {
+  [büyük*="(4"]:not([büyük*="(4/"]) {
     --o: 4;
   }
-  [\-büyük*="(5"]:not([\-büyük*="(5/"]) {
+  [büyük*="(5"]:not([büyük*="(5/"]) {
     --o: 5;
   }
-  [\-büyük*="(6"]:not([\-büyük*="(6/"]) {
+  [büyük*="(6"]:not([büyük*="(6/"]) {
     --o: 6;
   }
-  [\-büyük*="(7"]:not([\-büyük*="(7/"]) {
+  [büyük*="(7"]:not([büyük*="(7/"]) {
     --o: 7;
   }
-  [\-büyük*="(8"]:not([\-büyük*="(8/"]) {
+  [büyük*="(8"]:not([büyük*="(8/"]) {
     --o: 8;
   }
-  [\-büyük*="(9"]:not([\-büyük*="(9/"]) {
+  [büyük*="(9"]:not([büyük*="(9/"]) {
     --o: 9;
   }
-  [\-büyük*="1)"] {
+  [büyük*="1)"] {
     --i: 1;
   }
-  [\-büyük*="2)"] {
+  [büyük*="2)"] {
     --i: 2;
   }
-  [\-büyük*="3)"] {
+  [büyük*="3)"] {
     --i: 3;
   }
-  [\-büyük*="4)"] {
+  [büyük*="4)"] {
     --i: 4;
   }
-  [\-büyük*="5)"] {
+  [büyük*="5)"] {
     --i: 5;
   }
-  [\-büyük*="6)"] {
+  [büyük*="6)"] {
     --i: 6;
   }
-  [\-büyük*="7)"] {
+  [büyük*="7)"] {
     --i: 7;
   }
-  [\-büyük*="8)"] {
+  [büyük*="8)"] {
     --i: 8;
   }
-  [\-büyük*="9)"] {
+  [büyük*="9)"] {
     --i: 9;
   }
-  [\-büyük*="/100"] {
+  [büyük*="/100"] {
     --i: 90;
   }
-  [\-büyük*="/1"]:not([\-büyük*="/1)"]) {
+  [büyük*="/1"]:not([büyük*="/1)"]) {
     --n: 1;
   }
-  [\-büyük*="/2"]:not([\-büyük*="/2)"]) {
+  [büyük*="/2"]:not([büyük*="/2)"]) {
     --n: 2;
   }
-  [\-büyük*="/3"]:not([\-büyük*="/3)"]) {
+  [büyük*="/3"]:not([büyük*="/3)"]) {
     --n: 3;
   }
-  [\-büyük*="/4"]:not([\-büyük*="/4)"]) {
+  [büyük*="/4"]:not([büyük*="/4)"]) {
     --n: 4;
   }
-  [\-büyük*="/5"]:not([\-büyük*="/5)"]) {
+  [büyük*="/5"]:not([büyük*="/5)"]) {
     --n: 5;
   }
-  [\-büyük*="/6"]:not([\-büyük*="/6)"]) {
+  [büyük*="/6"]:not([büyük*="/6)"]) {
     --n: 6;
   }
-  [\-büyük*="/7"]:not([\-büyük*="/7)"]) {
+  [büyük*="/7"]:not([büyük*="/7)"]) {
     --n: 7;
   }
-  [\-büyük*="/8"]:not([\-büyük*="/8)"]) {
+  [büyük*="/8"]:not([büyük*="/8)"]) {
     --n: 8;
   }
-  [\-büyük*="/9"]:not([\-büyük*="/9)"]) {
+  [büyük*="/9"]:not([büyük*="/9)"]) {
     --n: 9;
   }
-  [\-büyük*=görünür] {
+  [büyük*=görünür] {
     display: inherit;
   }
-  [\-büyük*=gizli] {
+  [büyük*=gizli] {
     display: none;
   }
-  [\-büyük*=esnek] {
+  [büyük*=esnek] {
     display: flex;
     flex-wrap: wrap;
   }
-  [\-büyük*=block] {
+  [büyük*=block] {
     display: block;
   }
-  [\-büyük*="ortalı yazı"] {
+  [büyük*="ortalı yazı"] {
     text-align: center;
   }
-  [\-büyük*="başuçlu yazı"] {
+  [büyük*="başuçlu yazı"] {
     text-align: start;
   }
-  [\-büyük*="sollu yazı"] {
+  [büyük*="sollu yazı"] {
     text-align: left;
   }
-  [\-büyük*="ayakuçlu yazı"] {
+  [büyük*="ayakuçlu yazı"] {
     text-align: end;
   }
-  [\-büyük*="sağlı yazı"] {
+  [büyük*="sağlı yazı"] {
     text-align: right;
   }
-  [\-büyük*="yazıyı yasa"] {
+  [büyük*="yazıyı yasa"] {
     text-align: justify;
   }
-  [\-büyük*=ortalı] {
+  [büyük*=ortalı] {
     justify-content: center;
   }
 }
 @media screen and (min-width: 1200px) {
-  [\-koca*="/"] {
+  [koca*="/"] {
     --b: 0;
     --i: 0;
     --o: 0;
     --n: 0;
   }
-  [\-koca*="1/"] {
+  [koca*="1/"] {
     --b: 1;
   }
-  [\-koca*="2/"] {
+  [koca*="2/"] {
     --b: 2;
   }
-  [\-koca*="3/"] {
+  [koca*="3/"] {
     --b: 3;
   }
-  [\-koca*="4/"] {
+  [koca*="4/"] {
     --b: 4;
   }
-  [\-koca*="5/"] {
+  [koca*="5/"] {
     --b: 5;
   }
-  [\-koca*="6/"] {
+  [koca*="6/"] {
     --b: 6;
   }
-  [\-koca*="7/"] {
+  [koca*="7/"] {
     --b: 7;
   }
-  [\-koca*="8/"] {
+  [koca*="8/"] {
     --b: 8;
   }
-  [\-koca*="9/"] {
+  [koca*="9/"] {
     --b: 9;
   }
-  [\-koca*="100/"] {
+  [koca*="100/"] {
     --b: 90;
   }
-  [\-koca*="(1"]:not([\-koca*="(1/"]) {
+  [koca*="(1"]:not([koca*="(1/"]) {
     --o: 1;
   }
-  [\-koca*="(2"]:not([\-koca*="(2/"]) {
+  [koca*="(2"]:not([koca*="(2/"]) {
     --o: 2;
   }
-  [\-koca*="(3"]:not([\-koca*="(3/"]) {
+  [koca*="(3"]:not([koca*="(3/"]) {
     --o: 3;
   }
-  [\-koca*="(4"]:not([\-koca*="(4/"]) {
+  [koca*="(4"]:not([koca*="(4/"]) {
     --o: 4;
   }
-  [\-koca*="(5"]:not([\-koca*="(5/"]) {
+  [koca*="(5"]:not([koca*="(5/"]) {
     --o: 5;
   }
-  [\-koca*="(6"]:not([\-koca*="(6/"]) {
+  [koca*="(6"]:not([koca*="(6/"]) {
     --o: 6;
   }
-  [\-koca*="(7"]:not([\-koca*="(7/"]) {
+  [koca*="(7"]:not([koca*="(7/"]) {
     --o: 7;
   }
-  [\-koca*="(8"]:not([\-koca*="(8/"]) {
+  [koca*="(8"]:not([koca*="(8/"]) {
     --o: 8;
   }
-  [\-koca*="(9"]:not([\-koca*="(9/"]) {
+  [koca*="(9"]:not([koca*="(9/"]) {
     --o: 9;
   }
-  [\-koca*="1)"] {
+  [koca*="1)"] {
     --i: 1;
   }
-  [\-koca*="2)"] {
+  [koca*="2)"] {
     --i: 2;
   }
-  [\-koca*="3)"] {
+  [koca*="3)"] {
     --i: 3;
   }
-  [\-koca*="4)"] {
+  [koca*="4)"] {
     --i: 4;
   }
-  [\-koca*="5)"] {
+  [koca*="5)"] {
     --i: 5;
   }
-  [\-koca*="6)"] {
+  [koca*="6)"] {
     --i: 6;
   }
-  [\-koca*="7)"] {
+  [koca*="7)"] {
     --i: 7;
   }
-  [\-koca*="8)"] {
+  [koca*="8)"] {
     --i: 8;
   }
-  [\-koca*="9)"] {
+  [koca*="9)"] {
     --i: 9;
   }
-  [\-koca*="/100"] {
+  [koca*="/100"] {
     --i: 90;
   }
-  [\-koca*="/1"]:not([\-koca*="/1)"]) {
+  [koca*="/1"]:not([koca*="/1)"]) {
     --n: 1;
   }
-  [\-koca*="/2"]:not([\-koca*="/2)"]) {
+  [koca*="/2"]:not([koca*="/2)"]) {
     --n: 2;
   }
-  [\-koca*="/3"]:not([\-koca*="/3)"]) {
+  [koca*="/3"]:not([koca*="/3)"]) {
     --n: 3;
   }
-  [\-koca*="/4"]:not([\-koca*="/4)"]) {
+  [koca*="/4"]:not([koca*="/4)"]) {
     --n: 4;
   }
-  [\-koca*="/5"]:not([\-koca*="/5)"]) {
+  [koca*="/5"]:not([koca*="/5)"]) {
     --n: 5;
   }
-  [\-koca*="/6"]:not([\-koca*="/6)"]) {
+  [koca*="/6"]:not([koca*="/6)"]) {
     --n: 6;
   }
-  [\-koca*="/7"]:not([\-koca*="/7)"]) {
+  [koca*="/7"]:not([koca*="/7)"]) {
     --n: 7;
   }
-  [\-koca*="/8"]:not([\-koca*="/8)"]) {
+  [koca*="/8"]:not([koca*="/8)"]) {
     --n: 8;
   }
-  [\-koca*="/9"]:not([\-koca*="/9)"]) {
+  [koca*="/9"]:not([koca*="/9)"]) {
     --n: 9;
   }
-  [\-koca*=görünür] {
+  [koca*=görünür] {
     display: inherit;
   }
-  [\-koca*=gizli] {
+  [koca*=gizli] {
     display: none;
   }
-  [\-koca*=esnek] {
+  [koca*=esnek] {
     display: flex;
     flex-wrap: wrap;
   }
-  [\-koca*=block] {
+  [koca*=block] {
     display: block;
   }
-  [\-koca*="ortalı yazı"] {
+  [koca*="ortalı yazı"] {
     text-align: center;
   }
-  [\-koca*="başuçlu yazı"] {
+  [koca*="başuçlu yazı"] {
     text-align: start;
   }
-  [\-koca*="sollu yazı"] {
+  [koca*="sollu yazı"] {
     text-align: left;
   }
-  [\-koca*="ayakuçlu yazı"] {
+  [koca*="ayakuçlu yazı"] {
     text-align: end;
   }
-  [\-koca*="sağlı yazı"] {
+  [koca*="sağlı yazı"] {
     text-align: right;
   }
-  [\-koca*="yazıyı yasa"] {
+  [koca*="yazıyı yasa"] {
     text-align: justify;
   }
-  [\-koca*=ortalı] {
+  [koca*=ortalı] {
     justify-content: center;
   }
 }
-[\-koca*="/)"], [\-büyük*="/)"], [\-orta*="/)"], [\-küçük*="/)"], [class*="/)"] {
+[koca*="/)"], [büyük*="/)"], [orta*="/)"], [küçük*="/)"], [class*="/)"] {
   flex: calc(var(--o) * 10 + var(--b));
 }
 
-[\-koca*="(0)"], [\-büyük*="(0)"], [\-orta*="(0)"], [\-küçük*="(0)"], [class*="(0)"] {
+[koca*="(0)"], [büyük*="(0)"], [orta*="(0)"], [küçük*="(0)"], [class*="(0)"] {
   flex-basis: auto;
   max-width: none;
   width: auto;
@@ -1047,18 +1047,18 @@ input[id$=-basmacayı-aç] + * + label > button {
   margin-left: auto;
 }
 
-[\-küçük*=sağlı] {
+[küçük*=sağlı] {
   margin-left: auto;
 }
 
-[\-orta*=sağlı] {
+[orta*=sağlı] {
   margin-left: auto;
 }
 
-[\-büyük*=sağlı] {
+[büyük*=sağlı] {
   margin-left: auto;
 }
 
-[\-koca*=sağlı] {
+[koca*=sağlı] {
   margin-left: auto;
 }/*# sourceMappingURL=deveb.css.map */
