@@ -12,8 +12,6 @@ body {
 }
 
 body {
-  display: flex;
-  flex-wrap: wrap;
   font-family: "DM Sans", sans-serif;
   background-color: #f3f6fd;
 }
@@ -70,8 +68,7 @@ bölüm#alt {
   border-radius: 50%;
   height: 32px;
   width: 32px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .logo > p {
@@ -149,6 +146,15 @@ label:hover > button, button:hover {
 button:active {
   letter-spacing: 2px;
 }
+
+@-webkit-keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @keyframes rotating {
   from {
     transform: rotate(0deg);
@@ -205,8 +211,7 @@ button:active {
   border-radius: 50%;
   width: 18px;
   height: 18px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /************************************************************************
@@ -237,6 +242,15 @@ input[id$=-basmacayı-aç] + label > button,
 input[id$=-basmacayı-aç] + * + label > button {
   /* Kolanlar bir düğme barındırır iken işlemesi için tanımlandı. */
   pointer-events: none;
+}
+
+[\-koca*="/"], [\-büyük*="/"], [\-orta*="/"], [\-küçük*="/"], [class*="/"] {
+  width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+}
+
+[\-koca*="//"], [\-koca*="/"], [\-büyük*="//"], [\-büyük*="/"], [\-orta*="//"], [\-orta*="/"], [\-küçük*="//"], [\-küçük*="/"], [class*="//"], [class*="/"] {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 0) {
@@ -373,6 +387,27 @@ input[id$=-basmacayı-aç] + * + label > button {
   [class*=block] {
     display: block;
   }
+  [class*="ortalı yazı"] {
+    text-align: center;
+  }
+  [class*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [class*="sollu yazı"] {
+    text-align: left;
+  }
+  [class*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [class*="sağlı yazı"] {
+    text-align: right;
+  }
+  [class*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [class*=ortalı] {
+    justify-content: center;
+  }
 }
 @media screen and (min-width: 576px) {
   [\-küçük*="/"] {
@@ -508,140 +543,182 @@ input[id$=-basmacayı-aç] + * + label > button {
   [\-küçük*=block] {
     display: block;
   }
+  [\-küçük*="ortalı yazı"] {
+    text-align: center;
+  }
+  [\-küçük*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [\-küçük*="sollu yazı"] {
+    text-align: left;
+  }
+  [\-küçük*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [\-küçük*="sağlı yazı"] {
+    text-align: right;
+  }
+  [\-küçük*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [\-küçük*=ortalı] {
+    justify-content: center;
+  }
 }
 @media screen and (min-width: 768px) {
-  [\-ortanca*="/"] {
+  [\-orta*="/"] {
     --b: 0;
     --i: 0;
     --o: 0;
     --n: 0;
   }
-  [\-ortanca*="1/"] {
+  [\-orta*="1/"] {
     --b: 1;
   }
-  [\-ortanca*="2/"] {
+  [\-orta*="2/"] {
     --b: 2;
   }
-  [\-ortanca*="3/"] {
+  [\-orta*="3/"] {
     --b: 3;
   }
-  [\-ortanca*="4/"] {
+  [\-orta*="4/"] {
     --b: 4;
   }
-  [\-ortanca*="5/"] {
+  [\-orta*="5/"] {
     --b: 5;
   }
-  [\-ortanca*="6/"] {
+  [\-orta*="6/"] {
     --b: 6;
   }
-  [\-ortanca*="7/"] {
+  [\-orta*="7/"] {
     --b: 7;
   }
-  [\-ortanca*="8/"] {
+  [\-orta*="8/"] {
     --b: 8;
   }
-  [\-ortanca*="9/"] {
+  [\-orta*="9/"] {
     --b: 9;
   }
-  [\-ortanca*="100/"] {
+  [\-orta*="100/"] {
     --b: 90;
   }
-  [\-ortanca*="(1"]:not([\-ortanca*="(1/"]) {
+  [\-orta*="(1"]:not([\-orta*="(1/"]) {
     --o: 1;
   }
-  [\-ortanca*="(2"]:not([\-ortanca*="(2/"]) {
+  [\-orta*="(2"]:not([\-orta*="(2/"]) {
     --o: 2;
   }
-  [\-ortanca*="(3"]:not([\-ortanca*="(3/"]) {
+  [\-orta*="(3"]:not([\-orta*="(3/"]) {
     --o: 3;
   }
-  [\-ortanca*="(4"]:not([\-ortanca*="(4/"]) {
+  [\-orta*="(4"]:not([\-orta*="(4/"]) {
     --o: 4;
   }
-  [\-ortanca*="(5"]:not([\-ortanca*="(5/"]) {
+  [\-orta*="(5"]:not([\-orta*="(5/"]) {
     --o: 5;
   }
-  [\-ortanca*="(6"]:not([\-ortanca*="(6/"]) {
+  [\-orta*="(6"]:not([\-orta*="(6/"]) {
     --o: 6;
   }
-  [\-ortanca*="(7"]:not([\-ortanca*="(7/"]) {
+  [\-orta*="(7"]:not([\-orta*="(7/"]) {
     --o: 7;
   }
-  [\-ortanca*="(8"]:not([\-ortanca*="(8/"]) {
+  [\-orta*="(8"]:not([\-orta*="(8/"]) {
     --o: 8;
   }
-  [\-ortanca*="(9"]:not([\-ortanca*="(9/"]) {
+  [\-orta*="(9"]:not([\-orta*="(9/"]) {
     --o: 9;
   }
-  [\-ortanca*="1)"] {
+  [\-orta*="1)"] {
     --i: 1;
   }
-  [\-ortanca*="2)"] {
+  [\-orta*="2)"] {
     --i: 2;
   }
-  [\-ortanca*="3)"] {
+  [\-orta*="3)"] {
     --i: 3;
   }
-  [\-ortanca*="4)"] {
+  [\-orta*="4)"] {
     --i: 4;
   }
-  [\-ortanca*="5)"] {
+  [\-orta*="5)"] {
     --i: 5;
   }
-  [\-ortanca*="6)"] {
+  [\-orta*="6)"] {
     --i: 6;
   }
-  [\-ortanca*="7)"] {
+  [\-orta*="7)"] {
     --i: 7;
   }
-  [\-ortanca*="8)"] {
+  [\-orta*="8)"] {
     --i: 8;
   }
-  [\-ortanca*="9)"] {
+  [\-orta*="9)"] {
     --i: 9;
   }
-  [\-ortanca*="/100"] {
+  [\-orta*="/100"] {
     --i: 90;
   }
-  [\-ortanca*="/1"]:not([\-ortanca*="/1)"]) {
+  [\-orta*="/1"]:not([\-orta*="/1)"]) {
     --n: 1;
   }
-  [\-ortanca*="/2"]:not([\-ortanca*="/2)"]) {
+  [\-orta*="/2"]:not([\-orta*="/2)"]) {
     --n: 2;
   }
-  [\-ortanca*="/3"]:not([\-ortanca*="/3)"]) {
+  [\-orta*="/3"]:not([\-orta*="/3)"]) {
     --n: 3;
   }
-  [\-ortanca*="/4"]:not([\-ortanca*="/4)"]) {
+  [\-orta*="/4"]:not([\-orta*="/4)"]) {
     --n: 4;
   }
-  [\-ortanca*="/5"]:not([\-ortanca*="/5)"]) {
+  [\-orta*="/5"]:not([\-orta*="/5)"]) {
     --n: 5;
   }
-  [\-ortanca*="/6"]:not([\-ortanca*="/6)"]) {
+  [\-orta*="/6"]:not([\-orta*="/6)"]) {
     --n: 6;
   }
-  [\-ortanca*="/7"]:not([\-ortanca*="/7)"]) {
+  [\-orta*="/7"]:not([\-orta*="/7)"]) {
     --n: 7;
   }
-  [\-ortanca*="/8"]:not([\-ortanca*="/8)"]) {
+  [\-orta*="/8"]:not([\-orta*="/8)"]) {
     --n: 8;
   }
-  [\-ortanca*="/9"]:not([\-ortanca*="/9)"]) {
+  [\-orta*="/9"]:not([\-orta*="/9)"]) {
     --n: 9;
   }
-  [\-ortanca*=görünür] {
+  [\-orta*=görünür] {
     display: inherit;
   }
-  [\-ortanca*=gizli] {
+  [\-orta*=gizli] {
     display: none;
   }
-  [\-ortanca*=esnek] {
+  [\-orta*=esnek] {
     display: flex;
     flex-wrap: wrap;
   }
-  [\-ortanca*=block] {
+  [\-orta*=block] {
     display: block;
+  }
+  [\-orta*="ortalı yazı"] {
+    text-align: center;
+  }
+  [\-orta*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [\-orta*="sollu yazı"] {
+    text-align: left;
+  }
+  [\-orta*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [\-orta*="sağlı yazı"] {
+    text-align: right;
+  }
+  [\-orta*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [\-orta*=ortalı] {
+    justify-content: center;
   }
 }
 @media screen and (min-width: 992px) {
@@ -778,6 +855,27 @@ input[id$=-basmacayı-aç] + * + label > button {
   [\-büyük*=block] {
     display: block;
   }
+  [\-büyük*="ortalı yazı"] {
+    text-align: center;
+  }
+  [\-büyük*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [\-büyük*="sollu yazı"] {
+    text-align: left;
+  }
+  [\-büyük*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [\-büyük*="sağlı yazı"] {
+    text-align: right;
+  }
+  [\-büyük*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [\-büyük*=ortalı] {
+    justify-content: center;
+  }
 }
 @media screen and (min-width: 1200px) {
   [\-koca*="/"] {
@@ -913,16 +1011,33 @@ input[id$=-basmacayı-aç] + * + label > button {
   [\-koca*=block] {
     display: block;
   }
+  [\-koca*="ortalı yazı"] {
+    text-align: center;
+  }
+  [\-koca*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [\-koca*="sollu yazı"] {
+    text-align: left;
+  }
+  [\-koca*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [\-koca*="sağlı yazı"] {
+    text-align: right;
+  }
+  [\-koca*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [\-koca*=ortalı] {
+    justify-content: center;
+  }
 }
-[\-koca*="/"], [\-büyük*="/"], [\-ortanca*="/"], [\-küçük*="/"], [class*="/"] {
-  width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-}
-
-[\-koca*="/)"], [\-büyük*="/)"], [\-ortanca*="/)"], [\-küçük*="/)"], [class*="/)"] {
+[\-koca*="/)"], [\-büyük*="/)"], [\-orta*="/)"], [\-küçük*="/)"], [class*="/)"] {
   flex: calc(var(--o) * 10 + var(--b));
 }
 
-[\-koca*="(0)"], [\-büyük*="(0)"], [\-ortanca*="(0)"], [\-küçük*="(0)"], [class*="(0)"] {
+[\-koca*="(0)"], [\-büyük*="(0)"], [\-orta*="(0)"], [\-küçük*="(0)"], [class*="(0)"] {
   flex-basis: auto;
   max-width: none;
   width: auto;
@@ -936,7 +1051,7 @@ input[id$=-basmacayı-aç] + * + label > button {
   margin-left: auto;
 }
 
-[\-ortanca*=sağlı] {
+[\-orta*=sağlı] {
   margin-left: auto;
 }
 
