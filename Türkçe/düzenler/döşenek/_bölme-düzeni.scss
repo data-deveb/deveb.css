@@ -60,12 +60,24 @@
 
 @mixin bölme-düzeni-ayağı($germeler){
     /////////////////////////
-    %bölme-düzeni-genişliği {
+    %bölme-düzeni-genişliği {        
         #{$genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+    }
+    %esnek{
+        #{$sergi}: flex;
+        flex-wrap: wrap;
+    }
+    %block{
+        #{$sergi}: block;
+        float: left;
     }
     @each $germeAdı, $germeGenişliği in $germeler {
         [#{$germeAdı}*="/"]{
+            @extend %esnek;
             @extend %bölme-düzeni-genişliği;
+        }
+        [#{$germeAdı}*="//"]{
+            @extend %esnek;
         }
     }
 }
