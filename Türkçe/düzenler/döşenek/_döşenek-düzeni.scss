@@ -7,19 +7,20 @@
 @use "dayama-düzeni" as *;
 
 @mixin döşenek-düzeni-başı($germeAdı) {
-    @include bölme-düzeni-ayağı($germeler);
+    
 }
 
 @mixin döşenek-düzeni($germeAdı){
-    @include bölme-düzeni($germeAdı);
+    @include bölme-düzeni($germeAdı);    
     @include gizleme-düzeni($germeAdı);
     @include sergi-düzeni($germeAdı);
     @include dayama-düzeni($germeAdı);
-//  @include esneme-düzeni($germeAdı);
+    @include esneme-düzeni($germeAdı);
+    
 //  @include sıralama-düzeni($germeAdı); 
 }
 
-@mixin döşenek-düzeni-ayağı($germeler){
-    
+@mixin döşenek-düzeni-ayağı($germeler){  
+    @include bölme-düzeni-ayağı($germeler);  
     @include esneme-düzeni-ayağı($germeler);
 }
