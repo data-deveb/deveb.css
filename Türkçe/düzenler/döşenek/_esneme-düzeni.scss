@@ -1,25 +1,53 @@
 @use "../../ayarlar" as *;
 
 // bölme düzeni kullanılıp elde edilen değerler ile esneme düzeni oluşturulur.
+
+@mixin esneme-düzeni($germeAdı){
+    // PAY
+    [#{$germeAdı}*="}"]{--b1: 0; --i1: 0; --o1: 0; --n1: 0}
+    [#{$germeAdı}*="1}"]{--b1: 1}
+    [#{$germeAdı}*="2}"]{--b1: 2}
+    [#{$germeAdı}*="3}"]{--b1: 3}
+    [#{$germeAdı}*="4}"]{--b1: 4}
+    [#{$germeAdı}*="5}"]{--b1: 5} 
+    [#{$germeAdı}*="6}"]{--b1: 6}
+    [#{$germeAdı}*="7}"]{--b1: 7}
+    [#{$germeAdı}*="8}"]{--b1: 8}
+    [#{$germeAdı}*="9}"]{--b1: 9}
+    [#{$germeAdı}*="100}"]{--b1: 90}
+
+    [#{$germeAdı}*="{1"]:not([#{$germeAdı}*="{1}"]){--o1: 1}
+    [#{$germeAdı}*="{2"]:not([#{$germeAdı}*="{2}"]){--o1: 2}
+    [#{$germeAdı}*="{3"]:not([#{$germeAdı}*="{3}"]){--o1: 3}
+    [#{$germeAdı}*="{4"]:not([#{$germeAdı}*="{4}"]){--o1: 4}
+    [#{$germeAdı}*="{5"]:not([#{$germeAdı}*="{5}"]){--o1: 5}
+    [#{$germeAdı}*="{6"]:not([#{$germeAdı}*="{6}"]){--o1: 6}
+    [#{$germeAdı}*="{7"]:not([#{$germeAdı}*="{7}"]){--o1: 7}
+    [#{$germeAdı}*="{8"]:not([#{$germeAdı}*="{8}"]){--o1: 8}
+    [#{$germeAdı}*="{9"]:not([#{$germeAdı}*="{9}"]){--o1: 9}
+    
+}
+
 @mixin esneme-düzeni-ayağı($germeler){
 
     /////////////////////////
     %esneme-düzeni-genişliği {
-        #{$esneklik}: calc(var(--o) * 10 + var(--b));
+        
     }    
     @each $germeAdı, $germeGenişliği in $germeler {
-        [#{$germeAdı}*="/)"]{
-            @extend %esneme-düzeni-genişliği;
+        [#{$germeAdı}*="{"][#{$germeAdı}*="}"]{
+            #{$esneklik}: calc(var(--o1) * 10 + var(--b1));
         }
     }
     /////////////////////////
     %kendince-genişlik {
+        flex:0 !important;
         flex-basis: auto;
         max-width: none;
         width: auto;
     }
     @each $germeAdı, $germeGenişliği in $germeler {
-        [#{$germeAdı}*="(0)"]{
+        [#{$germeAdı}*="{0}"]{
             @extend %kendince-genişlik;
         }
     }
