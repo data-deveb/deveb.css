@@ -56,12 +56,15 @@
     [#{$germeAdı}*="/7"]:not([#{$germeAdı}*="/7)"]){--n: 7}
     [#{$germeAdı}*="/8"]:not([#{$germeAdı}*="/8)"]){--n: 8}
     [#{$germeAdı}*="/9"]:not([#{$germeAdı}*="/9)"]){--n: 9}
-}
 
-@mixin bölme-düzeni-ayağı($germeler){
-    /////////////////////////
     %bölme-düzeni-genişliği {        
-        #{$genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+        // #{$genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+        #{$genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
+
+    }
+    %esnemeli-bölme-düzeni-genişliği{
+        // #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+        #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
     }
     %esnek{
         #{$sergi}: flex;
@@ -71,13 +74,74 @@
         #{$sergi}: block;
         float: left;
     }
-    @each $germeAdı, $germeGenişliği in $germeler {
-        [#{$germeAdı}*="/"]{
-            @extend %esnek;
-            @extend %bölme-düzeni-genişliği;
+    
+        [#{$germeAdı}*="/"]:not([#{$germeAdı}*="}"]){
+            #{$sergi}: flex;
+            flex-wrap: wrap;
+            #{$genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
+            flex: unset;
+        }
+        [#{$germeAdı}*="}"]{
+            #{$sergi}: flex;
+            flex-wrap: wrap;
+            width: auto;
+            #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
         }
         [#{$germeAdı}*="//"]{
-            @extend %esnek;
+            #{$sergi}: flex;
+            flex-wrap: wrap;
         }
+
+}
+
+@mixin bölme-düzeni-ayağı($germeler){
+    /////////////////////////
+    // %bölme-düzeni-genişliği {        
+    //     // #{$genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+    //     #{$genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
+
+    // }
+    // %esnemeli-bölme-düzeni-genişliği{
+    //     // #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+    //     #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
+    // }
+    // %esnek{
+    //     #{$sergi}: flex;
+    //     flex-wrap: wrap;
+    // }
+    // %block{
+    //     #{$sergi}: block;
+    //     float: left;
+    // }
+    // @each $germeAdı, $germeGenişliği in $germeler {
+    //     [#{$germeAdı}*="/"]:not([#{$germeAdı}*="/)"]){
+    //         @extend %esnek;
+    //         @extend %bölme-düzeni-genişliği;
+
+    //         flex: unset;
+    //     }
+    //     [#{$germeAdı}*="/"][#{$germeAdı}*="/)"]{
+    //         @extend %esnek;
+    //         @extend %esnemeli-bölme-düzeni-genişliği;
+    //     }
+    //     [#{$germeAdı}*="//"]{
+    //         @extend %esnek;
+    //     }
+    // }
+
+    // %gaplı-bölme-düzeni-genişliği{
+    //     #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+    //     #{$en-az-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)) + .5));
+    // }
+
+    // %gaplı-bölme-düzeni-genişliği{
+    //     #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+    //     #{$en-az-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)) + (var(--i) / 10 * 2)));
+    // }
+
+    %gaplı-bölme-düzeni-genişliği{
+        // #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
+        #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - var(--gap, 0px));
     }
+
 }
