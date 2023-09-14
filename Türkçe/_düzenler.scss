@@ -11,8 +11,7 @@
     @include döşenek-düzeni-başı($germeler);
 
     // CSS Gövdesi
-    @each $germeAdı,
-    $germeGenişliği in $germeler {
+    @each $germeAdı, $germeGenişliği in $germeler {
  
         @media screen and (min-width:$germeGenişliği) {
             @include döşenek-düzeni($germeAdı);
