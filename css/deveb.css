@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap"); /* https://data-deveb.github.io/
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+/* https://data-deveb.github.io/
    1.0srmü
 */
 html {
@@ -244,15 +245,6 @@ input[id$=-basmacayı-aç] + * + label > button {
   pointer-events: none;
 }
 
-[koca*="/"], [büyük*="/"], [orta*="/"], [küçük*="/"], [class*="/"] {
-  width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-}
-
-[koca*="//"], [koca*="/"], [büyük*="//"], [büyük*="/"], [orta*="//"], [orta*="/"], [küçük*="//"], [küçük*="/"], [class*="//"], [class*="/"] {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 @media screen and (min-width: 0) {
   [class*="/"] {
     --b: 0;
@@ -374,6 +366,22 @@ input[id$=-basmacayı-aç] + * + label > button {
   [class*="/9"]:not([class*="/9)"]) {
     --n: 9;
   }
+  [class*="/"]:not([class*="}"]) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+    flex: unset;
+  }
+  [class*="}"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  }
+  [class*="//"] {
+    display: flex;
+    flex-wrap: wrap;
+  }
   [class*=görünür] {
     display: inherit;
   }
@@ -407,6 +415,69 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
   [class*=ortalı] {
     justify-content: center;
+  }
+  [class*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [class*="1}"] {
+    --b1: 1;
+  }
+  [class*="2}"] {
+    --b1: 2;
+  }
+  [class*="3}"] {
+    --b1: 3;
+  }
+  [class*="4}"] {
+    --b1: 4;
+  }
+  [class*="5}"] {
+    --b1: 5;
+  }
+  [class*="6}"] {
+    --b1: 6;
+  }
+  [class*="7}"] {
+    --b1: 7;
+  }
+  [class*="8}"] {
+    --b1: 8;
+  }
+  [class*="9}"] {
+    --b1: 9;
+  }
+  [class*="100}"] {
+    --b1: 90;
+  }
+  [class*="{1"]:not([class*="{1}"]) {
+    --o1: 1;
+  }
+  [class*="{2"]:not([class*="{2}"]) {
+    --o1: 2;
+  }
+  [class*="{3"]:not([class*="{3}"]) {
+    --o1: 3;
+  }
+  [class*="{4"]:not([class*="{4}"]) {
+    --o1: 4;
+  }
+  [class*="{5"]:not([class*="{5}"]) {
+    --o1: 5;
+  }
+  [class*="{6"]:not([class*="{6}"]) {
+    --o1: 6;
+  }
+  [class*="{7"]:not([class*="{7}"]) {
+    --o1: 7;
+  }
+  [class*="{8"]:not([class*="{8}"]) {
+    --o1: 8;
+  }
+  [class*="{9"]:not([class*="{9}"]) {
+    --o1: 9;
   }
 }
 @media screen and (min-width: 576px) {
@@ -530,6 +601,22 @@ input[id$=-basmacayı-aç] + * + label > button {
   [küçük*="/9"]:not([küçük*="/9)"]) {
     --n: 9;
   }
+  [küçük*="/"]:not([küçük*="}"]) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+    flex: unset;
+  }
+  [küçük*="}"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  }
+  [küçük*="//"] {
+    display: flex;
+    flex-wrap: wrap;
+  }
   [küçük*=görünür] {
     display: inherit;
   }
@@ -563,6 +650,69 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
   [küçük*=ortalı] {
     justify-content: center;
+  }
+  [küçük*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [küçük*="1}"] {
+    --b1: 1;
+  }
+  [küçük*="2}"] {
+    --b1: 2;
+  }
+  [küçük*="3}"] {
+    --b1: 3;
+  }
+  [küçük*="4}"] {
+    --b1: 4;
+  }
+  [küçük*="5}"] {
+    --b1: 5;
+  }
+  [küçük*="6}"] {
+    --b1: 6;
+  }
+  [küçük*="7}"] {
+    --b1: 7;
+  }
+  [küçük*="8}"] {
+    --b1: 8;
+  }
+  [küçük*="9}"] {
+    --b1: 9;
+  }
+  [küçük*="100}"] {
+    --b1: 90;
+  }
+  [küçük*="{1"]:not([küçük*="{1}"]) {
+    --o1: 1;
+  }
+  [küçük*="{2"]:not([küçük*="{2}"]) {
+    --o1: 2;
+  }
+  [küçük*="{3"]:not([küçük*="{3}"]) {
+    --o1: 3;
+  }
+  [küçük*="{4"]:not([küçük*="{4}"]) {
+    --o1: 4;
+  }
+  [küçük*="{5"]:not([küçük*="{5}"]) {
+    --o1: 5;
+  }
+  [küçük*="{6"]:not([küçük*="{6}"]) {
+    --o1: 6;
+  }
+  [küçük*="{7"]:not([küçük*="{7}"]) {
+    --o1: 7;
+  }
+  [küçük*="{8"]:not([küçük*="{8}"]) {
+    --o1: 8;
+  }
+  [küçük*="{9"]:not([küçük*="{9}"]) {
+    --o1: 9;
   }
 }
 @media screen and (min-width: 768px) {
@@ -686,6 +836,22 @@ input[id$=-basmacayı-aç] + * + label > button {
   [orta*="/9"]:not([orta*="/9)"]) {
     --n: 9;
   }
+  [orta*="/"]:not([orta*="}"]) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+    flex: unset;
+  }
+  [orta*="}"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  }
+  [orta*="//"] {
+    display: flex;
+    flex-wrap: wrap;
+  }
   [orta*=görünür] {
     display: inherit;
   }
@@ -719,6 +885,69 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
   [orta*=ortalı] {
     justify-content: center;
+  }
+  [orta*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [orta*="1}"] {
+    --b1: 1;
+  }
+  [orta*="2}"] {
+    --b1: 2;
+  }
+  [orta*="3}"] {
+    --b1: 3;
+  }
+  [orta*="4}"] {
+    --b1: 4;
+  }
+  [orta*="5}"] {
+    --b1: 5;
+  }
+  [orta*="6}"] {
+    --b1: 6;
+  }
+  [orta*="7}"] {
+    --b1: 7;
+  }
+  [orta*="8}"] {
+    --b1: 8;
+  }
+  [orta*="9}"] {
+    --b1: 9;
+  }
+  [orta*="100}"] {
+    --b1: 90;
+  }
+  [orta*="{1"]:not([orta*="{1}"]) {
+    --o1: 1;
+  }
+  [orta*="{2"]:not([orta*="{2}"]) {
+    --o1: 2;
+  }
+  [orta*="{3"]:not([orta*="{3}"]) {
+    --o1: 3;
+  }
+  [orta*="{4"]:not([orta*="{4}"]) {
+    --o1: 4;
+  }
+  [orta*="{5"]:not([orta*="{5}"]) {
+    --o1: 5;
+  }
+  [orta*="{6"]:not([orta*="{6}"]) {
+    --o1: 6;
+  }
+  [orta*="{7"]:not([orta*="{7}"]) {
+    --o1: 7;
+  }
+  [orta*="{8"]:not([orta*="{8}"]) {
+    --o1: 8;
+  }
+  [orta*="{9"]:not([orta*="{9}"]) {
+    --o1: 9;
   }
 }
 @media screen and (min-width: 992px) {
@@ -842,6 +1071,22 @@ input[id$=-basmacayı-aç] + * + label > button {
   [büyük*="/9"]:not([büyük*="/9)"]) {
     --n: 9;
   }
+  [büyük*="/"]:not([büyük*="}"]) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+    flex: unset;
+  }
+  [büyük*="}"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  }
+  [büyük*="//"] {
+    display: flex;
+    flex-wrap: wrap;
+  }
   [büyük*=görünür] {
     display: inherit;
   }
@@ -875,6 +1120,69 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
   [büyük*=ortalı] {
     justify-content: center;
+  }
+  [büyük*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [büyük*="1}"] {
+    --b1: 1;
+  }
+  [büyük*="2}"] {
+    --b1: 2;
+  }
+  [büyük*="3}"] {
+    --b1: 3;
+  }
+  [büyük*="4}"] {
+    --b1: 4;
+  }
+  [büyük*="5}"] {
+    --b1: 5;
+  }
+  [büyük*="6}"] {
+    --b1: 6;
+  }
+  [büyük*="7}"] {
+    --b1: 7;
+  }
+  [büyük*="8}"] {
+    --b1: 8;
+  }
+  [büyük*="9}"] {
+    --b1: 9;
+  }
+  [büyük*="100}"] {
+    --b1: 90;
+  }
+  [büyük*="{1"]:not([büyük*="{1}"]) {
+    --o1: 1;
+  }
+  [büyük*="{2"]:not([büyük*="{2}"]) {
+    --o1: 2;
+  }
+  [büyük*="{3"]:not([büyük*="{3}"]) {
+    --o1: 3;
+  }
+  [büyük*="{4"]:not([büyük*="{4}"]) {
+    --o1: 4;
+  }
+  [büyük*="{5"]:not([büyük*="{5}"]) {
+    --o1: 5;
+  }
+  [büyük*="{6"]:not([büyük*="{6}"]) {
+    --o1: 6;
+  }
+  [büyük*="{7"]:not([büyük*="{7}"]) {
+    --o1: 7;
+  }
+  [büyük*="{8"]:not([büyük*="{8}"]) {
+    --o1: 8;
+  }
+  [büyük*="{9"]:not([büyük*="{9}"]) {
+    --o1: 9;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -998,6 +1306,22 @@ input[id$=-basmacayı-aç] + * + label > button {
   [koca*="/9"]:not([koca*="/9)"]) {
     --n: 9;
   }
+  [koca*="/"]:not([koca*="}"]) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+    flex: unset;
+  }
+  [koca*="}"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  }
+  [koca*="//"] {
+    display: flex;
+    flex-wrap: wrap;
+  }
   [koca*=görünür] {
     display: inherit;
   }
@@ -1032,12 +1356,92 @@ input[id$=-basmacayı-aç] + * + label > button {
   [koca*=ortalı] {
     justify-content: center;
   }
+  [koca*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [koca*="1}"] {
+    --b1: 1;
+  }
+  [koca*="2}"] {
+    --b1: 2;
+  }
+  [koca*="3}"] {
+    --b1: 3;
+  }
+  [koca*="4}"] {
+    --b1: 4;
+  }
+  [koca*="5}"] {
+    --b1: 5;
+  }
+  [koca*="6}"] {
+    --b1: 6;
+  }
+  [koca*="7}"] {
+    --b1: 7;
+  }
+  [koca*="8}"] {
+    --b1: 8;
+  }
+  [koca*="9}"] {
+    --b1: 9;
+  }
+  [koca*="100}"] {
+    --b1: 90;
+  }
+  [koca*="{1"]:not([koca*="{1}"]) {
+    --o1: 1;
+  }
+  [koca*="{2"]:not([koca*="{2}"]) {
+    --o1: 2;
+  }
+  [koca*="{3"]:not([koca*="{3}"]) {
+    --o1: 3;
+  }
+  [koca*="{4"]:not([koca*="{4}"]) {
+    --o1: 4;
+  }
+  [koca*="{5"]:not([koca*="{5}"]) {
+    --o1: 5;
+  }
+  [koca*="{6"]:not([koca*="{6}"]) {
+    --o1: 6;
+  }
+  [koca*="{7"]:not([koca*="{7}"]) {
+    --o1: 7;
+  }
+  [koca*="{8"]:not([koca*="{8}"]) {
+    --o1: 8;
+  }
+  [koca*="{9"]:not([koca*="{9}"]) {
+    --o1: 9;
+  }
 }
-[koca*="/)"], [büyük*="/)"], [orta*="/)"], [küçük*="/)"], [class*="/)"] {
-  flex: calc(var(--o) * 10 + var(--b));
+[class*="{"][class*="}"] {
+  flex: calc(var(--o1) * 10 + var(--b1));
 }
 
-[koca*="(0)"], [büyük*="(0)"], [orta*="(0)"], [küçük*="(0)"], [class*="(0)"] {
+[küçük*="{"][küçük*="}"] {
+  flex: calc(var(--o1) * 10 + var(--b1));
+}
+
+[orta*="{"][orta*="}"] {
+  flex: calc(var(--o1) * 10 + var(--b1));
+}
+
+[büyük*="{"][büyük*="}"] {
+  flex: calc(var(--o1) * 10 + var(--b1));
+}
+
+[koca*="{"][koca*="}"] {
+  flex: calc(var(--o1) * 10 + var(--b1));
+}
+
+[koca*="{0}"], [büyük*="{0}"], [orta*="{0}"], [küçük*="{0}"], [class*="{0}"] {
+  flex: 0 !important;
   flex-basis: auto;
   max-width: none;
   width: auto;
