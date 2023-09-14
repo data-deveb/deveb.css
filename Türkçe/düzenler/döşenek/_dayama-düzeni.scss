@@ -1,11 +1,13 @@
 @use "../../ayarlar" as *;
 
 @mixin dayama-düzeni($germeAdı){
-    [#{$germeAdı}*="yazıyı ortala"]{text-align: center;}
-    [#{$germeAdı}*="yazıyı başla"]{text-align: start;}
-    [#{$germeAdı}*="yazıyı solla"]{text-align: left;}
-    [#{$germeAdı}*="yazıyı sağla"]{text-align: end;}
-    [#{$germeAdı}*="yazıyı sağla"]{text-align: right;}
+    [#{$germeAdı}*="ortalı yazı"]{text-align: center;}
+    [#{$germeAdı}*="başuçlu yazı"]{text-align: start;}
+    [#{$germeAdı}*="sollu yazı"]{text-align: left;}
+    [#{$germeAdı}*="ayakuçlu yazı"]{text-align: end;}
+    [#{$germeAdı}*="sağlı yazı"]{text-align: right;}
     [#{$germeAdı}*="yazıyı yasa"]{text-align: justify;}
+
+    [#{$germeAdı}*="ortalı"]{justify-content: center;}
 
 }
