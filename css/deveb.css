@@ -249,6 +249,8 @@ input[id$=-basmacayı-aç] + * + label > button {
   [class*="/"] {
     --b: 0;
     --i: 0;
+  }
+  [class*="("][class*="/"] {
     --o: 0;
     --n: 0;
   }
@@ -366,21 +368,17 @@ input[id$=-basmacayı-aç] + * + label > button {
   [class*="/9"]:not([class*="/9)"]) {
     --n: 9;
   }
-  [class*="/"]:not([class*="}"]) {
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  [class*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
     flex: unset;
   }
-  [class*="}"] {
+  [class*="/"], [class*="}"] {
     display: flex;
     flex-wrap: wrap;
+  }
+  [class*="}"][class*=")"] {
     width: auto;
     min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
-  }
-  [class*="//"] {
-    display: flex;
-    flex-wrap: wrap;
   }
   [class*=görünür] {
     display: inherit;
@@ -479,11 +477,16 @@ input[id$=-basmacayı-aç] + * + label > button {
   [class*="{9"]:not([class*="{9}"]) {
     --o1: 9;
   }
+  [class*="{"][class*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
 }
 @media screen and (min-width: 576px) {
   [küçük*="/"] {
     --b: 0;
     --i: 0;
+  }
+  [küçük*="("][küçük*="/"] {
     --o: 0;
     --n: 0;
   }
@@ -601,21 +604,17 @@ input[id$=-basmacayı-aç] + * + label > button {
   [küçük*="/9"]:not([küçük*="/9)"]) {
     --n: 9;
   }
-  [küçük*="/"]:not([küçük*="}"]) {
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  [küçük*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
     flex: unset;
   }
-  [küçük*="}"] {
+  [küçük*="/"], [küçük*="}"] {
     display: flex;
     flex-wrap: wrap;
+  }
+  [küçük*="}"][küçük*=")"] {
     width: auto;
     min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
-  }
-  [küçük*="//"] {
-    display: flex;
-    flex-wrap: wrap;
   }
   [küçük*=görünür] {
     display: inherit;
@@ -714,11 +713,16 @@ input[id$=-basmacayı-aç] + * + label > button {
   [küçük*="{9"]:not([küçük*="{9}"]) {
     --o1: 9;
   }
+  [küçük*="{"][küçük*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
 }
 @media screen and (min-width: 768px) {
   [orta*="/"] {
     --b: 0;
     --i: 0;
+  }
+  [orta*="("][orta*="/"] {
     --o: 0;
     --n: 0;
   }
@@ -836,21 +840,17 @@ input[id$=-basmacayı-aç] + * + label > button {
   [orta*="/9"]:not([orta*="/9)"]) {
     --n: 9;
   }
-  [orta*="/"]:not([orta*="}"]) {
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  [orta*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
     flex: unset;
   }
-  [orta*="}"] {
+  [orta*="/"], [orta*="}"] {
     display: flex;
     flex-wrap: wrap;
+  }
+  [orta*="}"][orta*=")"] {
     width: auto;
     min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
-  }
-  [orta*="//"] {
-    display: flex;
-    flex-wrap: wrap;
   }
   [orta*=görünür] {
     display: inherit;
@@ -949,11 +949,16 @@ input[id$=-basmacayı-aç] + * + label > button {
   [orta*="{9"]:not([orta*="{9}"]) {
     --o1: 9;
   }
+  [orta*="{"][orta*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
 }
 @media screen and (min-width: 992px) {
   [büyük*="/"] {
     --b: 0;
     --i: 0;
+  }
+  [büyük*="("][büyük*="/"] {
     --o: 0;
     --n: 0;
   }
@@ -1071,21 +1076,17 @@ input[id$=-basmacayı-aç] + * + label > button {
   [büyük*="/9"]:not([büyük*="/9)"]) {
     --n: 9;
   }
-  [büyük*="/"]:not([büyük*="}"]) {
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  [büyük*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
     flex: unset;
   }
-  [büyük*="}"] {
+  [büyük*="/"], [büyük*="}"] {
     display: flex;
     flex-wrap: wrap;
+  }
+  [büyük*="}"][büyük*=")"] {
     width: auto;
     min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
-  }
-  [büyük*="//"] {
-    display: flex;
-    flex-wrap: wrap;
   }
   [büyük*=görünür] {
     display: inherit;
@@ -1184,11 +1185,16 @@ input[id$=-basmacayı-aç] + * + label > button {
   [büyük*="{9"]:not([büyük*="{9}"]) {
     --o1: 9;
   }
+  [büyük*="{"][büyük*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
 }
 @media screen and (min-width: 1200px) {
   [koca*="/"] {
     --b: 0;
     --i: 0;
+  }
+  [koca*="("][koca*="/"] {
     --o: 0;
     --n: 0;
   }
@@ -1306,21 +1312,17 @@ input[id$=-basmacayı-aç] + * + label > button {
   [koca*="/9"]:not([koca*="/9)"]) {
     --n: 9;
   }
-  [koca*="/"]:not([koca*="}"]) {
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
+  [koca*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
     flex: unset;
   }
-  [koca*="}"] {
+  [koca*="/"], [koca*="}"] {
     display: flex;
     flex-wrap: wrap;
+  }
+  [koca*="}"][koca*=")"] {
     width: auto;
     min-width: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i))));
-  }
-  [koca*="//"] {
-    display: flex;
-    flex-wrap: wrap;
   }
   [koca*=görünür] {
     display: inherit;
@@ -1419,34 +1421,10 @@ input[id$=-basmacayı-aç] + * + label > button {
   [koca*="{9"]:not([koca*="{9}"]) {
     --o1: 9;
   }
+  [koca*="{"][koca*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
 }
-[class*="{"][class*="}"] {
-  flex: calc(var(--o1) * 10 + var(--b1));
-}
-
-[küçük*="{"][küçük*="}"] {
-  flex: calc(var(--o1) * 10 + var(--b1));
-}
-
-[orta*="{"][orta*="}"] {
-  flex: calc(var(--o1) * 10 + var(--b1));
-}
-
-[büyük*="{"][büyük*="}"] {
-  flex: calc(var(--o1) * 10 + var(--b1));
-}
-
-[koca*="{"][koca*="}"] {
-  flex: calc(var(--o1) * 10 + var(--b1));
-}
-
-[koca*="{0}"], [büyük*="{0}"], [orta*="{0}"], [küçük*="{0}"], [class*="{0}"] {
-  flex: 0 !important;
-  flex-basis: auto;
-  max-width: none;
-  width: auto;
-}
-
 [class*=sağlı] {
   margin-left: auto;
 }

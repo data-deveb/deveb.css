@@ -22,5 +22,5 @@
 
 @mixin döşenek-düzeni-ayağı($germeler){  
     @include bölme-düzeni-ayağı($germeler);  
-    @include esneme-düzeni-ayağı($germeler);
+    // @include esneme-düzeni-ayağı($germeler);
 }

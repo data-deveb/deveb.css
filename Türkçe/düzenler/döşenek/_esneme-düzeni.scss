@@ -26,13 +26,15 @@
     [#{$germeAdı}*="{8"]:not([#{$germeAdı}*="{8}"]){--o1: 8}
     [#{$germeAdı}*="{9"]:not([#{$germeAdı}*="{9}"]){--o1: 9}
     
+    [#{$germeAdı}*="{"][#{$germeAdı}*="}"]{
+        #{$esneklik}: calc(var(--o1) * 10 + var(--b1));
+    }
 }
 
 @mixin esneme-düzeni-ayağı($germeler){
 
     /////////////////////////
-    %esneme-düzeni-genişliği {
-        
+    %esneme-düzeni-genişliği {        
     }    
     @each $germeAdı, $germeGenişliği in $germeler {
         [#{$germeAdı}*="{"][#{$germeAdı}*="}"]{
