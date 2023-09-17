@@ -246,11 +246,11 @@ input[id$=-basmacayı-aç] + * + label > button {
 }
 
 @media screen and (min-width: 0) {
-  [class*="/"] {
+  [class*="("] {
     --b: 0;
     --i: 0;
   }
-  [class*="("][class*="/"] {
+  [class*="("][class*=")"] {
     --o: 0;
     --n: 0;
   }
@@ -482,11 +482,11 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
 }
 @media screen and (min-width: 576px) {
-  [küçük*="/"] {
+  [küçük*="("] {
     --b: 0;
     --i: 0;
   }
-  [küçük*="("][küçük*="/"] {
+  [küçük*="("][küçük*=")"] {
     --o: 0;
     --n: 0;
   }
@@ -718,11 +718,11 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
 }
 @media screen and (min-width: 768px) {
-  [orta*="/"] {
+  [orta*="("] {
     --b: 0;
     --i: 0;
   }
-  [orta*="("][orta*="/"] {
+  [orta*="("][orta*=")"] {
     --o: 0;
     --n: 0;
   }
@@ -954,11 +954,11 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
 }
 @media screen and (min-width: 992px) {
-  [büyük*="/"] {
+  [büyük*="("] {
     --b: 0;
     --i: 0;
   }
-  [büyük*="("][büyük*="/"] {
+  [büyük*="("][büyük*=")"] {
     --o: 0;
     --n: 0;
   }
@@ -1190,11 +1190,11 @@ input[id$=-basmacayı-aç] + * + label > button {
   }
 }
 @media screen and (min-width: 1200px) {
-  [koca*="/"] {
+  [koca*="("] {
     --b: 0;
     --i: 0;
   }
-  [koca*="("][koca*="/"] {
+  [koca*="("][koca*=")"] {
     --o: 0;
     --n: 0;
   }

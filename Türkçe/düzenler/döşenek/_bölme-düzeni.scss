@@ -12,8 +12,8 @@
 
 @mixin bölme-düzeni($germeAdı){
     // PAY
-    [#{$germeAdı}*="/"]{--b: 0; --i: 0}
-    [#{$germeAdı}*="("][#{$germeAdı}*="/"]{--o: 0; --n: 0;}
+    [#{$germeAdı}*="("]{--b: 0; --i: 0}
+    [#{$germeAdı}*="("][#{$germeAdı}*=")"]{--o: 0; --n: 0;}
     [#{$germeAdı}*="1/"]{--b: 1}
     [#{$germeAdı}*="2/"]{--b: 2}
     [#{$germeAdı}*="3/"]{--b: 3}
