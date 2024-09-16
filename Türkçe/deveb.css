@@ -1,0 +1,1625 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+/* https://data-deveb.github.io/
+   1.0srmü
+*/
+html {
+  line-height: normal;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #f3f6fd;
+}
+
+bet {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto 20fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px 24px;
+  padding: 24px;
+  grid-auto-flow: row;
+  grid-template-areas: "bölüm-sol bölüm-üst bölüm-üst" "bölüm-sol bölüm-orta bölüm-sağ" "bölüm-sol bölüm-alt bölüm-alt";
+}
+
+bölüm#sol {
+  grid-area: bölüm-sol;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+bölüm#üst {
+  grid-area: bölüm-üst;
+}
+
+bölüm#orta {
+  grid-area: bölüm-orta;
+}
+
+bölüm#sağ {
+  grid-area: bölüm-sağ;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+bölüm#alt {
+  grid-area: bölüm-alt;
+}
+
+.alan {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.üyelik {
+  align-items: center;
+  gap: 10px;
+}
+
+.üyelik > img {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo > p {
+  color: #1f1c2e;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 0 32px;
+}
+
+.dizme {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(5, auto) repeat(1, 1fr);
+  grid-gap: 0px;
+  padding: 0px;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+}
+
+.dizme > div {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.dizme > [başlık] {
+  background-color: turquoise;
+  border: 1px solid black;
+  border-right: 0px solid black;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.dizme > [başlık]:nth-child(n-1) {
+  border-right: 1px solid black;
+}
+
+.bilgi-1 {
+  margin-bottom: 12px;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: ghostwhite;
+}
+
+.bilgi-1 .düğmeler {
+  margin-left: auto;
+  gap: 12px;
+  align-items: center;
+}
+
+button {
+  outline: none;
+  text-align: center;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #3e64ff;
+  color: #3e64ff;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 4px 8px;
+}
+
+label:hover > button, button:hover {
+  color: white;
+  background: #3e64ff;
+}
+
+button:active {
+  letter-spacing: 2px;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.bilgi-1 .onaylı {
+  color: green;
+  font-weight: 700;
+}
+
+.bilgi-1 .icerik {
+  gap: 5px;
+}
+
+.bilgi-1 .ek {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bilgi-1 .ek .içerik {
+  background-color: black;
+  color: white;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.bilgi-1 .ek .id {
+  color: darkgray;
+}
+
+.bilgi-1 .ek .sürüm {
+  font-size: 11pt;
+  color: cadetblue;
+}
+
+.ekleme-bilgileri {
+  gap: 5px 10px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.ekleme-bilgileri .ekleyen {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ekleme-bilgileri .ekleyen img {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/************************************************************************
+╔═══════════════════════════════════════════════════════════════════════╗
+║ BASMACA 1.0                                                           ║
+║ https://data-deveb.github.io/basmaca                                  ║
+║ https://github.com/data-deveb/basmaca                                 ║
+╚═══════════════════════════════════════════════════════════════════════╝
+************************************************************************/
+input[id*=-basmacayı-],
+input[id*=-basmacayı-]:checked + *,
+input[id*=-basmacayı-]:not(:checked) + label + label[for$=-basmacayı-kapa] {
+  /* <input> hep görünmez tutulur. */
+  display: none;
+}
+
+input[id$=-basmacayı-aç] + label,
+input[id$=-basmacayı-aç] + * + label {
+  /* Tıklar iken yazılar seçilmemeli */
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+input[id$=-basmacayı-aç] + label > button,
+input[id$=-basmacayı-aç] + * + label > button {
+  /* Kolanlar bir düğme barındırır iken işlemesi için tanımlandı. */
+  pointer-events: none;
+}
+
+@media screen and (min-width: 0px) {
+  [class*="("] {
+    --b: 0;
+    --i: 0;
+  }
+  [class*="("][class*=")"] {
+    --o: 0;
+    --n: 0;
+  }
+  [class*="1/"] {
+    --b: 1;
+  }
+  [class*="2/"] {
+    --b: 2;
+  }
+  [class*="3/"] {
+    --b: 3;
+  }
+  [class*="4/"] {
+    --b: 4;
+  }
+  [class*="5/"] {
+    --b: 5;
+  }
+  [class*="6/"] {
+    --b: 6;
+  }
+  [class*="7/"] {
+    --b: 7;
+  }
+  [class*="8/"] {
+    --b: 8;
+  }
+  [class*="9/"] {
+    --b: 9;
+  }
+  [class*="100/"] {
+    --b: 90;
+  }
+  [class*="(1"]:not([class*="(1/"]) {
+    --o: 1;
+  }
+  [class*="(2"]:not([class*="(2/"]) {
+    --o: 2;
+  }
+  [class*="(3"]:not([class*="(3/"]) {
+    --o: 3;
+  }
+  [class*="(4"]:not([class*="(4/"]) {
+    --o: 4;
+  }
+  [class*="(5"]:not([class*="(5/"]) {
+    --o: 5;
+  }
+  [class*="(6"]:not([class*="(6/"]) {
+    --o: 6;
+  }
+  [class*="(7"]:not([class*="(7/"]) {
+    --o: 7;
+  }
+  [class*="(8"]:not([class*="(8/"]) {
+    --o: 8;
+  }
+  [class*="(9"]:not([class*="(9/"]) {
+    --o: 9;
+  }
+  [class*="1)"] {
+    --i: 1;
+  }
+  [class*="2)"] {
+    --i: 2;
+  }
+  [class*="3)"] {
+    --i: 3;
+  }
+  [class*="4)"] {
+    --i: 4;
+  }
+  [class*="5)"] {
+    --i: 5;
+  }
+  [class*="6)"] {
+    --i: 6;
+  }
+  [class*="7)"] {
+    --i: 7;
+  }
+  [class*="8)"] {
+    --i: 8;
+  }
+  [class*="9)"] {
+    --i: 9;
+  }
+  [class*="/100"] {
+    --i: 90;
+  }
+  [class*="/1"]:not([class*="/1)"]) {
+    --n: 1;
+  }
+  [class*="/2"]:not([class*="/2)"]) {
+    --n: 2;
+  }
+  [class*="/3"]:not([class*="/3)"]) {
+    --n: 3;
+  }
+  [class*="/4"]:not([class*="/4)"]) {
+    --n: 4;
+  }
+  [class*="/5"]:not([class*="/5)"]) {
+    --n: 5;
+  }
+  [class*="/6"]:not([class*="/6)"]) {
+    --n: 6;
+  }
+  [class*="/7"]:not([class*="/7)"]) {
+    --n: 7;
+  }
+  [class*="/8"]:not([class*="/8)"]) {
+    --n: 8;
+  }
+  [class*="/9"]:not([class*="/9)"]) {
+    --n: 9;
+  }
+  [class*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
+  }
+  [class*=görünür] {
+    display: inherit;
+  }
+  [class*=gizli] {
+    display: none;
+  }
+  [class*=esnek] {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  [class*=block] {
+    display: block;
+  }
+  [class*="ortalı yazı"] {
+    text-align: center;
+  }
+  [class*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [class*="sollu yazı"] {
+    text-align: left;
+  }
+  [class*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [class*="sağlı yazı"] {
+    text-align: right;
+  }
+  [class*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [class*=ortalı] {
+    justify-content: center;
+  }
+  [class*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [class*="1}"] {
+    --b1: 1;
+  }
+  [class*="2}"] {
+    --b1: 2;
+  }
+  [class*="3}"] {
+    --b1: 3;
+  }
+  [class*="4}"] {
+    --b1: 4;
+  }
+  [class*="5}"] {
+    --b1: 5;
+  }
+  [class*="6}"] {
+    --b1: 6;
+  }
+  [class*="7}"] {
+    --b1: 7;
+  }
+  [class*="8}"] {
+    --b1: 8;
+  }
+  [class*="9}"] {
+    --b1: 9;
+  }
+  [class*="100}"] {
+    --b1: 90;
+  }
+  [class*="{1"]:not([class*="{1}"]) {
+    --o1: 1;
+  }
+  [class*="{2"]:not([class*="{2}"]) {
+    --o1: 2;
+  }
+  [class*="{3"]:not([class*="{3}"]) {
+    --o1: 3;
+  }
+  [class*="{4"]:not([class*="{4}"]) {
+    --o1: 4;
+  }
+  [class*="{5"]:not([class*="{5}"]) {
+    --o1: 5;
+  }
+  [class*="{6"]:not([class*="{6}"]) {
+    --o1: 6;
+  }
+  [class*="{7"]:not([class*="{7}"]) {
+    --o1: 7;
+  }
+  [class*="{8"]:not([class*="{8}"]) {
+    --o1: 8;
+  }
+  [class*="{9"]:not([class*="{9}"]) {
+    --o1: 9;
+  }
+  [class*="{"][class*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
+}
+@media screen and (min-width: 576px) {
+  [kçk*="("] {
+    --b: 0;
+    --i: 0;
+  }
+  [kçk*="("][kçk*=")"] {
+    --o: 0;
+    --n: 0;
+  }
+  [kçk*="1/"] {
+    --b: 1;
+  }
+  [kçk*="2/"] {
+    --b: 2;
+  }
+  [kçk*="3/"] {
+    --b: 3;
+  }
+  [kçk*="4/"] {
+    --b: 4;
+  }
+  [kçk*="5/"] {
+    --b: 5;
+  }
+  [kçk*="6/"] {
+    --b: 6;
+  }
+  [kçk*="7/"] {
+    --b: 7;
+  }
+  [kçk*="8/"] {
+    --b: 8;
+  }
+  [kçk*="9/"] {
+    --b: 9;
+  }
+  [kçk*="100/"] {
+    --b: 90;
+  }
+  [kçk*="(1"]:not([kçk*="(1/"]) {
+    --o: 1;
+  }
+  [kçk*="(2"]:not([kçk*="(2/"]) {
+    --o: 2;
+  }
+  [kçk*="(3"]:not([kçk*="(3/"]) {
+    --o: 3;
+  }
+  [kçk*="(4"]:not([kçk*="(4/"]) {
+    --o: 4;
+  }
+  [kçk*="(5"]:not([kçk*="(5/"]) {
+    --o: 5;
+  }
+  [kçk*="(6"]:not([kçk*="(6/"]) {
+    --o: 6;
+  }
+  [kçk*="(7"]:not([kçk*="(7/"]) {
+    --o: 7;
+  }
+  [kçk*="(8"]:not([kçk*="(8/"]) {
+    --o: 8;
+  }
+  [kçk*="(9"]:not([kçk*="(9/"]) {
+    --o: 9;
+  }
+  [kçk*="1)"] {
+    --i: 1;
+  }
+  [kçk*="2)"] {
+    --i: 2;
+  }
+  [kçk*="3)"] {
+    --i: 3;
+  }
+  [kçk*="4)"] {
+    --i: 4;
+  }
+  [kçk*="5)"] {
+    --i: 5;
+  }
+  [kçk*="6)"] {
+    --i: 6;
+  }
+  [kçk*="7)"] {
+    --i: 7;
+  }
+  [kçk*="8)"] {
+    --i: 8;
+  }
+  [kçk*="9)"] {
+    --i: 9;
+  }
+  [kçk*="/100"] {
+    --i: 90;
+  }
+  [kçk*="/1"]:not([kçk*="/1)"]) {
+    --n: 1;
+  }
+  [kçk*="/2"]:not([kçk*="/2)"]) {
+    --n: 2;
+  }
+  [kçk*="/3"]:not([kçk*="/3)"]) {
+    --n: 3;
+  }
+  [kçk*="/4"]:not([kçk*="/4)"]) {
+    --n: 4;
+  }
+  [kçk*="/5"]:not([kçk*="/5)"]) {
+    --n: 5;
+  }
+  [kçk*="/6"]:not([kçk*="/6)"]) {
+    --n: 6;
+  }
+  [kçk*="/7"]:not([kçk*="/7)"]) {
+    --n: 7;
+  }
+  [kçk*="/8"]:not([kçk*="/8)"]) {
+    --n: 8;
+  }
+  [kçk*="/9"]:not([kçk*="/9)"]) {
+    --n: 9;
+  }
+  [kçk*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
+  }
+  [kçk*=görünür] {
+    display: inherit;
+  }
+  [kçk*=gizli] {
+    display: none;
+  }
+  [kçk*=esnek] {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  [kçk*=block] {
+    display: block;
+  }
+  [kçk*="ortalı yazı"] {
+    text-align: center;
+  }
+  [kçk*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [kçk*="sollu yazı"] {
+    text-align: left;
+  }
+  [kçk*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [kçk*="sağlı yazı"] {
+    text-align: right;
+  }
+  [kçk*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [kçk*=ortalı] {
+    justify-content: center;
+  }
+  [kçk*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [kçk*="1}"] {
+    --b1: 1;
+  }
+  [kçk*="2}"] {
+    --b1: 2;
+  }
+  [kçk*="3}"] {
+    --b1: 3;
+  }
+  [kçk*="4}"] {
+    --b1: 4;
+  }
+  [kçk*="5}"] {
+    --b1: 5;
+  }
+  [kçk*="6}"] {
+    --b1: 6;
+  }
+  [kçk*="7}"] {
+    --b1: 7;
+  }
+  [kçk*="8}"] {
+    --b1: 8;
+  }
+  [kçk*="9}"] {
+    --b1: 9;
+  }
+  [kçk*="100}"] {
+    --b1: 90;
+  }
+  [kçk*="{1"]:not([kçk*="{1}"]) {
+    --o1: 1;
+  }
+  [kçk*="{2"]:not([kçk*="{2}"]) {
+    --o1: 2;
+  }
+  [kçk*="{3"]:not([kçk*="{3}"]) {
+    --o1: 3;
+  }
+  [kçk*="{4"]:not([kçk*="{4}"]) {
+    --o1: 4;
+  }
+  [kçk*="{5"]:not([kçk*="{5}"]) {
+    --o1: 5;
+  }
+  [kçk*="{6"]:not([kçk*="{6}"]) {
+    --o1: 6;
+  }
+  [kçk*="{7"]:not([kçk*="{7}"]) {
+    --o1: 7;
+  }
+  [kçk*="{8"]:not([kçk*="{8}"]) {
+    --o1: 8;
+  }
+  [kçk*="{9"]:not([kçk*="{9}"]) {
+    --o1: 9;
+  }
+  [kçk*="{"][kçk*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
+}
+@media screen and (min-width: 768px) {
+  [ort*="("] {
+    --b: 0;
+    --i: 0;
+  }
+  [ort*="("][ort*=")"] {
+    --o: 0;
+    --n: 0;
+  }
+  [ort*="1/"] {
+    --b: 1;
+  }
+  [ort*="2/"] {
+    --b: 2;
+  }
+  [ort*="3/"] {
+    --b: 3;
+  }
+  [ort*="4/"] {
+    --b: 4;
+  }
+  [ort*="5/"] {
+    --b: 5;
+  }
+  [ort*="6/"] {
+    --b: 6;
+  }
+  [ort*="7/"] {
+    --b: 7;
+  }
+  [ort*="8/"] {
+    --b: 8;
+  }
+  [ort*="9/"] {
+    --b: 9;
+  }
+  [ort*="100/"] {
+    --b: 90;
+  }
+  [ort*="(1"]:not([ort*="(1/"]) {
+    --o: 1;
+  }
+  [ort*="(2"]:not([ort*="(2/"]) {
+    --o: 2;
+  }
+  [ort*="(3"]:not([ort*="(3/"]) {
+    --o: 3;
+  }
+  [ort*="(4"]:not([ort*="(4/"]) {
+    --o: 4;
+  }
+  [ort*="(5"]:not([ort*="(5/"]) {
+    --o: 5;
+  }
+  [ort*="(6"]:not([ort*="(6/"]) {
+    --o: 6;
+  }
+  [ort*="(7"]:not([ort*="(7/"]) {
+    --o: 7;
+  }
+  [ort*="(8"]:not([ort*="(8/"]) {
+    --o: 8;
+  }
+  [ort*="(9"]:not([ort*="(9/"]) {
+    --o: 9;
+  }
+  [ort*="1)"] {
+    --i: 1;
+  }
+  [ort*="2)"] {
+    --i: 2;
+  }
+  [ort*="3)"] {
+    --i: 3;
+  }
+  [ort*="4)"] {
+    --i: 4;
+  }
+  [ort*="5)"] {
+    --i: 5;
+  }
+  [ort*="6)"] {
+    --i: 6;
+  }
+  [ort*="7)"] {
+    --i: 7;
+  }
+  [ort*="8)"] {
+    --i: 8;
+  }
+  [ort*="9)"] {
+    --i: 9;
+  }
+  [ort*="/100"] {
+    --i: 90;
+  }
+  [ort*="/1"]:not([ort*="/1)"]) {
+    --n: 1;
+  }
+  [ort*="/2"]:not([ort*="/2)"]) {
+    --n: 2;
+  }
+  [ort*="/3"]:not([ort*="/3)"]) {
+    --n: 3;
+  }
+  [ort*="/4"]:not([ort*="/4)"]) {
+    --n: 4;
+  }
+  [ort*="/5"]:not([ort*="/5)"]) {
+    --n: 5;
+  }
+  [ort*="/6"]:not([ort*="/6)"]) {
+    --n: 6;
+  }
+  [ort*="/7"]:not([ort*="/7)"]) {
+    --n: 7;
+  }
+  [ort*="/8"]:not([ort*="/8)"]) {
+    --n: 8;
+  }
+  [ort*="/9"]:not([ort*="/9)"]) {
+    --n: 9;
+  }
+  [ort*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
+  }
+  [ort*=görünür] {
+    display: inherit;
+  }
+  [ort*=gizli] {
+    display: none;
+  }
+  [ort*=esnek] {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  [ort*=block] {
+    display: block;
+  }
+  [ort*="ortalı yazı"] {
+    text-align: center;
+  }
+  [ort*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [ort*="sollu yazı"] {
+    text-align: left;
+  }
+  [ort*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [ort*="sağlı yazı"] {
+    text-align: right;
+  }
+  [ort*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [ort*=ortalı] {
+    justify-content: center;
+  }
+  [ort*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [ort*="1}"] {
+    --b1: 1;
+  }
+  [ort*="2}"] {
+    --b1: 2;
+  }
+  [ort*="3}"] {
+    --b1: 3;
+  }
+  [ort*="4}"] {
+    --b1: 4;
+  }
+  [ort*="5}"] {
+    --b1: 5;
+  }
+  [ort*="6}"] {
+    --b1: 6;
+  }
+  [ort*="7}"] {
+    --b1: 7;
+  }
+  [ort*="8}"] {
+    --b1: 8;
+  }
+  [ort*="9}"] {
+    --b1: 9;
+  }
+  [ort*="100}"] {
+    --b1: 90;
+  }
+  [ort*="{1"]:not([ort*="{1}"]) {
+    --o1: 1;
+  }
+  [ort*="{2"]:not([ort*="{2}"]) {
+    --o1: 2;
+  }
+  [ort*="{3"]:not([ort*="{3}"]) {
+    --o1: 3;
+  }
+  [ort*="{4"]:not([ort*="{4}"]) {
+    --o1: 4;
+  }
+  [ort*="{5"]:not([ort*="{5}"]) {
+    --o1: 5;
+  }
+  [ort*="{6"]:not([ort*="{6}"]) {
+    --o1: 6;
+  }
+  [ort*="{7"]:not([ort*="{7}"]) {
+    --o1: 7;
+  }
+  [ort*="{8"]:not([ort*="{8}"]) {
+    --o1: 8;
+  }
+  [ort*="{9"]:not([ort*="{9}"]) {
+    --o1: 9;
+  }
+  [ort*="{"][ort*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
+}
+@media screen and (min-width: 992px) {
+  [kca*="("] {
+    --b: 0;
+    --i: 0;
+  }
+  [kca*="("][kca*=")"] {
+    --o: 0;
+    --n: 0;
+  }
+  [kca*="1/"] {
+    --b: 1;
+  }
+  [kca*="2/"] {
+    --b: 2;
+  }
+  [kca*="3/"] {
+    --b: 3;
+  }
+  [kca*="4/"] {
+    --b: 4;
+  }
+  [kca*="5/"] {
+    --b: 5;
+  }
+  [kca*="6/"] {
+    --b: 6;
+  }
+  [kca*="7/"] {
+    --b: 7;
+  }
+  [kca*="8/"] {
+    --b: 8;
+  }
+  [kca*="9/"] {
+    --b: 9;
+  }
+  [kca*="100/"] {
+    --b: 90;
+  }
+  [kca*="(1"]:not([kca*="(1/"]) {
+    --o: 1;
+  }
+  [kca*="(2"]:not([kca*="(2/"]) {
+    --o: 2;
+  }
+  [kca*="(3"]:not([kca*="(3/"]) {
+    --o: 3;
+  }
+  [kca*="(4"]:not([kca*="(4/"]) {
+    --o: 4;
+  }
+  [kca*="(5"]:not([kca*="(5/"]) {
+    --o: 5;
+  }
+  [kca*="(6"]:not([kca*="(6/"]) {
+    --o: 6;
+  }
+  [kca*="(7"]:not([kca*="(7/"]) {
+    --o: 7;
+  }
+  [kca*="(8"]:not([kca*="(8/"]) {
+    --o: 8;
+  }
+  [kca*="(9"]:not([kca*="(9/"]) {
+    --o: 9;
+  }
+  [kca*="1)"] {
+    --i: 1;
+  }
+  [kca*="2)"] {
+    --i: 2;
+  }
+  [kca*="3)"] {
+    --i: 3;
+  }
+  [kca*="4)"] {
+    --i: 4;
+  }
+  [kca*="5)"] {
+    --i: 5;
+  }
+  [kca*="6)"] {
+    --i: 6;
+  }
+  [kca*="7)"] {
+    --i: 7;
+  }
+  [kca*="8)"] {
+    --i: 8;
+  }
+  [kca*="9)"] {
+    --i: 9;
+  }
+  [kca*="/100"] {
+    --i: 90;
+  }
+  [kca*="/1"]:not([kca*="/1)"]) {
+    --n: 1;
+  }
+  [kca*="/2"]:not([kca*="/2)"]) {
+    --n: 2;
+  }
+  [kca*="/3"]:not([kca*="/3)"]) {
+    --n: 3;
+  }
+  [kca*="/4"]:not([kca*="/4)"]) {
+    --n: 4;
+  }
+  [kca*="/5"]:not([kca*="/5)"]) {
+    --n: 5;
+  }
+  [kca*="/6"]:not([kca*="/6)"]) {
+    --n: 6;
+  }
+  [kca*="/7"]:not([kca*="/7)"]) {
+    --n: 7;
+  }
+  [kca*="/8"]:not([kca*="/8)"]) {
+    --n: 8;
+  }
+  [kca*="/9"]:not([kca*="/9)"]) {
+    --n: 9;
+  }
+  [kca*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
+  }
+  [kca*=görünür] {
+    display: inherit;
+  }
+  [kca*=gizli] {
+    display: none;
+  }
+  [kca*=esnek] {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  [kca*=block] {
+    display: block;
+  }
+  [kca*="ortalı yazı"] {
+    text-align: center;
+  }
+  [kca*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [kca*="sollu yazı"] {
+    text-align: left;
+  }
+  [kca*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [kca*="sağlı yazı"] {
+    text-align: right;
+  }
+  [kca*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [kca*=ortalı] {
+    justify-content: center;
+  }
+  [kca*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [kca*="1}"] {
+    --b1: 1;
+  }
+  [kca*="2}"] {
+    --b1: 2;
+  }
+  [kca*="3}"] {
+    --b1: 3;
+  }
+  [kca*="4}"] {
+    --b1: 4;
+  }
+  [kca*="5}"] {
+    --b1: 5;
+  }
+  [kca*="6}"] {
+    --b1: 6;
+  }
+  [kca*="7}"] {
+    --b1: 7;
+  }
+  [kca*="8}"] {
+    --b1: 8;
+  }
+  [kca*="9}"] {
+    --b1: 9;
+  }
+  [kca*="100}"] {
+    --b1: 90;
+  }
+  [kca*="{1"]:not([kca*="{1}"]) {
+    --o1: 1;
+  }
+  [kca*="{2"]:not([kca*="{2}"]) {
+    --o1: 2;
+  }
+  [kca*="{3"]:not([kca*="{3}"]) {
+    --o1: 3;
+  }
+  [kca*="{4"]:not([kca*="{4}"]) {
+    --o1: 4;
+  }
+  [kca*="{5"]:not([kca*="{5}"]) {
+    --o1: 5;
+  }
+  [kca*="{6"]:not([kca*="{6}"]) {
+    --o1: 6;
+  }
+  [kca*="{7"]:not([kca*="{7}"]) {
+    --o1: 7;
+  }
+  [kca*="{8"]:not([kca*="{8}"]) {
+    --o1: 8;
+  }
+  [kca*="{9"]:not([kca*="{9}"]) {
+    --o1: 9;
+  }
+  [kca*="{"][kca*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
+}
+@media screen and (min-width: 1200px) {
+  [kkc*="("] {
+    --b: 0;
+    --i: 0;
+  }
+  [kkc*="("][kkc*=")"] {
+    --o: 0;
+    --n: 0;
+  }
+  [kkc*="1/"] {
+    --b: 1;
+  }
+  [kkc*="2/"] {
+    --b: 2;
+  }
+  [kkc*="3/"] {
+    --b: 3;
+  }
+  [kkc*="4/"] {
+    --b: 4;
+  }
+  [kkc*="5/"] {
+    --b: 5;
+  }
+  [kkc*="6/"] {
+    --b: 6;
+  }
+  [kkc*="7/"] {
+    --b: 7;
+  }
+  [kkc*="8/"] {
+    --b: 8;
+  }
+  [kkc*="9/"] {
+    --b: 9;
+  }
+  [kkc*="100/"] {
+    --b: 90;
+  }
+  [kkc*="(1"]:not([kkc*="(1/"]) {
+    --o: 1;
+  }
+  [kkc*="(2"]:not([kkc*="(2/"]) {
+    --o: 2;
+  }
+  [kkc*="(3"]:not([kkc*="(3/"]) {
+    --o: 3;
+  }
+  [kkc*="(4"]:not([kkc*="(4/"]) {
+    --o: 4;
+  }
+  [kkc*="(5"]:not([kkc*="(5/"]) {
+    --o: 5;
+  }
+  [kkc*="(6"]:not([kkc*="(6/"]) {
+    --o: 6;
+  }
+  [kkc*="(7"]:not([kkc*="(7/"]) {
+    --o: 7;
+  }
+  [kkc*="(8"]:not([kkc*="(8/"]) {
+    --o: 8;
+  }
+  [kkc*="(9"]:not([kkc*="(9/"]) {
+    --o: 9;
+  }
+  [kkc*="1)"] {
+    --i: 1;
+  }
+  [kkc*="2)"] {
+    --i: 2;
+  }
+  [kkc*="3)"] {
+    --i: 3;
+  }
+  [kkc*="4)"] {
+    --i: 4;
+  }
+  [kkc*="5)"] {
+    --i: 5;
+  }
+  [kkc*="6)"] {
+    --i: 6;
+  }
+  [kkc*="7)"] {
+    --i: 7;
+  }
+  [kkc*="8)"] {
+    --i: 8;
+  }
+  [kkc*="9)"] {
+    --i: 9;
+  }
+  [kkc*="/100"] {
+    --i: 90;
+  }
+  [kkc*="/1"]:not([kkc*="/1)"]) {
+    --n: 1;
+  }
+  [kkc*="/2"]:not([kkc*="/2)"]) {
+    --n: 2;
+  }
+  [kkc*="/3"]:not([kkc*="/3)"]) {
+    --n: 3;
+  }
+  [kkc*="/4"]:not([kkc*="/4)"]) {
+    --n: 4;
+  }
+  [kkc*="/5"]:not([kkc*="/5)"]) {
+    --n: 5;
+  }
+  [kkc*="/6"]:not([kkc*="/6)"]) {
+    --n: 6;
+  }
+  [kkc*="/7"]:not([kkc*="/7)"]) {
+    --n: 7;
+  }
+  [kkc*="/8"]:not([kkc*="/8)"]) {
+    --n: 8;
+  }
+  [kkc*="/9"]:not([kkc*="/9)"]) {
+    --n: 9;
+  }
+  [kkc*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
+  }
+  [kkc*=görünür] {
+    display: inherit;
+  }
+  [kkc*=gizli] {
+    display: none;
+  }
+  [kkc*=esnek] {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  [kkc*=block] {
+    display: block;
+  }
+  [kkc*="ortalı yazı"] {
+    text-align: center;
+  }
+  [kkc*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [kkc*="sollu yazı"] {
+    text-align: left;
+  }
+  [kkc*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [kkc*="sağlı yazı"] {
+    text-align: right;
+  }
+  [kkc*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [kkc*=ortalı] {
+    justify-content: center;
+  }
+  [kkc*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [kkc*="1}"] {
+    --b1: 1;
+  }
+  [kkc*="2}"] {
+    --b1: 2;
+  }
+  [kkc*="3}"] {
+    --b1: 3;
+  }
+  [kkc*="4}"] {
+    --b1: 4;
+  }
+  [kkc*="5}"] {
+    --b1: 5;
+  }
+  [kkc*="6}"] {
+    --b1: 6;
+  }
+  [kkc*="7}"] {
+    --b1: 7;
+  }
+  [kkc*="8}"] {
+    --b1: 8;
+  }
+  [kkc*="9}"] {
+    --b1: 9;
+  }
+  [kkc*="100}"] {
+    --b1: 90;
+  }
+  [kkc*="{1"]:not([kkc*="{1}"]) {
+    --o1: 1;
+  }
+  [kkc*="{2"]:not([kkc*="{2}"]) {
+    --o1: 2;
+  }
+  [kkc*="{3"]:not([kkc*="{3}"]) {
+    --o1: 3;
+  }
+  [kkc*="{4"]:not([kkc*="{4}"]) {
+    --o1: 4;
+  }
+  [kkc*="{5"]:not([kkc*="{5}"]) {
+    --o1: 5;
+  }
+  [kkc*="{6"]:not([kkc*="{6}"]) {
+    --o1: 6;
+  }
+  [kkc*="{7"]:not([kkc*="{7}"]) {
+    --o1: 7;
+  }
+  [kkc*="{8"]:not([kkc*="{8}"]) {
+    --o1: 8;
+  }
+  [kkc*="{9"]:not([kkc*="{9}"]) {
+    --o1: 9;
+  }
+  [kkc*="{"][kkc*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
+}
+@media screen and (min-width: 1600px) {
+  [kcm*="("] {
+    --b: 0;
+    --i: 0;
+  }
+  [kcm*="("][kcm*=")"] {
+    --o: 0;
+    --n: 0;
+  }
+  [kcm*="1/"] {
+    --b: 1;
+  }
+  [kcm*="2/"] {
+    --b: 2;
+  }
+  [kcm*="3/"] {
+    --b: 3;
+  }
+  [kcm*="4/"] {
+    --b: 4;
+  }
+  [kcm*="5/"] {
+    --b: 5;
+  }
+  [kcm*="6/"] {
+    --b: 6;
+  }
+  [kcm*="7/"] {
+    --b: 7;
+  }
+  [kcm*="8/"] {
+    --b: 8;
+  }
+  [kcm*="9/"] {
+    --b: 9;
+  }
+  [kcm*="100/"] {
+    --b: 90;
+  }
+  [kcm*="(1"]:not([kcm*="(1/"]) {
+    --o: 1;
+  }
+  [kcm*="(2"]:not([kcm*="(2/"]) {
+    --o: 2;
+  }
+  [kcm*="(3"]:not([kcm*="(3/"]) {
+    --o: 3;
+  }
+  [kcm*="(4"]:not([kcm*="(4/"]) {
+    --o: 4;
+  }
+  [kcm*="(5"]:not([kcm*="(5/"]) {
+    --o: 5;
+  }
+  [kcm*="(6"]:not([kcm*="(6/"]) {
+    --o: 6;
+  }
+  [kcm*="(7"]:not([kcm*="(7/"]) {
+    --o: 7;
+  }
+  [kcm*="(8"]:not([kcm*="(8/"]) {
+    --o: 8;
+  }
+  [kcm*="(9"]:not([kcm*="(9/"]) {
+    --o: 9;
+  }
+  [kcm*="1)"] {
+    --i: 1;
+  }
+  [kcm*="2)"] {
+    --i: 2;
+  }
+  [kcm*="3)"] {
+    --i: 3;
+  }
+  [kcm*="4)"] {
+    --i: 4;
+  }
+  [kcm*="5)"] {
+    --i: 5;
+  }
+  [kcm*="6)"] {
+    --i: 6;
+  }
+  [kcm*="7)"] {
+    --i: 7;
+  }
+  [kcm*="8)"] {
+    --i: 8;
+  }
+  [kcm*="9)"] {
+    --i: 9;
+  }
+  [kcm*="/100"] {
+    --i: 90;
+  }
+  [kcm*="/1"]:not([kcm*="/1)"]) {
+    --n: 1;
+  }
+  [kcm*="/2"]:not([kcm*="/2)"]) {
+    --n: 2;
+  }
+  [kcm*="/3"]:not([kcm*="/3)"]) {
+    --n: 3;
+  }
+  [kcm*="/4"]:not([kcm*="/4)"]) {
+    --n: 4;
+  }
+  [kcm*="/5"]:not([kcm*="/5)"]) {
+    --n: 5;
+  }
+  [kcm*="/6"]:not([kcm*="/6)"]) {
+    --n: 6;
+  }
+  [kcm*="/7"]:not([kcm*="/7)"]) {
+    --n: 7;
+  }
+  [kcm*="/8"]:not([kcm*="/8)"]) {
+    --n: 8;
+  }
+  [kcm*="/9"]:not([kcm*="/9)"]) {
+    --n: 9;
+  }
+  [kcm*="/"] {
+    width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
+  }
+  [kcm*=görünür] {
+    display: inherit;
+  }
+  [kcm*=gizli] {
+    display: none;
+  }
+  [kcm*=esnek] {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  [kcm*=block] {
+    display: block;
+  }
+  [kcm*="ortalı yazı"] {
+    text-align: center;
+  }
+  [kcm*="başuçlu yazı"] {
+    text-align: start;
+  }
+  [kcm*="sollu yazı"] {
+    text-align: left;
+  }
+  [kcm*="ayakuçlu yazı"] {
+    text-align: end;
+  }
+  [kcm*="sağlı yazı"] {
+    text-align: right;
+  }
+  [kcm*="yazıyı yasa"] {
+    text-align: justify;
+  }
+  [kcm*=ortalı] {
+    justify-content: center;
+  }
+  [kcm*="}"] {
+    --b1: 0;
+    --i1: 0;
+    --o1: 0;
+    --n1: 0;
+  }
+  [kcm*="1}"] {
+    --b1: 1;
+  }
+  [kcm*="2}"] {
+    --b1: 2;
+  }
+  [kcm*="3}"] {
+    --b1: 3;
+  }
+  [kcm*="4}"] {
+    --b1: 4;
+  }
+  [kcm*="5}"] {
+    --b1: 5;
+  }
+  [kcm*="6}"] {
+    --b1: 6;
+  }
+  [kcm*="7}"] {
+    --b1: 7;
+  }
+  [kcm*="8}"] {
+    --b1: 8;
+  }
+  [kcm*="9}"] {
+    --b1: 9;
+  }
+  [kcm*="100}"] {
+    --b1: 90;
+  }
+  [kcm*="{1"]:not([kcm*="{1}"]) {
+    --o1: 1;
+  }
+  [kcm*="{2"]:not([kcm*="{2}"]) {
+    --o1: 2;
+  }
+  [kcm*="{3"]:not([kcm*="{3}"]) {
+    --o1: 3;
+  }
+  [kcm*="{4"]:not([kcm*="{4}"]) {
+    --o1: 4;
+  }
+  [kcm*="{5"]:not([kcm*="{5}"]) {
+    --o1: 5;
+  }
+  [kcm*="{6"]:not([kcm*="{6}"]) {
+    --o1: 6;
+  }
+  [kcm*="{7"]:not([kcm*="{7}"]) {
+    --o1: 7;
+  }
+  [kcm*="{8"]:not([kcm*="{8}"]) {
+    --o1: 8;
+  }
+  [kcm*="{9"]:not([kcm*="{9}"]) {
+    --o1: 9;
+  }
+  [kcm*="{"][kcm*="}"] {
+    flex: calc(var(--o1) * 10 + var(--b1));
+  }
+}
+[class*=sağlı] {
+  margin-left: auto;
+}
+
+[kçk*=sağlı] {
+  margin-left: auto;
+}
+
+[ort*=sağlı] {
+  margin-left: auto;
+}
+
+[kca*=sağlı] {
+  margin-left: auto;
+}
+
+[kkc*=sağlı] {
+  margin-left: auto;
+}
+
+[kcm*=sağlı] {
+  margin-left: auto;
+}/*# sourceMappingURL=deveb.css.map */

@@ -1,9 +1,21 @@
 $germeler: (
-    class: 0,       // dikey tutulan telefon ekranları ve daha küçükleri
-    küçük: 576px,   // yatay tutulan telefon ekranları ve daha büyükleri
-    orta: 768px,   // tablet bilgisayar ekranları ve daha büyükleri
-    büyük: 992px,   // dizüstü bilgisayar ekranları ve daha büyükleri
-    koca: 1200px   // düz bilgisayar ekranları ve daha büyükleri
+    // Germelerin hepsi "class" yazmasının nedeni HTML'deki class içinde işleyebilmesi içindir.
+    class: 0px,
+
+    // Yatay tutulan telefon germeleri ve daha büyükleri      
+    kçk: 576px,
+
+    // Tablet bilgisayar germeleri ve daha büyükleri
+    ort: 768px,
+
+    // Dizüstü bilgisayar germeleri ve daha büyükleri
+    kca: 992px,
+
+    // Düz bilgisayar germeleri ve daha büyükleri
+    kkc: 1200px,
+
+    // Daha büyük düz bilgisayar germeleri ve daha büyükleri
+    kcm: 1600px,
 );
 
 

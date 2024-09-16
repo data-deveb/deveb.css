@@ -57,47 +57,46 @@
     [#{$germeAdı}*="/7"]:not([#{$germeAdı}*="/7)"]){--n: 7}
     [#{$germeAdı}*="/8"]:not([#{$germeAdı}*="/8)"]){--n: 8}
     [#{$germeAdı}*="/9"]:not([#{$germeAdı}*="/9)"]){--n: 9}
-
-    %bölme-düzeni-genişliği {        
-        // #{$genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-        #{$genişlik}: calc((100% * (var(--o, 0) * 10 + var(--b)) / ((var(--n, 0) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b)) / ((var(--n, 0) * 10 + var(--i))) ));
-
-    }
-    %esnemeli-bölme-düzeni-genişliği{
-        // #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
-        #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
-    }
-    %esnek{
-        #{$sergi}: flex;
-        flex-wrap: wrap;
-    }
-    %block{
-        #{$sergi}: block;
-        float: left;
-    }
     
-        [#{$germeAdı}*="/"]{
-            #{$genişlik}: calc((100% * (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1))) ));
-            flex: unset;
-        }
-        [#{$germeAdı}*="/"], [#{$germeAdı}*="}"]{
-            #{$sergi}: flex;
-            flex-wrap: wrap;
-        }
-        [#{$germeAdı}*="}"][#{$germeAdı}*=")"]{
-            width: auto;
-            #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
-        }
+    [#{$germeAdı}*="/"]{
+        #{$genişlik}: calc((100% * (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1))) ));
+        // flex: unset;
+    }
+
+    // %bölme-genişliği {
+    //     #{$genişlik}: calc((100% * (var(--o, 0) * 10 + var(--b)) / ((var(--n, 0) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b)) / ((var(--n, 0) * 10 + var(--i))) ));
+    // }
+
+    // %esnemeli-bölme-genişliği{
+    //     #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
+    // }
+    // %esnek{
+    //     #{$sergi}: flex;
+    //     flex-wrap: wrap;
+    // }
+    // %block{
+    //     #{$sergi}: block;
+    //     float: left;
+    // }
+    
+    // [#{$germeAdı}*="/"], [#{$germeAdı}*="}"]{
+    //     #{$sergi}: flex;
+    //     flex-wrap: wrap;
+    // }
+    // [#{$germeAdı}*="}"][#{$germeAdı}*=")"]{
+    //     width: auto;
+    //     #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
+    // }
 }
 
 @mixin bölme-düzeni-ayağı($germeler){
     /////////////////////////
-    // %bölme-düzeni-genişliği {        
+    // %bölme-genişliği {        
     //     // #{$genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
     //     #{$genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
 
     // }
-    // %esnemeli-bölme-düzeni-genişliği{
+    // %esnemeli-bölme-genişliği{
     //     // #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
     //     #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i))) ));
     // }
@@ -112,30 +111,30 @@
     // @each $germeAdı, $germeGenişliği in $germeler {
     //     [#{$germeAdı}*="/"]:not([#{$germeAdı}*="/)"]){
     //         @extend %esnek;
-    //         @extend %bölme-düzeni-genişliği;
+    //         @extend %bölme-genişliği;
 
     //         flex: unset;
     //     }
     //     [#{$germeAdı}*="/"][#{$germeAdı}*="/)"]{
     //         @extend %esnek;
-    //         @extend %esnemeli-bölme-düzeni-genişliği;
+    //         @extend %esnemeli-bölme-genişliği;
     //     }
     //     [#{$germeAdı}*="//"]{
     //         @extend %esnek;
     //     }
     // }
 
-    // %gaplı-bölme-düzeni-genişliği{
+    // %gaplı-bölme-genişliği{
     //     #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
     //     #{$en-az-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)) + .5));
     // }
 
-    // %gaplı-bölme-düzeni-genişliği{
+    // %gaplı-bölme-genişliği{
     //     #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
     //     #{$en-az-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)) + (var(--i) / 10 * 2)));
     // }
 
-    %gaplı-bölme-düzeni-genişliği{
+    %gaplı-bölme-genişliği{
         // #{$en-çok-genişlik}: calc(100% * (var(--o) * 10 + var(--b)) / (var(--n) * 10 + var(--i)));
         #{$en-az-genişlik}: calc((100% * (var(--o) * 10 + var(--b)) / ((var(--n) * 10 + var(--i)))) - var(--gap, 0px));
     }
