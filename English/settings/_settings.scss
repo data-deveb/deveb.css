@@ -7,6 +7,25 @@ $screens: (
     xxl: 1600px,
 );
 
+$screens: (
+    // All screens (default / mobile first)
+    class: 0px,
+
+    // Landscape phones and larger
+    sm: 576px,
+
+    // Tablets and larger
+    md: 768px,
+
+    // Laptops and larger
+    lg: 992px,
+
+    // Desktops and larger
+    xl: 1200px,
+
+    // Extra large desktops and larger
+    xxl: 1600px,
+);
 
 // telefon
 
