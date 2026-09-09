@@ -1,4 +1,6 @@
-@use "settings/breakpoints" as *;
+@use "settings" as *;
+@use "systems/core/reset" as *;
+@use "systems/utils/display" as *;
 @use "systems/layouts/grid" as *;
 
 @mixin media-screen($breakpoints) {
@@ -6,7 +8,7 @@
     //////////////
     // CSS Başı
 
-    
+    @include core-reset();
 
     //////////////
     // CSS Gövdesi
@@ -15,6 +17,7 @@
  
         @media screen and (min-width:$breakpoint_value) {
 
+            @include utils-display-body($breakpoint_name, $flex-mode);
             @include layout-grid-system-body($breakpoint_name);
 
         }
