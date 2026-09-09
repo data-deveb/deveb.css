@@ -19,6 +19,16 @@
         // PAY
     [#{$breakpoint_name}*="("]{--b: 0; --i: 0}
     [#{$breakpoint_name}*="("][#{$breakpoint_name}*=")"]{--o: 0; --n: 0;}
+    // RESET
+    [#{$breakpoint_name}*="("], 
+    [#{$breakpoint_name}*=")"]{
+        --b: 0; // Payın birler basamağı
+        --o: 0; // Payın onlar basamağı
+        --i: 0; // Paydanın birler basamağı
+        --n: 0; // Paydanın onlar basamağı 
+    }
+    // [#{$breakpoint_name}*="("][#{$breakpoint_name}*=")"]{--o: 0; --n: 0;}
+    
     [#{$breakpoint_name}*="1/"]{--b: 1}
     [#{$breakpoint_name}*="2/"]{--b: 2}
     [#{$breakpoint_name}*="3/"]{--b: 3}
