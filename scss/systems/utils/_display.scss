@@ -27,9 +27,10 @@ $display-values: (
 @mixin utils-display-body($breakpoint_name, $flex-mode){
 
     [#{$breakpoint_name}~="flex"]{
-            display: flex;
-            flex-wrap: wrap;
-        }
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 
     @each $key, $value in $display-values {
         [#{$breakpoint_name}~="#{$key}"]{
@@ -37,8 +38,20 @@ $display-values: (
         }
     }
 
+
     ////////////////////////////////////////////////////////////
     // MODE: FLEX //////////////////////////////////////////////
     @include display-in-flex-mode($breakpoint_name, $flex-mode);
     ////////////////////////////////////////////////////////////
+    
+}
+
+@mixin utils-display-footer(){
+
+    // Doğruca yazı içeriği barındıran bir div block tanımlanmalıdır.
+    div:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote),
+    div:not(:has(*)) {
+        display: block; // Veya metin akışını güvenceye alacak kurallar
+    }
+
 }
