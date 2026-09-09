@@ -11,6 +11,15 @@
     //////////////
     // CSS Gövdesi
 
+    @each $breakpoint_name, $breakpoint_value in $breakpoints {
+ 
+        @media screen and (min-width:$breakpoint_value) {
+
+            @include layout-grid-system-body($breakpoint_name);
+
+        }
+ 
+    }
 
     //////////////
     // CSS Ayağı
