@@ -1,6 +1,0 @@
-@use "../../ayarlar" as *;
-
-@mixin gizleme-düzeni($germeAdı){
-    [#{$germeAdı}*="görünür"]{display: inherit} // gizli kılınmadan önce hangi sergi tanımlı ise onu getirmek için inherit değeri yazılır.
-    [#{$germeAdı}*="gizli"]{display: none} // sergi değeri "yok" anlamına gelen "none" değeri ile tanımlı kılınır böylece gizli olma etkisi var edilir.
-}

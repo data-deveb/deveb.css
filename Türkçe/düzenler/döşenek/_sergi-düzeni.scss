@@ -1,6 +1,0 @@
-@use "../../ayarlar" as *;
-
-@mixin sergi-düzeni($germeAdı){
-    [#{$germeAdı}*="esnek"]{display: flex; flex-wrap: wrap;}
-    [#{$germeAdı}*="block"]{display: block}    
-}
