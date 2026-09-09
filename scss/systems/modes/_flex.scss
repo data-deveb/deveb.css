@@ -1,0 +1,11 @@
+
+// mode: flex
+@mixin display-in-flex-mode($breakpoint_name, $flex-mode){
+    
+    html:has(link[href$="deveb.css"][mode~="#{$flex-mode}"]) :is([#{$breakpoint_name}*="/"], div){
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}
