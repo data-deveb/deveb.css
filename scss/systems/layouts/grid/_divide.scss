@@ -1,0 +1,17 @@
+//////////////////////////////////////////////////////////////////////////////////////
+///
+///    BÖLME DÜZENİ (DIVISION LAYOUT) 🍇
+///
+///    Bu modül, 1/1 ile 100/100 arasındaki tüm olası kesirli (pay/payda) oranları 
+///    dinamik olarak hesaplayıp sunan matematiksel bir genişlik altyapısıdır.
+///
+///    Matematiksel döngüler (SCSS Loops) kullanılarak CSS kuralları optimize edilmiş, 
+///    gereksiz kod yükü önlenmiştir.
+///
+///    HTML Kullanımı: Sınıflar, pay ve payda değerlerini temsil edecek biçimde 
+///    (örneğin; pay/payda yapısıyla) işlenir. En az satır ve maksimum verimlilik 
+///    ilkesiyle tasarlanmıştır.
+///
+//////////////////////////////////////////////////////////////////////////////////////
+
+@mixin divide-system($screen_name){}
