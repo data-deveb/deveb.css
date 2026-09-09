@@ -9,3 +9,26 @@
  * Responsive breakpoint'lere uyumlu ve akışkan (fluid) olarak tasarlanmıştır.
  * ==========================================================================
  */
+
+@use "grid/divide" as *;
+@use "../../settings" as *;
+
+
+
+@mixin layout-grid-system-head($breakpoints) {
+    
+}
+
+
+@mixin layout-grid-system-body($breakpoint_name){
+
+    @include divide-system($breakpoint_name);    
+
+}
+
+
+@mixin layout-grid-system-foot($breakpoints){
+
+    @include divide-system-foot($breakpoints);
+
+}
