@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////
 ///
-///    BÖLME DÜZENİ (DIVISION LAYOUT) 🍇
+///    BÖLME DÜZENİ (DIVIDE SYSTEM) 🍇
 ///
 ///    Bu modül, 1/1 ile 100/100 arasındaki tüm olası kesirli (pay/payda) oranları 
 ///    dinamik olarak hesaplayıp sunan matematiksel bir genişlik altyapısıdır.
@@ -14,4 +14,8 @@
 ///
 //////////////////////////////////////////////////////////////////////////////////////
 
-@mixin divide-system($screen_name){}
+@mixin divide-system($breakpoint_name){
+    [#{$breakpoint_name}*="/"]{
+        width: 100%;
+    }
+}
