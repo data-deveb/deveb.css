@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch Türkçe/deveb.scss:css/deveb.css"
+    "sass:scss": "sass --watch scss/deveb.scss:css/deveb.css",
+    "sass:turkish": "sass --watch turkish/scss/deveb.scss:turkish/css/deveb.css"
   },
   "repository": {
     "type": "git",
