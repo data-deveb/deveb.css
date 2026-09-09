@@ -15,7 +15,57 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 @mixin divide-system($breakpoint_name){
+
+        // PAY
+    [#{$breakpoint_name}*="("]{--b: 0; --i: 0}
+    [#{$breakpoint_name}*="("][#{$breakpoint_name}*=")"]{--o: 0; --n: 0;}
+    [#{$breakpoint_name}*="1/"]{--b: 1}
+    [#{$breakpoint_name}*="2/"]{--b: 2}
+    [#{$breakpoint_name}*="3/"]{--b: 3}
+    [#{$breakpoint_name}*="4/"]{--b: 4}
+    [#{$breakpoint_name}*="5/"]{--b: 5} 
+    [#{$breakpoint_name}*="6/"]{--b: 6}
+    [#{$breakpoint_name}*="7/"]{--b: 7}
+    [#{$breakpoint_name}*="8/"]{--b: 8}
+    [#{$breakpoint_name}*="9/"]{--b: 9}
+    [#{$breakpoint_name}*="100/"]{--b: 90}
+
+    [#{$breakpoint_name}*="(1"]:not([#{$breakpoint_name}*="(1/"]){--o: 1}
+    [#{$breakpoint_name}*="(2"]:not([#{$breakpoint_name}*="(2/"]){--o: 2}
+    [#{$breakpoint_name}*="(3"]:not([#{$breakpoint_name}*="(3/"]){--o: 3}
+    [#{$breakpoint_name}*="(4"]:not([#{$breakpoint_name}*="(4/"]){--o: 4}
+    [#{$breakpoint_name}*="(5"]:not([#{$breakpoint_name}*="(5/"]){--o: 5}
+    [#{$breakpoint_name}*="(6"]:not([#{$breakpoint_name}*="(6/"]){--o: 6}
+    [#{$breakpoint_name}*="(7"]:not([#{$breakpoint_name}*="(7/"]){--o: 7}
+    [#{$breakpoint_name}*="(8"]:not([#{$breakpoint_name}*="(8/"]){--o: 8}
+    [#{$breakpoint_name}*="(9"]:not([#{$breakpoint_name}*="(9/"]){--o: 9}
+    
+
+    // PAYDA
+    [#{$breakpoint_name}*="1)"]{--i: 1}
+    [#{$breakpoint_name}*="2)"]{--i: 2}
+    [#{$breakpoint_name}*="3)"]{--i: 3}
+    [#{$breakpoint_name}*="4)"]{--i: 4}
+    [#{$breakpoint_name}*="5)"]{--i: 5} 
+    [#{$breakpoint_name}*="6)"]{--i: 6}
+    [#{$breakpoint_name}*="7)"]{--i: 7}
+    [#{$breakpoint_name}*="8)"]{--i: 8}
+    [#{$breakpoint_name}*="9)"]{--i: 9}
+    [#{$breakpoint_name}*="/100"]{--i: 90}
+
+    [#{$breakpoint_name}*="/1"]:not([#{$breakpoint_name}*="/1)"]){--n: 1}
+    [#{$breakpoint_name}*="/2"]:not([#{$breakpoint_name}*="/2)"]){--n: 2}
+    [#{$breakpoint_name}*="/3"]:not([#{$breakpoint_name}*="/3)"]){--n: 3}
+    [#{$breakpoint_name}*="/4"]:not([#{$breakpoint_name}*="/4)"]){--n: 4}
+    [#{$breakpoint_name}*="/5"]:not([#{$breakpoint_name}*="/5)"]){--n: 5}
+    [#{$breakpoint_name}*="/6"]:not([#{$breakpoint_name}*="/6)"]){--n: 6}
+    [#{$breakpoint_name}*="/7"]:not([#{$breakpoint_name}*="/7)"]){--n: 7}
+    [#{$breakpoint_name}*="/8"]:not([#{$breakpoint_name}*="/8)"]){--n: 8}
+    [#{$breakpoint_name}*="/9"]:not([#{$breakpoint_name}*="/9)"]){--n: 9}
+
+
+
     [#{$breakpoint_name}*="/"]{
-        width: 100%;
+        width: calc((100% * (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1))) ));
     }
 }
