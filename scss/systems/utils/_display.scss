@@ -1,0 +1,44 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//    DISPLAY DÜZENİ (DISPLAY UTILITIES) 🍇
+//
+//    Bu modül, elementlerin tarayıcıdaki akış davranışlarını (display özelliklerini)
+//    hızlı ve tutarlı bir şekilde değiştirmek için utility sınıfları üretir.
+//
+//    Döngü mantığı ile optimize edilmiş, en az kod satırıyla maksimum esneklik sağlar.
+//
+/////////////////////////////////////////////////////////////////////////////////////
+
+@use "../modes/flex" as *;
+
+// Kullanılacak display değerleri haritası
+$display-values: (
+  'block': block,
+  'inline': inline,
+  'inline-block': inline-block,
+  'inline-flex': inline-flex,
+  'grid': grid,
+  'inline-grid': inline-grid,
+  'none': none,
+  'flow-root': flow-root
+);
+
+// Döngü ile sınıfların üretilmesi (Örn: .d-block, .d-flex, .d-none)
+@mixin utils-display-body($breakpoint_name, $flex-mode){
+
+    [#{$breakpoint_name}~="flex"]{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+    @each $key, $value in $display-values {
+        [#{$breakpoint_name}~="#{$key}"]{
+            display: $value;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MODE: FLEX //////////////////////////////////////////////
+    @include display-in-flex-mode($breakpoint_name, $flex-mode);
+    ////////////////////////////////////////////////////////////
+}
