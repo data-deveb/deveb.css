@@ -2,10 +2,14 @@
 // mode: flex
 @mixin display-in-flex-mode($breakpoint_name, $flex-mode){
     
-    html:has(link[href$="deveb.css"][mode~="#{$flex-mode}"]) :is([#{$breakpoint_name}*="/"], div){
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
+    // html:has(link[href$="deveb.css"][mode~="#{$flex-mode}"]) :is([#{$breakpoint_name}*="/"], div){
+    //     display:flex;
+    //     flex-direction: row;
+    //     flex-wrap: wrap;
+    // }
+    html:has(link[href$="deveb.css"][mode~="#{$flex-mode}"]) :is([#{$breakpoint_name}*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
