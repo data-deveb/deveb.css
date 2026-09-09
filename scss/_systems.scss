@@ -6,25 +6,26 @@
 @mixin media-screen($breakpoints) {
 
     //////////////
-    // CSS Başı
+    // 🫡 CSS Başı
 
     @include core-reset();
 
     //////////////
-    // CSS Gövdesi
+    // 🙆 CSS Gövdesi
 
     @each $breakpoint_name, $breakpoint_value in $breakpoints {
  
         @media screen and (min-width:$breakpoint_value) {
 
-            @include utils-display-body($breakpoint_name, $flex-mode);
             @include layout-grid-system-body($breakpoint_name);
+            @include utils-display-body($breakpoint_name, $flex-mode);
 
         }
  
     }
 
     //////////////
-    // CSS Ayağı
+    // 🦶 CSS Ayağı
 
+    @include utils-display-footer();
 }
