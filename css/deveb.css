@@ -30,8 +30,6 @@ ul, ol, menu {
 body {
   min-height: 100vh;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 img, picture, video, canvas, svg {
@@ -65,39 +63,6 @@ a {
   }
 }
 @media screen and (min-width: 0px) {
-  [xs~=flex] {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  [xs~=block] {
-    display: block;
-  }
-  [xs~=inline] {
-    display: inline;
-  }
-  [xs~=inline-block] {
-    display: inline-block;
-  }
-  [xs~=inline-flex] {
-    display: inline-flex;
-  }
-  [xs~=grid] {
-    display: grid;
-  }
-  [xs~=inline-grid] {
-    display: inline-grid;
-  }
-  [xs~=none] {
-    display: none;
-  }
-  [xs~=flow-root] {
-    display: flow-root;
-  }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xs*="/"], div) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
   [xs*="("],
   [xs*=")"] {
     --b: 0;
@@ -222,41 +187,41 @@ a {
   [xs*="/"] {
     width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
   }
-}
-@media screen and (min-width: 576px) {
-  [sm~=flex] {
+  [xs~=flex] {
     display: flex;
     flex-wrap: wrap;
   }
-  [sm~=block] {
+  [xs~=block] {
     display: block;
   }
-  [sm~=inline] {
+  [xs~=inline] {
     display: inline;
   }
-  [sm~=inline-block] {
+  [xs~=inline-block] {
     display: inline-block;
   }
-  [sm~=inline-flex] {
+  [xs~=inline-flex] {
     display: inline-flex;
   }
-  [sm~=grid] {
+  [xs~=grid] {
     display: grid;
   }
-  [sm~=inline-grid] {
+  [xs~=inline-grid] {
     display: inline-grid;
   }
-  [sm~=none] {
+  [xs~=none] {
     display: none;
   }
-  [sm~=flow-root] {
+  [xs~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([sm*="/"], div) {
+  html:has(link[href$="deveb.css"][mode~=flex]) :is([xs*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+@media screen and (min-width: 576px) {
   [sm*="("],
   [sm*=")"] {
     --b: 0;
@@ -381,41 +346,41 @@ a {
   [sm*="/"] {
     width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
   }
-}
-@media screen and (min-width: 768px) {
-  [md~=flex] {
+  [sm~=flex] {
     display: flex;
     flex-wrap: wrap;
   }
-  [md~=block] {
+  [sm~=block] {
     display: block;
   }
-  [md~=inline] {
+  [sm~=inline] {
     display: inline;
   }
-  [md~=inline-block] {
+  [sm~=inline-block] {
     display: inline-block;
   }
-  [md~=inline-flex] {
+  [sm~=inline-flex] {
     display: inline-flex;
   }
-  [md~=grid] {
+  [sm~=grid] {
     display: grid;
   }
-  [md~=inline-grid] {
+  [sm~=inline-grid] {
     display: inline-grid;
   }
-  [md~=none] {
+  [sm~=none] {
     display: none;
   }
-  [md~=flow-root] {
+  [sm~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([md*="/"], div) {
+  html:has(link[href$="deveb.css"][mode~=flex]) :is([sm*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+@media screen and (min-width: 768px) {
   [md*="("],
   [md*=")"] {
     --b: 0;
@@ -540,41 +505,41 @@ a {
   [md*="/"] {
     width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
   }
-}
-@media screen and (min-width: 992px) {
-  [lg~=flex] {
+  [md~=flex] {
     display: flex;
     flex-wrap: wrap;
   }
-  [lg~=block] {
+  [md~=block] {
     display: block;
   }
-  [lg~=inline] {
+  [md~=inline] {
     display: inline;
   }
-  [lg~=inline-block] {
+  [md~=inline-block] {
     display: inline-block;
   }
-  [lg~=inline-flex] {
+  [md~=inline-flex] {
     display: inline-flex;
   }
-  [lg~=grid] {
+  [md~=grid] {
     display: grid;
   }
-  [lg~=inline-grid] {
+  [md~=inline-grid] {
     display: inline-grid;
   }
-  [lg~=none] {
+  [md~=none] {
     display: none;
   }
-  [lg~=flow-root] {
+  [md~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([lg*="/"], div) {
+  html:has(link[href$="deveb.css"][mode~=flex]) :is([md*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+@media screen and (min-width: 992px) {
   [lg*="("],
   [lg*=")"] {
     --b: 0;
@@ -699,41 +664,41 @@ a {
   [lg*="/"] {
     width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
   }
-}
-@media screen and (min-width: 1200px) {
-  [xl~=flex] {
+  [lg~=flex] {
     display: flex;
     flex-wrap: wrap;
   }
-  [xl~=block] {
+  [lg~=block] {
     display: block;
   }
-  [xl~=inline] {
+  [lg~=inline] {
     display: inline;
   }
-  [xl~=inline-block] {
+  [lg~=inline-block] {
     display: inline-block;
   }
-  [xl~=inline-flex] {
+  [lg~=inline-flex] {
     display: inline-flex;
   }
-  [xl~=grid] {
+  [lg~=grid] {
     display: grid;
   }
-  [xl~=inline-grid] {
+  [lg~=inline-grid] {
     display: inline-grid;
   }
-  [xl~=none] {
+  [lg~=none] {
     display: none;
   }
-  [xl~=flow-root] {
+  [lg~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xl*="/"], div) {
+  html:has(link[href$="deveb.css"][mode~=flex]) :is([lg*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+@media screen and (min-width: 1200px) {
   [xl*="("],
   [xl*=")"] {
     --b: 0;
@@ -858,41 +823,41 @@ a {
   [xl*="/"] {
     width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
   }
-}
-@media screen and (min-width: 1600px) {
-  [xxl~=flex] {
+  [xl~=flex] {
     display: flex;
     flex-wrap: wrap;
   }
-  [xxl~=block] {
+  [xl~=block] {
     display: block;
   }
-  [xxl~=inline] {
+  [xl~=inline] {
     display: inline;
   }
-  [xxl~=inline-block] {
+  [xl~=inline-block] {
     display: inline-block;
   }
-  [xxl~=inline-flex] {
+  [xl~=inline-flex] {
     display: inline-flex;
   }
-  [xxl~=grid] {
+  [xl~=grid] {
     display: grid;
   }
-  [xxl~=inline-grid] {
+  [xl~=inline-grid] {
     display: inline-grid;
   }
-  [xxl~=none] {
+  [xl~=none] {
     display: none;
   }
-  [xxl~=flow-root] {
+  [xl~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xxl*="/"], div) {
+  html:has(link[href$="deveb.css"][mode~=flex]) :is([xl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+@media screen and (min-width: 1600px) {
   [xxl*="("],
   [xxl*=")"] {
     --b: 0;
@@ -1017,6 +982,43 @@ a {
   [xxl*="/"] {
     width: calc(100% * (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1)) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / (var(--n, 0) * 10 + var(--i, 1))));
   }
+  [xxl~=flex] {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  [xxl~=block] {
+    display: block;
+  }
+  [xxl~=inline] {
+    display: inline;
+  }
+  [xxl~=inline-block] {
+    display: inline-block;
+  }
+  [xxl~=inline-flex] {
+    display: inline-flex;
+  }
+  [xxl~=grid] {
+    display: grid;
+  }
+  [xxl~=inline-grid] {
+    display: inline-grid;
+  }
+  [xxl~=none] {
+    display: none;
+  }
+  [xxl~=flow-root] {
+    display: flow-root;
+  }
+  html:has(link[href$="deveb.css"][mode~=flex]) :is([xxl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+div:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote),
+div:not(:has(*)) {
+  display: block;
 }
 
 /*# sourceMappingURL=deveb.css.map */
