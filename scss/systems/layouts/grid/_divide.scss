@@ -16,9 +16,6 @@
 
 @mixin divide-system($breakpoint_name){
 
-        // PAY
-    [#{$breakpoint_name}*="("]{--b: 0; --i: 0}
-    [#{$breakpoint_name}*="("][#{$breakpoint_name}*=")"]{--o: 0; --n: 0;}
     // RESET
     [#{$breakpoint_name}*="("], 
     [#{$breakpoint_name}*=")"]{
@@ -29,6 +26,7 @@
     }
     // [#{$breakpoint_name}*="("][#{$breakpoint_name}*=")"]{--o: 0; --n: 0;}
     
+    // PAY
     [#{$breakpoint_name}*="1/"]{--b: 1}
     [#{$breakpoint_name}*="2/"]{--b: 2}
     [#{$breakpoint_name}*="3/"]{--b: 3}
@@ -72,8 +70,6 @@
     [#{$breakpoint_name}*="/7"]:not([#{$breakpoint_name}*="/7)"]){--n: 7}
     [#{$breakpoint_name}*="/8"]:not([#{$breakpoint_name}*="/8)"]){--n: 8}
     [#{$breakpoint_name}*="/9"]:not([#{$breakpoint_name}*="/9)"]){--n: 9}
-
-
 
     [#{$breakpoint_name}*="/"]{
         width: calc((100% * (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1))) ));
