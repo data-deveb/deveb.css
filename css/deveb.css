@@ -1,3 +1,44 @@
-
+@charset "UTF-8";
+/**
+ * ==========================================================================
+ * Grid System & Layout Layout Styles
+ * ==========================================================================
+ * Bu dosya, framework içerisindeki esnek grid düzenini (Flexbox/CSS Grid tabanlı), 
+ * sütun yapılarını, container (konteyner) genişliklerini ve hizalama yardımcılarını 
+ * (alignment utilities) barındırır.
+ * 
+ * Responsive breakpoint'lere uyumlu ve akışkan (fluid) olarak tasarlanmıştır.
+ * ==========================================================================
+ */
+@media screen and (min-width: 0px) {
+  [xs*="/"] {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) {
+  [sm*="/"] {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  [md*="/"] {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  [lg*="/"] {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  [xl*="/"] {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  [xxl*="/"] {
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=deveb.css.map */
