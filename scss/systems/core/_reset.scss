@@ -1,0 +1,75 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//
+//    CSS RESET / NORMALIZE 🍇
+//
+//    Tarayıcıların varsayılan margin, padding, tipografi ve liste stillerini 
+//    sıfırlayarak tutarlı bir temel oluşturur.
+//
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+@mixin core-reset(){
+// 1. Box-sizing standardı (Modern CSS'in kalbi)
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// 2. Varsayılan margin ve padding'lerin sıfırlanması
+body, h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd,
+ul, ol, menu {
+  margin: 0;
+  padding: 0;
+}
+
+// 3. Liste stillerinin kaldırılması (ul, ol için)
+ul, ol, menu {
+  list-style: none;
+}
+
+// 4. Body temel akış ayarları (2026 standartlarında pürüzsüz görünüm)
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 5. Görsel ve medya elementlerinin esnetilmesi (Responsive görseller)
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// 6. Form elemanlarının tipografisini devralması (Inheritance)
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+// 7. Metin taşmalarını önlemek için word-break standartları
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+// 8. Bağlantıların (link) varsayılan alt çizgilerinin ve renklerinin sıfırlanması
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// 9. Erişilebilirlik (Accessibility) için hareket azaltma tercihi
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+}
