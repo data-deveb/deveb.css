@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <style>
+        body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+        header { border-bottom: 1px solid #eee; margin-bottom: 20px; }
+        footer { margin-top: 40px; font-size: 0.9em; color: #666; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="{{ '/' | relative_url }}" style="text-decoration: none; color: #333;">{{ site.title }}</a></h1>
+    </header>
+    
+    <main>
+        {{ content }}
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 - Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
