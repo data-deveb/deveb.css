@@ -35,11 +35,8 @@ github_username:  jekyll
 plugins:
   - jekyll-feed
 
-collections:
-  docs:
-    output: true
-    permalink: /docs/:path/
-    
+
+
     
 # Exclude from processing.
 # The following items will not be processed, by default.
