@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    {% assign sorted_docs = site.docs | sort: 'nav_order' %}
+
     <div class="docs-container">
         <!-- Sol Kenar Çubuğu (Navigasyon) -->
         <aside class="docs-sidebar">
@@ -17,7 +19,6 @@
             
             <nav class="sidebar-nav">
                 <ul>
-                    {% assign sorted_docs = site.docs | sort: 'nav_order' %}
                     {% for doc in sorted_docs %}
                         <li>
                             <a href="{{ doc.url | relative_url }}" {% if page.url == doc.url %}class="active"{% endif %}>
@@ -41,17 +42,19 @@
                 </div>
             </article>
 
-            <!-- Önceki / Sonraki Sayfa Navigasyonu (Opsiyonel Kolaylık) -->
+            <!-- Önceki / Sonraki Sayfa Navigasyonu -->
             <div class="doc-pagination">
-                {% assign sorted_docs = site.docs | sort: 'nav_order' %}
                 {% for doc in sorted_docs %}
                     {% if doc.url == page.url %}
                         {% unless forloop.first %}
-                            {% assign prev_doc = sorted_docs[forloop.index0 | minus: 1] %}
+                            {% assign prev_index = forloop.index0 | minus: 1 %}
+                            {% assign prev_doc = sorted_docs[prev_index] %}
                             <a href="{{ prev_doc.url | relative_url }}" class="prev">← {{ prev_doc.title }}</a>
                         {% endunless %}
+
                         {% unless forloop.last %}
-                            {% assign next_doc = sorted_docs[forloop.index0 | plus: 1] %}
+                            {% assign next_index = forloop.index0 | plus: 1 %}
+                            {% assign next_doc = sorted_docs[next_index] %}
                             <a href="{{ next_doc.url | relative_url }}" class="next">{{ next_doc.title }} →</a>
                         {% endunless %}
                     {% endif %}

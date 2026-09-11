@@ -1,25 +1,216 @@
 ---
+layout: default
+title: "404 - Sayfa Bulunamadı"
 permalink: /404.html
-layout: page
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<div data-container data-align="center" class="deveb-404-wrapper">
+  <div data-grid data-justify="center" data-align="center">
+    <div data-col="xs-12 md-8 lg-6" class="deveb-404-card">
+      
+      <!-- Pure CSS Animasyonlu 404 Izgara Grafiği -->
+      <div class="deveb-404-graphic">
+        <span class="num num-left">4</span>
+        <div class="grid-orb">
+          <div class="orb-ring"></div>
+          <div class="orb-core"></div>
+        </div>
+        <span class="num num-right">4</span>
+      </div>
 
-<div class="container">
-  <h1>404</h1>
+      <!-- Başlık ve Metin -->
+      <h1 class="deveb-404-title">Sayfa Izgaranın Dışında Kaldı!</h1>
+      <p class="deveb-404-desc">
+        Aradığınız sayfa <code>deveb.css</code> koordinatlarında bulunamadı. Sayfa taşınmış, silinmiş veya ızgara düzeninin dışına çıkmış olabilir.
+      </p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+      <!-- Aksiyon Butonu -->
+      <div class="deveb-404-actions">
+        <a href="{{ '/' | relative_url }}" class="deveb-home-btn">
+          <span>← Dokümantasyona Dön</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
 </div>
+
+<style>
+/* ==========================================================================
+   deveb.css - Pure CSS 404 Animasyonları & Tema Stilleri
+   ========================================================================== */
+
+.deveb-404-wrapper {
+  min-height: calc(80vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+/* Koyu Cam (Glassmorphism) Kart Yapısı */
+.deveb-404-card {
+  text-align: center;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 3.5rem 2rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arka Plan Hareketli Grid Deseni */
+.deveb-404-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  transform: rotate(12deg);
+  animation: gridFlow 25s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridFlow {
+  0% { transform: rotate(12deg) translateY(0); }
+  100% { transform: rotate(12deg) translateY(28px); }
+}
+
+/* İçerikleri Katmanlandırma */
+.deveb-404-graphic,
+.deveb-404-title,
+.deveb-404-desc,
+.deveb-404-actions {
+  position: relative;
+  z-index: 1;
+}
+
+/* 404 Sayısal Görsel Tasarımı */
+.deveb-404-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  font-size: 7.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.deveb-404-graphic .num {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 10px 25px rgba(168, 85, 247, 0.25));
+  animation: floatNum 4s ease-in-out infinite alternate;
+}
+
+.deveb-404-graphic .num-right {
+  animation-delay: -2s;
+}
+
+@keyframes floatNum {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-14px); }
+}
+
+/* Ortadaki Dönen Yörünge ve Nabız Atomu */
+.grid-orb {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px dashed #8b5cf6;
+  border-radius: 50%;
+  animation: spinRing 14s linear infinite;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+}
+
+.orb-core {
+  width: 44px;
+  height: 44px;
+  background: radial-gradient(circle, #ec4899 0%, #6366f1 100%);
+  border-radius: 50%;
+  animation: pulseCore 2s ease-in-out infinite alternate;
+}
+
+@keyframes spinRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseCore {
+  0% {
+    transform: scale(0.85);
+    box-shadow: 0 0 12px rgba(236, 72, 153, 0.5);
+  }
+  100% {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.9);
+  }
+}
+
+/* Metinler ve Kod Vurgusu */
+.deveb-404-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.deveb-404-desc {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  max-width: 460px;
+  margin: 0 auto 2.25rem auto;
+  line-height: 1.6;
+}
+
+.deveb-404-desc code {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95em;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Anasayfa Butonu */
+.deveb-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.25rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.deveb-home-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.55);
+}
+</style>
