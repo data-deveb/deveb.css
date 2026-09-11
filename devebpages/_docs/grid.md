@@ -5,6 +5,37 @@ permalink: /docs/grid/
 nav_order: 2
 ---
 
+<style>
+  /* Dokümantasyon Canlı Demo Stilleri */
+  .demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  .demo-box {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #ffffff;
+    padding: 14px 8px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .demo-box-alt {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  }
+  .demo-box-accent {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  }
+</style>
+
 # Bölme Düzeni (Grid)
 
 > Esnek, sezgisel ve tamamen bağımsız, derlemeksizin, JavaScript olmadan
@@ -47,12 +78,27 @@ Geleneksel CSS frameworkleri, tasarımları kodlayanları sabit 12'lik grid kal�
 
 Bölme düzeninde her eleman, kapsayıcısı içinde belirttiğiniz kesirli oran kadar genişlik kaplar:
 
-```html
-<!-- Yarı yarıya (%50 + %50) iki sütun -->
-<div class="(6/12)">%50 Alan</div>
-<div class="(6/12)">%50 Alan</div>
+### Yarı Yarıya (%50 + %50)
 
-<!-- Üçe bölünmüş (%33.3) yerleşim -->
+<div class="demo-row">
+  <div class="(6/12) demo-box">%50 Alan (6/12)</div>
+  <div class="(6/12) demo-box demo-box-alt">%50 Alan (6/12)</div>
+</div>
+
+```html
+<div class="(6/12)">%50 Alan</div>
+<div class="(6/12)">%50 Alan</div>
+```
+
+### Üçe Bölünmüş (%33.3) Yerleşim
+
+<div class="demo-row">
+  <div class="(1/3) demo-box">1/3 Alan</div>
+  <div class="(1/3) demo-box demo-box-alt">1/3 Alan</div>
+  <div class="(1/3) demo-box demo-box-accent">1/3 Alan</div>
+</div>
+
+```html
 <div class="(1/3)">1/3 Alan</div>
 <div class="(1/3)">1/3 Alan</div>
 <div class="(1/3)">1/3 Alan</div>
@@ -75,21 +121,44 @@ Ekran boyutuna göre farklı oranlar vermek için ilgili ekran özniteliğini ek
 
 ### Tepkisel Örnek
 
+<div class="demo-row">
+  <div class="(12/12)" md="(6/12)" lg="(3/12)">
+    <div class="demo-box">Kart 1</div>
+  </div>
+  <div class="(12/12)" md="(6/12)" lg="(3/12)">
+    <div class="demo-box demo-box-alt">Kart 2</div>
+  </div>
+  <div class="(12/12)" md="(6/12)" lg="(3/12)">
+    <div class="demo-box demo-box-accent">Kart 3</div>
+  </div>
+  <div class="(12/12)" md="(6/12)" lg="(3/12)">
+    <div class="demo-box">Kart 4</div>
+  </div>
+</div>
+
 ```html
 <!-- Mobilde tam genişlik (12/12), tablette yarı yarıya (6/12), masaüstünde dörtte bir (3/12) -->
-<div class="(12/12)" md="(6/12)" lg="(3/12)">
-  İçerik Kartı
-</div>
+<div class="(12/12)" md="(6/12)" lg="(3/12)">İçerik Kartı 1</div>
+<div class="(12/12)" md="(6/12)" lg="(3/12)">İçerik Kartı 2</div>
+<div class="(12/12)" md="(6/12)" lg="(3/12)">İçerik Kartı 3</div>
+<div class="(12/12)" md="(6/12)" lg="(3/12)">İçerik Kartı 4</div>
 ```
+
 
 ---
 
 ## Gelişmiş Yerleşimler
 
-Geleneksel 12'lik yapıların dışına çıkmak istediğinizde herhangi bir paydayı kullanabilirsiniz:
+Geleneksel 12'lik yapıların dışına çıkmak istediğinizde herhangi bir paydayı kullanabilirsiniz.
+
+### 21'lik Sistem Örneği (%66.6 + %33.3)
+
+<div class="demo-row">
+  <div class="(14/21) demo-box">Sol Panel (14/21)</div>
+  <div class="(7/21) demo-box demo-box-alt">Sağ Panel (7/21)</div>
+</div>
 
 ```html
-<!-- 21'lik sistemde özel genişlikler -->
 <div class="(14/21)">Sol Panel (%66.6)</div>
 <div class="(7/21)">Sağ Panel (%33.3)</div>
 ```
