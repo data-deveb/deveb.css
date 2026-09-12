@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-11T18:35:02+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/deveb.css/jekyll/update/2026/09/10/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2026-09-10T15:14:49+03:00</published><updated>2026-09-10T15:14:49+03:00</updated><id>http://localhost:4000/deveb.css/jekyll/update/2026/09/10/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/deveb.css/jekyll/update/2026/09/10/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-12T13:41:59+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?</title><link href="http://localhost:4000/deveb.css/2026/09/11/ilk-post/" rel="alternate" type="text/html" title="Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?" /><published>2026-09-11T14:00:00+03:00</published><updated>2026-09-11T14:00:00+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/11/ilk-post</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/11/ilk-post/"><![CDATA[<p>Web tasarım dünyasında sayfa düzeni (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla şekillendi. <code class="language-plaintext highlighter-rouge">float</code> temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta framework’ler bizlere hız vaat etti. Ancak hız kazanırken arka planda neleri feda ettik?</p>
+
+<p>Bu yazıda, piyasadaki grid sistemlerinin getirdiği kolaylıkları, farkında olmadan üstlendiğimiz mecburiyetleri ve <strong>deveb.css</strong>‘in kesirli bölme düzeniyle (<code class="language-plaintext highlighter-rouge">10/21</code> gibi) bu denklemi nasıl değiştirdiğini inceliyoruz.</p>
+
+<hr />
+
+<h2 id="1-geleneksel-grid-sistemleri-vaat-edilen-kolaylıklar-ve-doğurduğu-mecburiyetler">1. Geleneksel Grid Sistemleri: Vaat Edilen Kolaylıklar ve Doğurduğu Mecburiyetler</h2>
+
+<p>Piyasadaki popüler grid çözümleri (sabit sütunlu kütüphaneler ve derleyici tabanlı utility yaklaşımları) geliştiricilere şüphesiz büyük kolaylıklar sundu:</p>
+<ul>
+  <li><strong>Hızlı İskelet Kurulumu:</strong> Önceden tanımlanmış sınıflarla hızlıca hizalama yapabilmek.</li>
+  <li><strong>Ekip Standardı:</strong> Herkesin aynı <code class="language-plaintext highlighter-rouge">col-</code> veya <code class="language-plaintext highlighter-rouge">w-</code> dilini konuşması.</li>
+  <li><strong>Tepkisellik (Responsive) Kolaylığı:</strong> Kırılım noktalarında ön ekler ekleyerek sütun genişliğini değiştirmek.</li>
+</ul>
+
+<p>Ancak bu kolaylıklar beraberinde ciddi <strong>mecburiyetler</strong> getirdi:</p>
+
+<ol>
+  <li><strong>12 Sütun Hapsi (Veya Katı Izgara Bağımlılığı):</strong> Tasarımcı bir arayüzü 12 eşit parçaya bölemediğinde (örneğin 5 eşit sütun, 7’de 3 oran veya 21’de 10 hassasiyeti gerektiğinde) sistem tıkanır. Geliştirici ya özel CSS yazmak ya da tasarımı değiştirmek zorunda kalır.</li>
+  <li><strong>Kod Şişmesi (Class Bloat):</strong> HTML elemanlarının üzerine onlarca utility sınıfı yığılır, kod okunamaz ve bakımı zor bir hale gelir.</li>
+  <li><strong>Derleme Süreçleri (Build Step) Zoranı:</strong> Modern araçların neredeyse tamamı arka planda Node.js, PostCSS veya JIT (Just-In-Time) derleyicilerine ihtiyaç duyar. CSS yazmak için devasa bir paket ekosistemini çalıştırmak zorunda kalırız.</li>
+</ol>
+
+<hr />
+
+<h2 id="2-bağımlılık-zinciri-build-ve-javascript-yükü">2. Bağımlılık Zinciri: Build ve JavaScript Yükü</h2>
+
+<p>Piyasadaki pek çok gelişmiş arayüz aracı; dinamik hesaplamalar, taşmalar veya uyumluluk katmanları için çalışma zamanında (runtime) <strong>JavaScript</strong> yürütür ya da projeyi canlıya almadan önce bir <strong>Build/Compile</strong> aşamasını şart koşar.</p>
+
+<ul>
+  <li><strong>Build Gereksinimi:</strong> Küçük bir değişiklik için derleyicilerin çalışması, <code class="language-plaintext highlighter-rouge">node_modules</code> klasörlerinin devasa boyutlara ulaşması ve CI/CD süreçlerinin uzaması demektir.</li>
+  <li><strong>JS Bağımlılığı:</strong> İstemci tarafında çalışan her script; tarayıcıya ek yük getirir, pil ömrünü tüketir ve Sıkı İçerik Güvenlik Politikası (<strong>Strict CSP</strong>) uygulanan kurumsal panellerde veya e-posta/bülten şablonlarında sistemin çalışmamasına neden olur.</li>
+</ul>
+
+<blockquote>
+  <p><strong>deveb.css İddiası:</strong> Sıfır JavaScript (Zero-JS) ve Sıfır Derleme (Zero-Build). Sadece HTML ve CSS’in kendi saf gücü.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="3-htmlde-kesirli-dönem-1021-ne-sunuyor">3. HTML’de Kesirli Dönem: <code class="language-plaintext highlighter-rouge">(10/21)</code> Ne Sunuyor?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">deveb.css</code> ile gelen en büyük mimari yenilik, geliştiriciye katı sınıflar ezberletmek yerine doğrudan HTML özniteliği üzerinden <strong>kesirli oran</strong> tanımlama imkanı vermesidir:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 21 birimlik alanın 10 birimini kapsayan eleman --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"(10/21)"</span> <span class="na">sm=</span><span class="s">"(12/21)"</span> <span class="na">lg=</span><span class="s">"(5/21)"</span><span class="nt">&gt;</span>
+  Esnek Alan
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Bu yaklaşım piyasadaki duruma karşı şu avantajları üretir:</p>
+
+<ul>
+  <li>
+    <p><strong>1/1’den 100/100’e Sınırsız Esneklik:</strong> Derleyici çalıştırmadan, konfigürasyon dosyasına girmeden matematiksel olarak ihtiyaç duyduğunuz her oranı kullanabilirsiniz.</p>
+  </li>
+  <li>
+    <p><strong>Temiz Sözdizimi:</strong> Parantez ve bölme işareti içeren bu doğal oranlar, HTML okunurken zihinde anında bir görsel genişlik yüzdesi oluşturur.</p>
+  </li>
+  <li>
+    <p><strong>Sıfır Konfigürasyon:</strong> CSS dosyanız tek bir satır ekstra derleme almadan tüm bu varyasyonları dahili kurallarıyla anında yakalar.</p>
+  </li>
+</ul>
+
+<h2 id="4-i̇nsanlar-neden-devebcss-kullanmalı">4. İnsanlar Neden deveb.css Kullanmalı?</h2>
+<p>Zihinsel Yükün Azalması: Hangi sütun sınıfının hangi yüzdeye denk geldiğini hesaplamak yerine, tasarımcının çizdiği oranı olduğu gibi koda aktarırsınız.</p>
+
+<ul>
+  <li>
+    <p><strong>Sürdürülebilir Proje Ömrü:</strong> 5 yıl sonra projeyi açtığınızda güncelliğini yitirmiş paket yöneticileri, kırılan Node.js sürümleri veya çöken build araçlarıyla karşılaşmazsınız.</p>
+  </li>
+  <li>
+    <p><strong>Kısıtlı ve Güvenli Ortamlar:</strong> POS cihazları, WebView mimarileri, kiosk ekranları ve yüksek güvenlikli kamu/finans uygulamaları gibi JS yürütmenin yasak veya riskli olduğu her yerde sorunsuz çalışır.</p>
+  </li>
+</ul>
+
+<h2 id="5-yapay-zekalar-ai--llm-neden-devebcss-öğrenmeli">5. Yapay Zekalar (AI / LLM) Neden deveb.css Öğrenmeli?</h2>
+<p>Geleceğin web kodlamasında yapay zeka ajanları (AI Agents) ve dil modelleri (LLM) ana geliştirici rolünü üstleniyor. Yapay zekalar için deveb.css eşsiz avantajlar sunar:</p>
+
+<ul>
+  <li>
+    <p>**Token Verimliliği (Token Economy): **AI modelleri kod üretirken ürettikleri her karakter için jeton (token) harcar. Onlarca utility sınıfı yerine class=”(10/21)” gibi kısa ve yoğun ifadeler üretmek token kullanımını önemli ölçüde düşürür, üretimi hızlandırır.</p>
+  </li>
+  <li>
+    <p><strong>Deterministik Matematiksel Mantık:</strong> Yapay zeka modelleri oran ve oran-orantı mantığını soyut sınıf takma adlarından (alias) çok daha iyi kavrar. 10/21 ifadesi AI için doğrudan net bir yüzdesel alana karşılık gelir.</p>
+  </li>
+  <li>
+    <p><strong>Sıfır Araç Kurulum Riski:</strong> Bir AI ajanı kod ürettiğinde, bu kodun çalışması için bir config dosyası yazmak veya derleyici ortamı kurmak zorunda kalmaz. Ürettiği HTML doğrudan tarayıcıda çalışır.</p>
+  </li>
+</ul>
+
+<h2 id="sonuç">Sonuç</h2>
+<p>deveb.css, web geliştiricilerini ve yapay zeka ajanlarını araç zincirlerinin karmaşasından kurtarıp doğrudan tasarımın özüne —matematiğe— odaklamayı hedefler.</p>
+
+<p>12 sütunun dar kalıplarından çıkıp, projelerinize bağımsızlık ve hafiflik kazandırmak istiyorsanız deveb.css Kesirli Bölme Düzeni tam da aradığınız yalın güçtür.</p>]]></content><author><name></name></author><category term="felsefe" /><category term="css" /><category term="web-tasarim" /><category term="deveb.css" /><category term="grid" /><category term="zero-build" /><category term="zero-js" /><category term="ai-friendly" /><category term="css-framework" /><summary type="html"><![CDATA[Web tasarım dünyasında sayfa düzeni (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla şekillendi. float temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta framework’ler bizlere hız vaat etti. Ancak hız kazanırken arka planda neleri feda ettik?]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/deveb.css/2026/09/10/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2026-09-10T15:14:49+03:00</published><updated>2026-09-10T15:14:49+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/10/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/10/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 

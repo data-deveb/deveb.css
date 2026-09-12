@@ -39,6 +39,22 @@ collections:
   docs:
     output: true
     permalink: /docs/:path/
+
+# 1. URL Yapısı (Permalink)
+# Varsayılan URL'ler sadece /title/ şeklindedir. Bunu daha profesyonel hale getirebilirsin:
+permalink: /:year/:month/:day/:title/
+
+# 2. Öntanımlı Değerler (Defaults)
+# Bu sayede _posts klasöründeki hiçbir markdown dosyasına "layout: post" yazmak zorunda kalmazsın.
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+
+# 3. Markdown ve Kod Vurgulama Motoru
+markdown: kramdown
+highlighter: rouge
     
     
 # Exclude from processing.
