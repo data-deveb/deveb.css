@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-12T13:41:59+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?</title><link href="http://localhost:4000/deveb.css/2026/09/11/ilk-post/" rel="alternate" type="text/html" title="Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?" /><published>2026-09-11T14:00:00+03:00</published><updated>2026-09-11T14:00:00+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/11/ilk-post</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/11/ilk-post/"><![CDATA[<p>Web tasarım dünyasında sayfa düzeni (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla şekillendi. <code class="language-plaintext highlighter-rouge">float</code> temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta framework’ler bizlere hız vaat etti. Ancak hız kazanırken arka planda neleri feda ettik?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-12T13:49:23+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?</title><link href="http://localhost:4000/deveb.css/2026/09/11/ilk-post/" rel="alternate" type="text/html" title="Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?" /><published>2026-09-11T14:00:00+03:00</published><updated>2026-09-11T14:00:00+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/11/ilk-post</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/11/ilk-post/"><![CDATA[<p>Web tasarım dünyasında sayfa düzeni (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla şekillendi. <code class="language-plaintext highlighter-rouge">float</code> temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta framework’ler bizlere hız vaat etti. Ancak hız kazanırken arka planda neleri feda ettik?</p>
 
 <p>Bu yazıda, piyasadaki grid sistemlerinin getirdiği kolaylıkları, farkında olmadan üstlendiğimiz mecburiyetleri ve <strong>deveb.css</strong>‘in kesirli bölme düzeniyle (<code class="language-plaintext highlighter-rouge">10/21</code> gibi) bu denklemi nasıl değiştirdiğini inceliyoruz.</p>
 
@@ -63,9 +63,10 @@
 </ul>
 
 <h2 id="4-i̇nsanlar-neden-devebcss-kullanmalı">4. İnsanlar Neden deveb.css Kullanmalı?</h2>
-<p>Zihinsel Yükün Azalması: Hangi sütun sınıfının hangi yüzdeye denk geldiğini hesaplamak yerine, tasarımcının çizdiği oranı olduğu gibi koda aktarırsınız.</p>
-
 <ul>
+  <li>
+    <p><strong>Zihinsel Yükün Azalması:</strong> Hangi sütun sınıfının hangi yüzdeye denk geldiğini hesaplamak yerine, tasarımcının çizdiği oranı olduğu gibi koda aktarırsınız.</p>
+  </li>
   <li>
     <p><strong>Sürdürülebilir Proje Ömrü:</strong> 5 yıl sonra projeyi açtığınızda güncelliğini yitirmiş paket yöneticileri, kırılan Node.js sürümleri veya çöken build araçlarıyla karşılaşmazsınız.</p>
   </li>
@@ -79,7 +80,7 @@
 
 <ul>
   <li>
-    <p>**Token Verimliliği (Token Economy): **AI modelleri kod üretirken ürettikleri her karakter için jeton (token) harcar. Onlarca utility sınıfı yerine class=”(10/21)” gibi kısa ve yoğun ifadeler üretmek token kullanımını önemli ölçüde düşürür, üretimi hızlandırır.</p>
+    <p><strong>Token Verimliliği (Token Economy):</strong> AI modelleri kod üretirken ürettikleri her karakter için jeton (token) harcar. Onlarca utility sınıfı yerine class=”(10/21)” gibi kısa ve yoğun ifadeler üretmek token kullanımını önemli ölçüde düşürür, üretimi hızlandırır.</p>
   </li>
   <li>
     <p><strong>Deterministik Matematiksel Mantık:</strong> Yapay zeka modelleri oran ve oran-orantı mantığını soyut sınıf takma adlarından (alias) çok daha iyi kavrar. 10/21 ifadesi AI için doğrudan net bir yüzdesel alana karşılık gelir.</p>
