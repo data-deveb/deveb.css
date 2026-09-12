@@ -1,42 +1,48 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/deveb.css' | relative_url }}" mode="flex">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body xs="(1/1)">
+---
+layout: default
+---
     
-    {% assign sorted_docs = site.docs | sort: 'nav_order' %}
+{% assign sorted_docs = site.docs | sort: 'nav_order' %}
 
-    <aside xs="(1/12)">
-        <nav>
-            <ul>
+<aside xs="(1/12)">
+    <nav>
+        <ul>
+            {% for doc in sorted_docs %}
+            <li>
+                <a href="{{ doc.url | relative_url }}" {% if page.url == doc.url %}class="active"{% endif %}>
+                    {{ doc.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</aside>
+<main xs="(11/12)">
+    <article>
+        <header>
+            <h1>{{ page.title }}</h1>
+        </header>
+        <main>
+            {{ content }}
+        </main>
+        <footer>
+            <div class="doc-pagination">
                 {% for doc in sorted_docs %}
-                <li>
-                    <a href="{{ doc.url | relative_url }}" {% if page.url == doc.url %}class="active"{% endif %}>
-                        {{ doc.title }}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </aside>
-    <main xs="(11/12)">
-        <article>
-            <header>
-                Article Header
-            </header>
-            <main>
-                Article Main
-            </main>
-            <footer>
-                Article Footer
-            </footer>
-        </article>
-    </main>
+                    {% if doc.url == page.url %}
+                        {% unless forloop.first %}
+                            {% assign prev_index = forloop.index0 | minus: 1 %}
+                            {% assign prev_doc = sorted_docs[prev_index] %}
+                            <a href="{{ prev_doc.url | relative_url }}" class="prev">← {{ prev_doc.title }}</a>
+                        {% endunless %}
 
-</body>
-</html>
+                        {% unless forloop.last %}
+                            {% assign next_index = forloop.index0 | plus: 1 %}
+                            {% assign next_doc = sorted_docs[next_index] %}
+                            <a href="{{ next_doc.url | relative_url }}" class="next">{{ next_doc.title }} →</a>
+                        {% endunless %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </footer>
+    </article>
+</main>

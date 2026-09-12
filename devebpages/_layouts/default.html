@@ -9,22 +9,23 @@
     <!-- Rouge kod renklendirme stil dosyan -->
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
     <style>
-        body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+        body { font-family: sans-serif; margin: 40px auto; padding: 0 20px; line-height: 1.6; align-content: flex-start; }
         header { border-bottom: 1px solid #eee; margin-bottom: 20px; }
         footer { margin-top: 40px; font-size: 0.9em; color: #666; border-top: 1px solid #eee; }
+        article { max-width: 700px; }
         p{margin-bottom: 30px;}
     </style>
 </head>
-<body>
-    <header>
+<body xs="(1/1)">
+    <header xs="(1/1)">
         <h1><a href="{{ '/' | relative_url }}" style="text-decoration: none; color: #333;">{{ site.title }}</a></h1>
     </header>
     
-    <main>
+    <main xs="(1/1)">
         {{ content }}
     </main>
     
-    <footer>
+    <footer xs="(1/1)">
         <p>&copy; 2026 - Tüm hakları saklıdır.</p>
     </footer>
 </body>

@@ -42,7 +42,7 @@ collections:
 
 # 1. URL Yapısı (Permalink)
 # Varsayılan URL'ler sadece /title/ şeklindedir. Bunu daha profesyonel hale getirebilirsin:
-permalink: /:year/:month/:day/:title/
+permalink: /posts/:year/:month/:day/:title/
 
 # 2. Öntanımlı Değerler (Defaults)
 # Bu sayede _posts klasöründeki hiçbir markdown dosyasına "layout: post" yazmak zorunda kalmazsın.

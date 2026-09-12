@@ -1,0 +1,8 @@
+.tag {
+    margin: 5px;
+    padding: 4px;
+    border: 1px dashed #031501;
+}
+.tag:hover {
+    color:chocolate;
+}
