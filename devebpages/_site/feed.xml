@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-12T19:36:10+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?</title><link href="http://localhost:4000/deveb.css/2026/09/11/ilk-post/" rel="alternate" type="text/html" title="Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?" /><published>2026-09-11T14:00:00+03:00</published><updated>2026-09-11T14:00:00+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/11/ilk-post</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/11/ilk-post/"><![CDATA[<p>Neden CSS yazmak için devasa bir Node.js ordusuna ihtiyacımız var? Ya da tasarımcının çizdiği o hassas oranı pikseli pikseline tutturmak için neden önceden tanımlanmış sınıf isimlerine (class) mahkûmuz?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-12T20:36:51+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?</title><link href="http://localhost:4000/deveb.css/2026/09/11/ilk-post/" rel="alternate" type="text/html" title="Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?" /><published>2026-09-11T14:00:00+03:00</published><updated>2026-09-11T14:00:00+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/11/ilk-post</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/11/ilk-post/"><![CDATA[<p>Neden CSS yazmak için devasa bir Node.js ordusuna ihtiyacımız var? Ya da tasarımcının çizdiği o hassas oranı pikseli pikseline tutturmak için neden önceden tanımlanmış sınıf isimlerine (class) mahkûmuz?</p>
 
 <p>Ağ sayfaları tasarımında sayfa döşeneği (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla biçimlendi. <code class="language-plaintext highlighter-rouge">float</code> temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta frameworkler bizlere hız vaad etti. Ancak hız kazanırken arka planda neleri fedâ ettiğimizi pek konuşmadık.</p>
 
@@ -117,26 +117,4 @@
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://data-deveb.github.io/deveb.css/deveb.min.css"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
-<p>(Not: Projenizin güncel CDN/dosya yolunu yukarıdaki href alanına ekleyebilirsiniz.)</p>
-
-<h1 id="ne-değişti">Ne Değişti?</h1>
-<ul>
-  <li>
-    <p><strong>Giriş:</strong> Okuyucuyu teknik bir çıkmazla (Node.js ordusu, sınıf bağımlılığı) yüzleştiren bir soruyla başladık.</p>
-  </li>
-  <li>
-    <p><strong>12 Sütun Eleştirisi:</strong> Modern framework’lerin 12 sütunu aşabildiği gerçeğini kabul edip, asıl sorunun “tasarımcı-geliştirici arasındaki oran uyuşmazlığı” ve “özel config gereksinimi” olduğunu vurguladık.</p>
-  </li>
-  <li>
-    <p><strong>Teknik İpucu:</strong> Kodun altındaki peki bu sihir arka planda nasıl işliyor? başlığı ile calc() ve attribute selectors kavramları kısa ve öz şekilde açıklandı.</p>
-  </li>
-  <li>
-    <p><strong>Kod Kıyaslaması:</strong> Tailwind’in JIT tabanlı karmaşık w-[57.142%] yapısı ile deveb.css’in temiz (10/21) yapısı görsel olarak kıyaslandı.</p>
-  </li>
-  <li>
-    <p><strong>Yapay Zeka (AI):</strong> Vurgu zorlamadan çıkarılıp, “Token ekonomisi sağlarken insan geliştiricinin okumasını da kolaylaştırıyor” mantığına, yani bir dengeye oturtuldu.</p>
-  </li>
-  <li>
-    <p><strong>CTA (Call to Action):</strong> Manifesto hissi korunarak, sayfanın sonunda pratik bir deneme kodu (CDN linki) eklendi. Gelen ziyaretçinin anında kopyalayıp denemesi sağlandı.</p>
-  </li>
-</ul>]]></content><author><name></name></author><category term="felsefe" /><category term="css" /><category term="web-tasarim" /><category term="deveb.css" /><category term="grid" /><category term="zero-build" /><category term="zero-js" /><category term="ai-friendly" /><category term="css-framework" /><summary type="html"><![CDATA[Neden CSS yazmak için devasa bir Node.js ordusuna ihtiyacımız var? Ya da tasarımcının çizdiği o hassas oranı pikseli pikseline tutturmak için neden önceden tanımlanmış sınıf isimlerine (class) mahkûmuz?]]></summary></entry></feed>
+<p>(Not: Projenizin güncel CDN/dosya yolunu yukarıdaki href alanına ekleyebilirsiniz.)</p>]]></content><author><name></name></author><category term="felsefe" /><category term="css" /><category term="web-tasarim" /><category term="deveb.css" /><category term="grid" /><category term="zero-build" /><category term="zero-js" /><category term="ai-friendly" /><category term="css-framework" /><summary type="html"><![CDATA[Neden CSS yazmak için devasa bir Node.js ordusuna ihtiyacımız var? Ya da tasarımcının çizdiği o hassas oranı pikseli pikseline tutturmak için neden önceden tanımlanmış sınıf isimlerine (class) mahkûmuz?]]></summary></entry></feed>
