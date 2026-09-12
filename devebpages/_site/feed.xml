@@ -1,46 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-12T13:54:51+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?</title><link href="http://localhost:4000/deveb.css/2026/09/11/ilk-post/" rel="alternate" type="text/html" title="Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?" /><published>2026-09-11T14:00:00+03:00</published><updated>2026-09-11T14:00:00+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/11/ilk-post</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/11/ilk-post/"><![CDATA[<p>Web tasarım dünyasında sayfa düzeni (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla şekillendi. <code class="language-plaintext highlighter-rouge">float</code> temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta framework’ler bizlere hız vaat etti. Ancak hız kazanırken arka planda neleri feda ettik?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/deveb.css/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/deveb.css/" rel="alternate" type="text/html" /><updated>2026-09-12T19:36:10+03:00</updated><id>http://localhost:4000/deveb.css/feed.xml</id><title type="html">Deveb.css No JS Forever CSS</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?</title><link href="http://localhost:4000/deveb.css/2026/09/11/ilk-post/" rel="alternate" type="text/html" title="Izgara Kalıplarından Özgür Matematiğe: Neden deveb.css ve Kesirli Bölme Düzeni?" /><published>2026-09-11T14:00:00+03:00</published><updated>2026-09-11T14:00:00+03:00</updated><id>http://localhost:4000/deveb.css/2026/09/11/ilk-post</id><content type="html" xml:base="http://localhost:4000/deveb.css/2026/09/11/ilk-post/"><![CDATA[<p>Neden CSS yazmak için devasa bir Node.js ordusuna ihtiyacımız var? Ya da tasarımcının çizdiği o hassas oranı pikseli pikseline tutturmak için neden önceden tanımlanmış sınıf isimlerine (class) mahkûmuz?</p>
 
-<p>Bu yazıda, piyasadaki grid sistemlerinin getirdiği kolaylıkları, farkında olmadan üstlendiğimiz mecburiyetleri ve <strong>deveb.css</strong>‘in kesirli bölme düzeniyle (<code class="language-plaintext highlighter-rouge">10/21</code> gibi) bu denklemi nasıl değiştirdiğini inceliyoruz.</p>
+<p>Ağ sayfaları tasarımında sayfa döşeneği (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla biçimlendi. <code class="language-plaintext highlighter-rouge">float</code> temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta frameworkler bizlere hız vaad etti. Ancak hız kazanırken arka planda neleri fedâ ettiğimizi pek konuşmadık.</p>
+
+<p>Bu yazıda, piyasadaki grid düzenlerinin getirdiği kolaylıkları, farkında olmadan üstlendiğimiz mecburiyetleri ve <strong>deveb.css</strong>‘in bölme düzeni ile (örneğin 10/21) bu denklemi sıfır-JS ve sıfır-yapılandırma ilkesi ile nasıl kökten değiştirdiğini inceliyoruz.</p>
 
 <hr />
 
-<h2 id="1-geleneksel-grid-sistemleri-vaat-edilen-kolaylıklar-ve-doğurduğu-mecburiyetler">1. Geleneksel Grid Sistemleri: Vaat Edilen Kolaylıklar ve Doğurduğu Mecburiyetler</h2>
+<h2 id="1-geleneksel-grid-düzenleri-vaad-edilen-kolaylıklar-ve-doğurduğu-mecburiyetler">1. Geleneksel Grid Düzenleri: Vaad Edilen Kolaylıklar ve Doğurduğu Mecburiyetler</h2>
 
 <p>Piyasadaki popüler grid çözümleri (sabit sütunlu kütüphaneler ve derleyici tabanlı utility yaklaşımları) geliştiricilere şüphesiz büyük kolaylıklar sundu:</p>
-<ul>
-  <li><strong>Hızlı İskelet Kurulumu:</strong> Önceden tanımlanmış sınıflarla hızlıca hizalama yapabilmek.</li>
-  <li><strong>Ekip Standardı:</strong> Herkesin aynı <code class="language-plaintext highlighter-rouge">col-</code> veya <code class="language-plaintext highlighter-rouge">w-</code> dilini konuşması.</li>
-  <li><strong>Tepkisellik (Responsive) Kolaylığı:</strong> Kırılım noktalarında ön ekler ekleyerek sütun genişliğini değiştirmek.</li>
-</ul>
+
+<p><strong>Hızlı İskelet Kurulumu:</strong> Hazır css sınıfları ile hızlıca hizalama yapabilmek.</p>
+
+<p><strong>Takım Standardı:</strong> Herkesin aynı <code class="language-plaintext highlighter-rouge">col-</code> veya <code class="language-plaintext highlighter-rouge">w-</code> dilini konuşması.</p>
+
+<p><strong>Tepkisellik (Responsive) Kolaylığı:</strong> Kırılım noktalarında ön ekler ekleyerek sütun genişliğini değiştirmek.</p>
 
 <p>Ancak bu kolaylıklar beraberinde ciddi <strong>mecburiyetler</strong> getirdi:</p>
 
-<ol>
-  <li><strong>12 Sütun Hapsi (Veya Katı Izgara Bağımlılığı):</strong> Tasarımcı bir arayüzü 12 eşit parçaya bölemediğinde (örneğin 5 eşit sütun, 7’de 3 oran veya 21’de 10 hassasiyeti gerektiğinde) sistem tıkanır. Geliştirici ya özel CSS yazmak ya da tasarımı değiştirmek zorunda kalır.</li>
-  <li><strong>Kod Şişmesi (Class Bloat):</strong> HTML elemanlarının üzerine onlarca utility sınıfı yığılır, kod okunamaz ve bakımı zor bir hale gelir.</li>
-  <li><strong>Derleme Süreçleri (Build Step) Zoranı:</strong> Modern araçların neredeyse tamamı arka planda Node.js, PostCSS veya JIT (Just-In-Time) derleyicilerine ihtiyaç duyar. CSS yazmak için devasa bir paket ekosistemini çalıştırmak zorunda kalırız.</li>
-</ol>
+<ul>
+  <li><strong>Önceden Tanımlanmış Sınıflara Bağımlılık (Tasarımcı ve Geliştirici Uyumsuzluğu):</strong> Sorun artık sadece 12 sütunu aşamamak değil; modern araçlar (örneğin Tailwind’in grid-cols-5 gibi yapıları) esneklik sunabiliyor. Asıl sorun, tasarımcının Figma’da kurduğu kusursuz orantının, geliştiricinin elindeki paketlenmiş “utility” sınıflarına sıkışmasıdır. İhtiyacınız olan tam olarak 21’de 10’luk bir oransa, sistemin size sunduğu hazır sınıflarla cebelleşmek veya projeye özel karmaşık konfigürasyon (config) dosyaları yazmak zorunda kalırsınız.</li>
+</ul>
 
-<hr />
+<p><strong>Kod Şişmesi (Class Bloat):</strong> HTML elemanlarının üzerine onlarca karmaşık utility sınıfı yığılır, kod okunamaz ve bakımı zor bir hale gelir.</p>
+
+<p><strong>Derleme (Build) Zorunluluğu:</strong> Modern araçların neredeyse tamamı arka planda Node.js, PostCSS veya JIT (Just-In-Time) derleyicilerine ihtiyaç duyar. Sadece CSS yazabilmek için devasa bir ekosistemi ayağa kaldırmanız gerekir.</p>
 
 <h2 id="2-bağımlılık-zinciri-build-ve-javascript-yükü">2. Bağımlılık Zinciri: Build ve JavaScript Yükü</h2>
 
-<p>Piyasadaki pek çok gelişmiş arayüz aracı; dinamik hesaplamalar, taşmalar veya uyumluluk katmanları için çalışma zamanında (runtime) <strong>JavaScript</strong> yürütür ya da projeyi canlıya almadan önce bir <strong>Build/Compile</strong> aşamasını şart koşar.</p>
+<p>Piyasadaki pek çok gelişmiş CSS aracı; dinamik hesaplamalar, taşmalar veya uyumluluk katmanları için çalışma zamanında (runtime) <strong>JavaScript</strong> yürütür ya da projeyi canlıya almadan önce bir <strong>Build/Compile</strong> aşamasını şart koşar.</p>
 
-<ul>
-  <li><strong>Build Gereksinimi:</strong> Küçük bir değişiklik için derleyicilerin çalışması, <code class="language-plaintext highlighter-rouge">node_modules</code> klasörlerinin devasa boyutlara ulaşması ve CI/CD süreçlerinin uzaması demektir.</li>
-  <li><strong>JS Bağımlılığı:</strong> İstemci tarafında çalışan her script; tarayıcıya ek yük getirir, pil ömrünü tüketir ve Sıkı İçerik Güvenlik Politikası (<strong>Strict CSP</strong>) uygulanan kurumsal panellerde veya e-posta/bülten şablonlarında sistemin çalışmamasına neden olur.</li>
-</ul>
+<p><strong>Build Gereksinimi:</strong> Küçük bir stil değişikliği için derleyicilerin çalışması, <code class="language-plaintext highlighter-rouge">node_modules</code> klasörlerinin devasa boyutlara ulaşması ve CI/CD süreçlerinin uzaması demektir.</p>
 
-<blockquote>
-  <p><strong>deveb.css İddiası:</strong> Sıfır JavaScript (Zero-JS) ve Sıfır Derleme (Zero-Build). Sadece HTML ve CSS’in kendi saf gücü.</p>
-</blockquote>
+<p><strong>JS Bağımlılığı:</strong> İstemci tarafında çalışan her script; tarayıcıya ek yük getirir, performansı düşürür ve Sıkı İçerik Güvenlik Politikası (<strong>Strict CSP</strong>) uygulanan kurumsal panellerde veya e-posta şablonlarında çalışmama riski taşır.</p>
+
+<p><strong>deveb.css İddiası:</strong> Tamamen zero-JS (Sıfır JavaScript) ve zero-build (Sıfır Derleme). Sadece HTML ve CSS’in kendi saf gücü.</p>
 
 <hr />
 
-<h2 id="3-htmlde-kesirli-dönem-1021-ne-sunuyor">3. HTML’de Kesirli Dönem: <code class="language-plaintext highlighter-rouge">(10/21)</code> Ne Sunuyor?</h2>
+<h2 id="3-htmlde-kesirli-dönem-1021-ne-sunuyor">3. HTML’de Kesirli Dönem: (10/21) Ne Sunuyor?</h2>
 
-<p><code class="language-plaintext highlighter-rouge">deveb.css</code> ile gelen en büyük mimari yenilik, geliştiriciye katı sınıflar ezberletmek yerine doğrudan HTML özniteliği üzerinden <strong>kesirli oran</strong> tanımlama imkanı vermesidir:</p>
+<p><code class="language-plaintext highlighter-rouge">deveb.css</code> ile gelen en büyük mimari yenilik, geliştiriciye katı sınıflar ezberletmek yerine doğrudan HTML özniteliği üzerinden <code class="language-plaintext highlighter-rouge">bölülü oran</code> tanımlama imkanı vermesidir.</p>
+
+<p>Bu felsefeyi en iyi anlatan şey, geleneksel bir yaklaşımla <code class="language-plaintext highlighter-rouge">deveb.css</code> arasındaki kod okunabilirliği farkıdır:</p>
+
+<p><strong>Geleneksel Yaklaşım (Tailwind vb.):</strong> Yüzdelik dilimleri hesaplamak veya config dosyasına özel değerler eklemek gerekir.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Özel değerler hesaplanıp derleyiciye (JIT) muhtaç bırakılır --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"w-full sm:w-[57.142%] lg:w-[23.809%]"</span><span class="nt">&gt;</span>
+  İçerik
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p><strong>deveb.css Yaklaşımı:</strong> Saf matematik, anında okunabilirlik ve sıfır derleme.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 21 birimlik alanın 10 birimini kapsayan eleman --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"(10/21)"</span> <span class="na">sm=</span><span class="s">"(12/21)"</span> <span class="na">lg=</span><span class="s">"(5/21)"</span><span class="nt">&gt;</span>
@@ -48,49 +60,83 @@
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<p>Bu yaklaşım piyasadaki duruma karşı şu avantajları üretir:</p>
+<h2 id="peki-bu-sihir-arka-planda-nasıl-çalışıyor">Peki Bu Sihir Arka Planda Nasıl Çalışıyor?</h2>
+
+<p>Bu kesirli oranlar aslında karmaşık JavaScript hesaplamaları değil, tamamen saf CSS ustalığıdır. <code class="language-plaintext highlighter-rouge">deveb.css</code>, modern CSS’in nitelik seçicilerini (attribute selectors) ve calc() fonksiyonunu zekice harmanlar. Tarayıcı, özel bir derleyiciye ihtiyaç duymadan CSS seviyesinde bu oranları anında hesaplar ve sayfanıza yansıtır.</p>
+
+<p><strong>Bu yaklaşım şu avantajları üretir:</strong></p>
 
 <ul>
   <li>
-    <p><strong>1/1’den 100/100’e Sınırsız Esneklik:</strong> Derleyici çalıştırmadan, konfigürasyon dosyasına girmeden matematiksel olarak ihtiyaç duyduğunuz her oranı kullanabilirsiniz.</p>
+    <p><strong>1/1’den 100/100’e Sınırsız Esneklik:</strong> Derleyici (build) çalıştırmadan matematiksel olarak ihtiyaç duyduğunuz her oranı kullanabilirsiniz.</p>
   </li>
   <li>
-    <p><strong>Temiz Sözdizimi:</strong> Parantez ve bölme işareti içeren bu doğal oranlar, HTML okunurken zihinde anında bir görsel genişlik yüzdesi oluşturur.</p>
+    <p><strong>Temiz Sözdizimi:</strong> Parantez ve bölme işareti içeren bu doğal oranlar, kod okunurken zihinde anında görsel bir genişlik yüzdesi oluşturur.</p>
   </li>
   <li>
-    <p><strong>Sıfır Konfigürasyon:</strong> CSS dosyanız tek bir satır ekstra derleme almadan tüm bu varyasyonları dahili kurallarıyla anında yakalar.</p>
+    <p><strong>Sıfır Konfigürasyon:</strong> CSS dosyanız tek bir satır ekstra ayar almadan tüm varyasyonları anında yakalar.</p>
   </li>
 </ul>
 
 <h2 id="4-i̇nsanlar-neden-devebcss-kullanmalı">4. İnsanlar Neden deveb.css Kullanmalı?</h2>
+
 <ul>
   <li>
-    <p><strong>Zihinsel Yükün Azalması:</strong> Hangi sütun sınıfının hangi yüzdeye denk geldiğini hesaplamak yerine, tasarımcının çizdiği oranı olduğu gibi koda aktarırsınız.</p>
+    <p><strong>Zihinsel Yükün Azalması:</strong> Hangi sınıfın hangi yüzdeye denk geldiğini hesaplamak yerine, tasarımcının çizdiği oranı olduğu gibi koda aktarırsınız.</p>
   </li>
   <li>
     <p><strong>Sürdürülebilir Proje Ömrü:</strong> 5 yıl sonra projeyi açtığınızda güncelliğini yitirmiş paket yöneticileri, kırılan Node.js sürümleri veya çöken build araçlarıyla karşılaşmazsınız.</p>
   </li>
   <li>
-    <p><strong>Kısıtlı ve Güvenli Ortamlar:</strong> POS cihazları, WebView mimarileri, kiosk ekranları ve yüksek güvenlikli kamu/finans uygulamaları gibi JS yürütmenin yasak veya riskli olduğu her yerde sorunsuz çalışır.</p>
+    <p><strong>Kısıtlı ve Güvenli Ortamlar:</strong> POS cihazları, WebView mimarileri, kiosk ekranları ve yüksek güvenlikli kurumsal/finans uygulamaları gibi JS yürütmenin yasak olduğu yerlerde sorunsuz çalışır.</p>
   </li>
 </ul>
 
-<h2 id="5-yapay-zekalar-ai--llm-neden-devebcss-öğrenmeli">5. Yapay Zekalar (AI / LLM) Neden deveb.css Öğrenmeli?</h2>
-<p>Geleceğin web kodlamasında yapay zeka ajanları (AI Agents) ve dil modelleri (LLM) ana geliştirici rolünü üstleniyor. Yapay zekalar için deveb.css eşsiz avantajlar sunar:</p>
+<h2 id="5-i̇nsan-geliştirici-ve-yapay-zeka-arasındaki-kusursuz-denge-ai-friendly">5. İnsan Geliştirici ve Yapay Zeka Arasındaki Kusursuz Denge (AI-Friendly)</h2>
+
+<p>Geleceğin web kodlamasında yapay zeka ajanları (AI Agents) ve dil modellerinin (LLM) rolu giderek artıyor. deveb.css, bu noktada sadece makineler için değil, makine ile insanın ortak çalışması için ai-friendly bir köprü kurar:</p>
 
 <ul>
   <li>
-    <p><strong>Token Verimliliği (Token Economy):</strong> AI modelleri kod üretirken ürettikleri her karakter için jeton (token) harcar. Onlarca utility sınıfı yerine class=”(10/21)” gibi kısa ve yoğun ifadeler üretmek token kullanımını önemli ölçüde düşürür, üretimi hızlandırır.</p>
+    <p><strong>Token Tasarrufu ve İnsan Okunabilirliği:</strong> AI modelleri kod üretirken onlarca uzun utility sınıfı yerine class=”(10/21)” gibi yoğun ve kısa ifadeler kullanır. Bu, AI için token verimliliği (token economy) sağlarken; kodu inceleyen insan geliştirici için de karmaşadan uzak, okunabilir bir yapı sunar.</p>
   </li>
   <li>
-    <p><strong>Deterministik Matematiksel Mantık:</strong> Yapay zeka modelleri oran ve oran-orantı mantığını soyut sınıf takma adlarından (alias) çok daha iyi kavrar. 10/21 ifadesi AI için doğrudan net bir yüzdesel alana karşılık gelir.</p>
+    <p><strong>Deterministik Matematiksel Mantık:</strong> Yapay zeka, oran-orantı mantığını soyut sınıf isimlerinden çok daha iyi kavrar. 10/21 ifadesi, model için net bir yüzdesel alana karşılık gelir ve halüsinasyonları (yanlış hizalamaları) azaltır.</p>
   </li>
   <li>
-    <p><strong>Sıfır Araç Kurulum Riski:</strong> Bir AI ajanı kod ürettiğinde, bu kodun çalışması için bir config dosyası yazmak veya derleyici ortamı kurmak zorunda kalmaz. Ürettiği HTML doğrudan tarayıcıda çalışır.</p>
+    <p><strong>Sıfır Kurulum Riski:</strong> Bir AI ajanı kod ürettiğinde, bu kodun çalışması için arka planda Tailwind config’i veya Webpack ayarı yapmasına gerek kalmaz. Ürettiği HTML doğrudan tarayıcıda, ilk saniyede çalışır.</p>
   </li>
 </ul>
 
-<h2 id="sonuç">Sonuç</h2>
-<p>deveb.css, web geliştiricilerini ve yapay zeka ajanlarını araç zincirlerinin karmaşasından kurtarıp doğrudan tasarımın özüne —matematiğe— odaklamayı hedefler.</p>
+<h2 id="sonuç-hemen-başlayın">Sonuç: Hemen Başlayın!</h2>
+<p><code class="language-plaintext highlighter-rouge">deveb.css</code>, web geliştiricilerini ve yapay zeka ajanlarını araç zincirlerinin karmaşasından kurtarıp doğrudan tasarımın özüne —matematiğe— odaklamayı hedefler. Sütunların dar kalıplarından çıkıp projelerinize bağımsızlık ve hafiflik kazandırmak istiyorsanız, ihtiyacınız olan şey saf matematiktir.</p>
 
-<p>12 sütunun dar kalıplarından çıkıp, projelerinize bağımsızlık ve hafiflik kazandırmak istiyorsanız deveb.css Kesirli Bölme Düzeni tam da aradığınız yalın güçtür.</p>]]></content><author><name></name></author><category term="felsefe" /><category term="css" /><category term="web-tasarim" /><category term="deveb.css" /><category term="grid" /><category term="zero-build" /><category term="zero-js" /><category term="ai-friendly" /><category term="css-framework" /><summary type="html"><![CDATA[Web tasarım dünyasında sayfa düzeni (layout) oluşturmak, yıllardır CSS akışının karmaşasını dizginleme çabasıyla şekillendi. float temizleme hilelerinden (clearfix) Flexbox ve CSS Grid devrimine kadar uzanan bu yolculukta framework’ler bizlere hız vaat etti. Ancak hız kazanırken arka planda neleri feda ettik?]]></summary></entry></feed>
+<p>Hiçbir paket yöneticisi kurmadan, hiçbir derleyici çalıştırmadan deveb.css’i hemen şimdi HTML dosyanıza ekleyin ve kesirli bölme düzeninin özgürlüğünü test edin:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Sıfır kurulum, sıfır JS. Sadece HTML belgenizin &lt;head&gt; etiketine ekleyin: --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://data-deveb.github.io/deveb.css/deveb.min.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>(Not: Projenizin güncel CDN/dosya yolunu yukarıdaki href alanına ekleyebilirsiniz.)</p>
+
+<h1 id="ne-değişti">Ne Değişti?</h1>
+<ul>
+  <li>
+    <p><strong>Giriş:</strong> Okuyucuyu teknik bir çıkmazla (Node.js ordusu, sınıf bağımlılığı) yüzleştiren bir soruyla başladık.</p>
+  </li>
+  <li>
+    <p><strong>12 Sütun Eleştirisi:</strong> Modern framework’lerin 12 sütunu aşabildiği gerçeğini kabul edip, asıl sorunun “tasarımcı-geliştirici arasındaki oran uyuşmazlığı” ve “özel config gereksinimi” olduğunu vurguladık.</p>
+  </li>
+  <li>
+    <p><strong>Teknik İpucu:</strong> Kodun altındaki peki bu sihir arka planda nasıl işliyor? başlığı ile calc() ve attribute selectors kavramları kısa ve öz şekilde açıklandı.</p>
+  </li>
+  <li>
+    <p><strong>Kod Kıyaslaması:</strong> Tailwind’in JIT tabanlı karmaşık w-[57.142%] yapısı ile deveb.css’in temiz (10/21) yapısı görsel olarak kıyaslandı.</p>
+  </li>
+  <li>
+    <p><strong>Yapay Zeka (AI):</strong> Vurgu zorlamadan çıkarılıp, “Token ekonomisi sağlarken insan geliştiricinin okumasını da kolaylaştırıyor” mantığına, yani bir dengeye oturtuldu.</p>
+  </li>
+  <li>
+    <p><strong>CTA (Call to Action):</strong> Manifesto hissi korunarak, sayfanın sonunda pratik bir deneme kodu (CDN linki) eklendi. Gelen ziyaretçinin anında kopyalayıp denemesi sağlandı.</p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="felsefe" /><category term="css" /><category term="web-tasarim" /><category term="deveb.css" /><category term="grid" /><category term="zero-build" /><category term="zero-js" /><category term="ai-friendly" /><category term="css-framework" /><summary type="html"><![CDATA[Neden CSS yazmak için devasa bir Node.js ordusuna ihtiyacımız var? Ya da tasarımcının çizdiği o hassas oranı pikseli pikseline tutturmak için neden önceden tanımlanmış sınıf isimlerine (class) mahkûmuz?]]></summary></entry></feed>
