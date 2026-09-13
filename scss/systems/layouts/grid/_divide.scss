@@ -71,7 +71,7 @@
     [#{$breakpoint_name}*="/8"]:not([#{$breakpoint_name}*="/8)"]){--n: 8}
     [#{$breakpoint_name}*="/9"]:not([#{$breakpoint_name}*="/9)"]){--n: 9}
 
-    [#{$breakpoint_name}*="/"]{
+    [#{$breakpoint_name}*="/"]:not([#{$breakpoint_name}*="/)"]){
         width: calc((100% * (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1)))) - (var(--gap, 0px) - var(--gap, 0px) / (var(--o, 0) * 10 + var(--b, 1)) / ((var(--n, 0) * 10 + var(--i, 1))) ));
     }
 }
