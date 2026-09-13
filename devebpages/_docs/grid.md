@@ -36,8 +36,6 @@ nav_order: 2
   }
 </style>
 
-# Bölme Düzeni (Grid)
-
 > Esnek, sezgisel ve tamamen bağımsız, derlemeksizin, JavaScript olmadan
 
 **deveb.css Bölme Düzeni**, html tabanlı ağ sayfa tasarımlarını, karmaşık derleme adımlarına veya katı sütun kalıplarına bağlı kalmadan doğrudan HTML üzerinde yönetmenizi sağlar. Sezgisel pay pay oranlar sayesinde, tasarımın kendi matematiğine sadık kalan, duyarlı ve özgür bir genişlik denetimi sunar.
