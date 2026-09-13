@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test: Grid</title>
+    <link rel="stylesheet" href="../css/deveb.css" mode="flex">
+    <style>
+        div > div:nth-child(2n+1){
+            background-color: red;
+            margin: 1px;
+        }
+        div > div:nth-child(2n+0){
+            background-color: green;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div xs="center" style="height: 100px; background-color: antiquewhite;">
+        <div xs="(1/12)">1/1</div>
+        <div xs="(1/12)">1/2</div>
+        <div xs="(2/12)">2/2</div>
+        <div xs="(1/12)">1/3</div>
+        <div xs="(2/12)">
+            <div>2/3</div>
+        </div>
+        <div xs="(3/12)">3/3</div>
+    </div>
+</body>
+</html>
