@@ -1,0 +1,24 @@
+@mixin alignment-system($breakpoint_name){
+
+    [#{$breakpoint_name}~="center"]{
+        justify-content: center;
+        align-content: center;
+    }
+
+    [#{$breakpoint_name}~="top"]{
+        align-content: flex-start;
+    }
+
+    [#{$breakpoint_name}~="bottom"]{
+        align-content: flex-end;
+    }
+
+    [#{$breakpoint_name}~="left"]{
+        justify-content: flex-start;
+    }
+
+    [#{$breakpoint_name}~="right"]{
+        justify-content: flex-end;
+    }
+
+}

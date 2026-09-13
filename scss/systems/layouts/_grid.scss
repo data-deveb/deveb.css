@@ -11,6 +11,7 @@
  */
 
 @use "grid/divide" as *;
+@use "grid/alignment" as *;
 @use "../../settings" as *;
 
 
@@ -22,7 +23,8 @@
 
 @mixin layout-grid-system-body($breakpoint_name){
 
-    @include divide-system($breakpoint_name);    
+    @include divide-system($breakpoint_name);
+    @include alignment-system($breakpoint_name); 
 
 }
 
