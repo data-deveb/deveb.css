@@ -1,0 +1,31 @@
+@use "settings" as *;
+@use "systems/core/reset" as *;
+@use "systems/utils/display" as *;
+@use "systems/layouts/grid" as *;
+
+@mixin media-screen($breakpoints) {
+
+    //////////////
+    // 🫡 CSS Başı
+
+    @include core-reset();
+
+    //////////////
+    // 🙆 CSS Gövdesi
+
+    @each $breakpoint_name, $breakpoint_value in $breakpoints {
+ 
+        @media screen and (min-width:$breakpoint_value) {
+
+            @include layout-grid-system-body($breakpoint_name);
+            @include utils-display-body($breakpoint_name, $flex-mode);
+
+        }
+ 
+    }
+
+    //////////////
+    // 🦶 CSS Ayağı
+
+    @include utils-display-footer();
+}
