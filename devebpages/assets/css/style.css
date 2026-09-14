@@ -2,7 +2,7 @@
 
 .damga{
     font-family: 'Comfortaa', cursive;
-    margin: 10px;
+    margin: 10px 10px 10px 0;
     font-size:x-large;
 }
 .site-nav{
@@ -29,12 +29,12 @@
 :root {
   --bg: linear-gradient(to top left, #255760, rgba(219, 105, 102, 0), #2c2171), linear-gradient(to top right, #2c2171, rgba(255, 153, 150, 0), black) rgb(64, 126, 140);;
   --bg-color: #fff;
-  --surface-color: #1e293b;
-  --text-main: #0080ff;
+  --surface-color: #2c2171;
+  --text-main: #2c49a1;
   --text-muted: #94a3b8;
-  --accent-color: #38bdf8;
-  --border-color: #334155;
-  --radius: 8px;
+  --accent-color: #281891;
+  --border-color: #2c2171;
+  --radius: 0;
   --transition: 0.2s ease;
 }
 
@@ -70,6 +70,7 @@ body > footer > .container{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px;
 }
 
 
@@ -133,6 +134,7 @@ ul {
   padding: 1.25rem;
   margin-bottom: 1rem;
   transition: transform var(--transition), border-color var(--transition);
+  color:white;
 }
 
 .doc-list li:hover, .post-list li:hover {

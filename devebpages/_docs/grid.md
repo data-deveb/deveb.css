@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Bölme Düzeni"
+title: "Grid System"
 permalink: /docs/grid/
 nav_order: 2
 ---

@@ -5,16 +5,27 @@
 layout: default
 ---
 
-# Hoş Geldiniz
-
-Deveb.css ve No JS Forever felsefesiyle hazırladığımız tüm içerikler aşağıda listelenmiştir.
+<div class="hero">
+<div class="(1/1) right center" md="(1/2)">
+    <div>
+        <h1>No JS Forever Pure CSS</h1>
+        <p>The days of loading a JavaScript bundle for every interaction are over. This approach, which pushes the boundaries of CSS, allows you to build modern websites with pure CSS—without the need for complex state management or bloated libraries.</p>
+        <p>Pages load faster, server load is reduced, and users enjoy a seamless experience. Because sometimes, the best code is the code that’s never been written (or hasn’t been tainted by JS).</p>
+    </div>
+</div>
+<div class="(1/1) center" md="(1/2)">
+    <div class="center" style="border: 1px dashed rgb(197, 198, 230); padding: 10px; margin:10px;">
+        <img src="./assets/img/hero_deveb.css.png">
+    </div>
+</div>
+</div>
 
 <div class="home-content">
     
   <!-- 1. DOKÜMANLAR BÖLÜMÜ -->
   {% assign sorted_docs = site.docs | sort: 'nav_order' %}
   <section class="(1/1) docs-section">
-    <h2>Dokümanlar</h2>
+    <h2>Documention</h2>
     <ul class="doc-list">
       <!-- site.docs koleksiyonundaki tüm belgeleri listeler -->
       {% for doc in sorted_docs %}
