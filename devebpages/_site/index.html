@@ -9,10 +9,7 @@
     <!-- Rouge kod renklendirme stil dosyan -->
     <link rel="stylesheet" href="/deveb.css/assets/css/syntax.css">
     <style>
-        body { font-family: sans-serif; padding: 0 20px; line-height: 1.6; align-content: flex-start; }
-        
-        header { border-bottom: 1px solid #eee; margin-bottom: 20px; }
-        footer { margin-top: 40px; font-size: 0.9em; color: #666; border-top: 1px solid #eee; }
+
         article { max-width: 700px; }
         p{margin-bottom: 30px;}
 
@@ -21,7 +18,8 @@
 </head>
 <body xs="(1/1)">
     <header xs="(1/1)">
-        <div xs="(1/1)">
+        <div class="container">
+            <div xs="(1/1)">
     <a class="damga" rel="author" href="/deveb.css/">deveb.css</a>
 
     <nav class="site-nav" xs="center">
@@ -34,28 +32,31 @@
       </div>
     </nav>
   </div>
+        </div>
     </header>
     
     <main xs="(1/1)">
-        <h1 id="hoş-geldiniz">Hoş Geldiniz</h1>
+        <div class="container">
+            <h1 id="hoş-geldiniz">Hoş Geldiniz</h1>
 
 <p>Deveb.css ve No JS Forever felsefesiyle hazırladığımız tüm içerikler aşağıda listelenmiştir.</p>
 
 <div class="home-content">
-
+    
   <!-- 1. DOKÜMANLAR BÖLÜMÜ -->
-  <section class="docs-section">
+  
+  <section class="(1/1) docs-section">
     <h2>Dokümanlar</h2>
     <ul class="doc-list">
       <!-- site.docs koleksiyonundaki tüm belgeleri listeler -->
       
         <li>
-          <a href="/deveb.css/docs/grid/">Bölme Düzeni</a>
+          <a href="/deveb.css/docs/introduction/">Introduction</a>
           
         </li>
       
         <li>
-          <a href="/deveb.css/docs/introduction/">Introduction</a>
+          <a href="/deveb.css/docs/grid/">Bölme Düzeni</a>
           
         </li>
       
@@ -65,7 +66,7 @@
   <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eaeaea;" />
 
   <!-- 2. BLOG YAZILARI BÖLÜMÜ -->
-  <section class="posts-section">
+  <section class="(1/1) posts-section">
     <h2>Son Yazılar</h2>
     <ul class="post-list">
       <!-- site.posts koleksiyonundaki tüm yazıları kronolojik sırayla listeler -->
@@ -88,10 +89,12 @@
 
 </div>
 
+        </div>
     </main>
     
     <footer xs="(1/1)">
-        <div class="(1/1)">
+        <div class="container">
+            <div class="(1/1)">
     <div class="(1/1)">
       
       <!-- Sol Sütun: Site Hakkında veya Künye -->
@@ -121,6 +124,7 @@
 
     </div>
   </div>
+        </div>
     </footer>
 </body>
 </html>

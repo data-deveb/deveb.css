@@ -27,9 +27,10 @@
 */
 
 :root {
-  --bg-color: #0f172a;
+  --bg: linear-gradient(to top left, #255760, rgba(219, 105, 102, 0), #2c2171), linear-gradient(to top right, #2c2171, rgba(255, 153, 150, 0), black) rgb(64, 126, 140);;
+  --bg-color: #fff;
   --surface-color: #1e293b;
-  --text-main: #f8fafc;
+  --text-main: #0080ff;
   --text-muted: #94a3b8;
   --accent-color: #38bdf8;
   --border-color: #334155;
@@ -48,13 +49,29 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   line-height: 1.6;
-  padding: 2rem 1rem;
+  align-content: flex-start;
+}
+body > header > .container{
+    border-bottom: 1px dashed #c5c6e6;
+}
+body > main > .container{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+body > footer > .container{
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px dashed #c5c6e6;
+}
+.container{
+    max-width: 1376px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-}
 
 /* Header & Footer Styles */
 .site-header, .site-footer {
@@ -81,7 +98,6 @@ body {
 .site-nav .trigger {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
 .page-link, .footer-col a {

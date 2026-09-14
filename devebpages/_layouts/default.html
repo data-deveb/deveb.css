@@ -9,10 +9,7 @@
     <!-- Rouge kod renklendirme stil dosyan -->
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
     <style>
-        body { font-family: sans-serif; padding: 0 20px; line-height: 1.6; align-content: flex-start; }
-        
-        header { border-bottom: 1px solid #eee; margin-bottom: 20px; }
-        footer { margin-top: 40px; font-size: 0.9em; color: #666; border-top: 1px solid #eee; }
+
         article { max-width: 700px; }
         p{margin-bottom: 30px;}
 
@@ -21,15 +18,21 @@
 </head>
 <body xs="(1/1)">
     <header xs="(1/1)">
-        {% include header.html %}
+        <div class="container">
+            {% include header.html %}
+        </div>
     </header>
     
     <main xs="(1/1)">
-        {{ content }}
+        <div class="container">
+            {{ content }}
+        </div>
     </main>
     
     <footer xs="(1/1)">
-        {% include footer.html %}
+        <div class="container">
+            {% include footer.html %}
+        </div>
     </footer>
 </body>
 </html>

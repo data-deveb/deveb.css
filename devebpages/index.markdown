@@ -10,13 +10,14 @@ layout: default
 Deveb.css ve No JS Forever felsefesiyle hazırladığımız tüm içerikler aşağıda listelenmiştir.
 
 <div class="home-content">
-
+    
   <!-- 1. DOKÜMANLAR BÖLÜMÜ -->
-  <section class="docs-section">
+  {% assign sorted_docs = site.docs | sort: 'nav_order' %}
+  <section class="(1/1) docs-section">
     <h2>Dokümanlar</h2>
     <ul class="doc-list">
       <!-- site.docs koleksiyonundaki tüm belgeleri listeler -->
-      {% for doc in site.docs %}
+      {% for doc in sorted_docs %}
         <li>
           <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
           {% if doc.description %}
@@ -30,7 +31,7 @@ Deveb.css ve No JS Forever felsefesiyle hazırladığımız tüm içerikler aşa
   <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eaeaea;">
 
   <!-- 2. BLOG YAZILARI BÖLÜMÜ -->
-  <section class="posts-section">
+  <section class="(1/1) posts-section">
     <h2>Son Yazılar</h2>
     <ul class="post-list">
       <!-- site.posts koleksiyonundaki tüm yazıları kronolojik sırayla listeler -->
