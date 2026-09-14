@@ -8,7 +8,7 @@
 .site-nav{
     margin-left: auto;
 }
-.site-nav .trigger{
+.site-nav .trigger, .contact-list{
     gap: 15px;
 }
 
