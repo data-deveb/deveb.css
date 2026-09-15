@@ -233,7 +233,6 @@ a {
   }
   html:has(link[href$="deveb.css"][mode~=flex]) :is([class*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -408,7 +407,6 @@ a {
   }
   html:has(link[href$="deveb.css"][mode~=flex]) :is([xs*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -583,7 +581,6 @@ a {
   }
   html:has(link[href$="deveb.css"][mode~=flex]) :is([sm*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -758,7 +755,6 @@ a {
   }
   html:has(link[href$="deveb.css"][mode~=flex]) :is([md*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -933,7 +929,6 @@ a {
   }
   html:has(link[href$="deveb.css"][mode~=flex]) :is([lg*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -1108,7 +1103,6 @@ a {
   }
   html:has(link[href$="deveb.css"][mode~=flex]) :is([xl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 }
@@ -1283,7 +1277,6 @@ a {
   }
   html:has(link[href$="deveb.css"][mode~=flex]) :is([xxl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote), :not(:has(> *))) {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 }
