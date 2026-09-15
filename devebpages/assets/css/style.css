@@ -124,6 +124,17 @@ body>footer>.container {
   color: var(--accent-color);
 }
 
+pre.highlight, pre.highlight code {
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;     /* Uzun satırların alt satıra inmesini sağlar */
+  word-break: break-all;     /* Kelimelerin taşmasını engeller */
+}
+pre.highlight code{
+  display: block;
+  padding: 10px;
+}
+
 /* Content & Cards */
 h1,
 h2,
@@ -161,10 +172,11 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  
+
 }
-.doc-list>li{
-  display:flex;
+
+.doc-list>li {
+  display: flex;
   align-items: stretch;
 }
 
@@ -226,7 +238,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left:auto; 
+  margin-left: auto;
   margin-bottom: 10px;
 }
 
@@ -286,9 +298,10 @@ ul {
   flex: 1;
 
 }
-.c6-cta > a{
+
+.c6-cta>a {
   padding: 12px;
-    text-align: center;
+  text-align: center;
   flex: 1;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.55);
@@ -296,7 +309,8 @@ ul {
   font-size: 0.8rem;
   color: #1a1a1a;
 }
-.c6-cta > a:hover{
+
+.c6-cta>a:hover {
   background: rgba(255, 255, 255, 0.95);
 }
 
@@ -308,4 +322,77 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+.glow-on-hover {
+  display: block;
+  width: 220px;
+  height: 50px;
+  padding: 14px 48px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #2c49a1;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 24px;
+  margin: 20px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 24px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #2c49a1;
+  left: 0;
+  top: 0;
+  border-radius: 24px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
