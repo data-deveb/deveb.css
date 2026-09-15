@@ -24,19 +24,54 @@ layout: default
     
   <!-- 1. DOKÜMANLAR BÖLÜMÜ -->
   {% assign sorted_docs = site.docs | sort: 'nav_order' %}
-  <section class="(1/1) docs-section">
+  <section class="docs-section" xs="(1/1)">
     <h2>Documention</h2>
     <ul class="doc-list">
       <!-- site.docs koleksiyonundaki tüm belgeleri listeler -->
       {% for doc in sorted_docs %}
         <li>
-          <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
-          {% if doc.description %}
-            <p>{{ doc.description }}</p>
-          {% endif %}
+          <div class="c6">
+            <div>
+            <div class="c6-top">
+              <div class="c6-share" style="">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#1a1a1a" stroke-width="1.8"><path d="M12 15V4M7 8l5-5 5 5M5 15v4a1 1 0 001 1h12a1 1 0 001-1v-4"></path></svg>
+              </div>
+              <div class="c6-img">
+                <a href="{{ doc.url | relative_url }}"><img src="./assets/img/{{ doc.banner-image }}"></a>
+              </div>    
+            </div>
+            <div class="c6-name"><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></div>
+            <div class="c6-role">{{ doc.categories[0] }}</div>
+            <div class="c6-tags">
+            {% if doc.tags %}              
+              {% for tag in doc.tags limit: 3 %}
+              <div class="c6-tag">
+                {{ tag }}
+              </div>
+              {% endfor %}              
+            {% endif %}
+            </div>
+            <div class="c6-desc">
+              {% if doc.description %}
+                <p>{{ doc.description }}</p>
+              {% endif %}
+            </div>
+            <span></span>
+            </div>
+            <div class="c6-actions">
+              <div class="c6-cta center">
+                <a href="{{ doc.url | relative_url }}">Get in read</a>
+              </div>
+              <div class="c6-bookmark">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#1a1a1a" stroke-width="1.8"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>
+              </div>
+            </div>
+          </div>
+                
         </li>
       {% endfor %}
     </ul>
+    
   </section>
 
   <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eaeaea;">

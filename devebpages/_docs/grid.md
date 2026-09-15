@@ -1,8 +1,11 @@
 ---
 layout: doc
 title: "Grid System"
+categories: ["Getting Started"]
 permalink: /docs/grid/
 nav_order: 2
+tags: ["Flex", "Grid", "UX Design"]
+banner-image: "grid-system.jfif"
 ---
 
 <style>
