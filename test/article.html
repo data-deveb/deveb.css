@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Test - deveb.css</title>
+
+    <!-- deveb.css dosyanın test dizinindeki yolu (kendi derleme yoluna göre güncelle) -->
+    <link rel="stylesheet" href="../css/deveb.css" mode="flex">
+
+    <!-- Test için geçici CSS değişkenleri (Eğer root'ta tanımlı değilse burada dursun) -->
+    <style>
+        :root {
+            --text-dark: #1a1a1a;
+            --text-muted: #6b7280;
+            --primary-color: #2563eb;
+            --bg-surface: #f3f4f6;
+            --border-color: #e5e7eb;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            color: var(--text-dark);
+            padding: 2rem;
+            /* Arka planı hafif gri yapıyoruz ki nested article'ın arkaplanı test edilebilsin */
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TEST BAŞLANGICI: Ana Makale -->
+    <article>
+
+        <!-- 1. HEADER TESTİ: Başlık ve meta bilgilerin konumlanması -->
+        <header>
+            <h1>deveb.css ile Anlamsal Web ve Sınıfsız Tasarım</h1>
+            <p class="meta">
+                Yazar: <a href="#">Geliştirici</a> |
+                Tarih: <time datetime="2026-09-16">16 Eylül 2026</time> |
+                Okuma Süresi: 3 Dk.
+            </p>
+        </header>
+
+        <!-- 2. PARAGRAF VE INLINE ETIKET TESTİ: ch birimi ve satır yüksekliği -->
+        <p>
+            Anlamsal web (Semantic Web), içeriğin sadece insanlar için değil, aynı zamanda makineler için de
+            anlaşılabilir olmasını sağlar. <strong>deveb.css</strong>, herhangi bir CSS sınıfına ihtiyaç duymadan,
+            sadece doğru HTML etiketlerini kullanarak harika bir okuma deneyimi sunmayı hedefler. HTML'de en sık
+            kullanılan etiketlerden biri <code>&lt;article&gt;</code> etiketidir.
+        </p>
+
+        <!-- 3. BAŞLIK HİYERARŞİSİ VE DİKEY RİTİM TESTİ: Lobotomized Owl (* + *) çalışıyor mu? -->
+        <h2>Dikey Ritim Neden Önemlidir?</h2>
+        <p>
+            İçerik blokları arasındaki boşluklar (margin) rastgele olmamalıdır. Başlıklar, paragraflar ve listeler
+            arasında matematiksel bir uyum olmalıdır. Üst başlık (h2) ile paragraf arasındaki boşluk, paragrafların
+            kendi aralarındaki boşluktan farklı hissettirmelidir.
+        </p>
+
+        <h3>Alt Başlık (H3) Testi</h3>
+        <p>
+            Başlıklar kendi içlerinde hiyerarşik bir yapıya sahip olmalıdır. Bir makale okunurken göz yorulmamalı, satır
+            uzunluğu <code>max-width: 65ch</code> ile sınırlandırılmalıdır ki göz takibi zorlaşmasın.
+        </p>
+
+        <!-- 4. BLOCKQUOTE TESTİ: Alıntı tasarımı ve kenar çizgisi -->
+        <blockquote>
+            "İyi bir tasarım, içeriği gölgelemez; aksine içeriğin en iyi şekilde anlaşılmasını sağlayan görünmez bir
+            hizmetkardır. Sınıfsız (classless) CSS frameworkleri tam olarak bu amaca hizmet eder."
+        </blockquote>
+
+        <p>Alıntıdan sonraki paragrafın dikey ritmi bozulmadan, uygun margin değeri ile devam etmesi gerekir.</p>
+
+        <!-- 5. LİSTE TESTİ: Madde imleri ve iç içe listeler ritmi bozuyor mu? -->
+        <h2>Temel İçerik Tipleri</h2>
+        <ul>
+            <li><strong>Paragraflar:</strong> Temel metin blokları.</li>
+            <li><strong>Bağlantılar:</strong> Sayfalar arası geçiş <a href="#">referansları</a>.</li>
+            <li><strong>Listeler:</strong> Sıralı veya sırasız madde imleri.
+                <ul>
+                    <li>İç içe liste elemanı 1</li>
+                    <li>İç içe liste elemanı 2 (Burada boşluklar abartılı olmamalı)
+                        <ul>
+                            <li>İç içe liste elemanı 1</li>
+                            <li>İç içe liste elemanı 2 (Burada boşluklar abartılı olmamalı)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- 6. MEDYA TESTİ: Resimler 65ch'yi taşıyor mu veya düzgün kapsanıyor mu? -->
+        <h2>Görseller ve Medya Kullanımı</h2>
+        <p>Görseller sayfa dışına taşmamalı, makale alanının sınırlarına uyum sağlamalı ve border-radius gibi değerleri
+            otomatik almalıdır.</p>
+
+        <figure>
+            <!-- Gerçek bir resim gibi davranması için yer tutucu kullanıyoruz -->
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                alt="Bilgisayar başında kod yazan biri">
+            <figcaption>Şekil 1: Bir figure elementi ve figcaption yazısı.</figcaption>
+        </figure>
+
+        <p>Resimden sonra gelen metin de aynı hizadan ve ritimden sekteye uğramadan devam etmelidir.</p>
+
+        <!-- 7. NESTED (İÇ İÇE) ARTICLE TESTİ: Yorumların 65ch kuralından çıkıp %100 kapsayıcı olması -->
+        <hr>
+        <h2>Yorumlar (Nested Article Testi)</h2>
+
+        <!-- Yorum 1 -->
+        <article>
+            <header>
+                <h4>Ahmet Yılmaz</h4>
+                <p class="meta"><time datetime="2026-09-16T14:00">Bugün 14:00</time></p>
+            </header>
+            <p>Bu framework'ün sınıfsız çalışması harika. HTML kodum çok temiz kaldı! İç içe article kullanımında arka
+                plan renginin değişmesi yorumu çok güzel ayırdı.</p>
+        </article>
+
+        <!-- Yorum 2 -->
+        <article>
+            <header>
+                <h4>Ayşe Demir</h4>
+                <p class="meta"><time datetime="2026-09-16T15:30">Bugün 15:30</time></p>
+            </header>
+            <p>Dikey ritim gerçekten okumayı çok kolaylaştırıyor. Özellikle <code>ch</code> biriminin kullanımı mobil
+                cihazlarda da harika sonuç veriyor.</p>
+        </article>
+
+        <!-- 8. FOOTER TESTİ: Makale altı etiketler ve son çizgi -->
+        <footer>
+            <p>
+                Etiketler:
+                <a href="#">#deveb</a>,
+                <a href="#">#css</a>,
+                <a href="#">#framework</a>,
+                <a href="#">#semantic-web</a>
+            </p>
+        </footer>
+
+    </article>
+
+</body>
+
+</html>
