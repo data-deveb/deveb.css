@@ -32,6 +32,11 @@ body {
   line-height: 1.5;
 }
 
+body, blockquote, address, article, aside, details, div, dd, dl, dt, figcaption, figure, footer,
+form, fieldset, header, hgroup, hr, main, menu, nav, ol, p, pre, search, section, summary, ul {
+  display: block;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -62,12 +67,85 @@ a {
     scroll-behavior: auto !important;
   }
 }
+article {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+article > * + * {
+  margin-block-start: 1.5em;
+}
+article h2,
+article h3,
+article h4 {
+  margin-block-start: 2em;
+  margin-block-end: 0.75em;
+  line-height: 1.3;
+}
+article header {
+  margin-block-end: 2.5rem;
+}
+article header h1,
+article header h2 {
+  margin-block-start: 0;
+}
+article header .meta {
+  color: var(--text-muted, #666);
+  font-size: 0.9em;
+  margin-block-start: 0.5rem;
+}
+article ul {
+  margin-block-start: 0.4lh;
+  padding-inline-start: 3ch;
+  list-style: disc;
+}
+article img,
+article video,
+article iframe,
+article figure {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md, 8px);
+  margin-block: 2.5rem;
+}
+article figcaption {
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--text-muted, #666);
+  margin-block-start: 0.75rem;
+}
+article blockquote {
+  border-inline-start: 4px solid var(--primary-color, #007bff);
+  padding-inline-start: 1.25rem;
+  margin-inline: 0;
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--text-dark, #333);
+}
+article article {
+  max-width: 100%;
+  padding: 1.5rem;
+  background-color: var(--bg-surface, #f8f9fa);
+  border-radius: var(--radius-sm, 4px);
+  margin-block-start: 2rem;
+}
+article article > * + * {
+  margin-block-start: 1em;
+}
+article footer {
+  margin-block-start: 3rem;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid var(--border-color, #eee);
+}
+
 @media screen and (min-width: 0px) {
   [class*="("],
   [class*=")"] {
     --b: 0;
-    --o: 0;
     --i: 0;
+  }
+  [class*="("][class*=")"] {
+    --o: 0;
     --n: 0;
   }
   [class*="1/"] {
@@ -231,17 +309,15 @@ a {
   [class~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([class*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 0px) {
   [xs*="("],
   [xs*=")"] {
     --b: 0;
-    --o: 0;
     --i: 0;
+  }
+  [xs*="("][xs*=")"] {
+    --o: 0;
     --n: 0;
   }
   [xs*="1/"] {
@@ -405,17 +481,15 @@ a {
   [xs~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xs*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 576px) {
   [sm*="("],
   [sm*=")"] {
     --b: 0;
-    --o: 0;
     --i: 0;
+  }
+  [sm*="("][sm*=")"] {
+    --o: 0;
     --n: 0;
   }
   [sm*="1/"] {
@@ -579,17 +653,15 @@ a {
   [sm~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([sm*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 768px) {
   [md*="("],
   [md*=")"] {
     --b: 0;
-    --o: 0;
     --i: 0;
+  }
+  [md*="("][md*=")"] {
+    --o: 0;
     --n: 0;
   }
   [md*="1/"] {
@@ -753,17 +825,15 @@ a {
   [md~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([md*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 992px) {
   [lg*="("],
   [lg*=")"] {
     --b: 0;
-    --o: 0;
     --i: 0;
+  }
+  [lg*="("][lg*=")"] {
+    --o: 0;
     --n: 0;
   }
   [lg*="1/"] {
@@ -927,17 +997,15 @@ a {
   [lg~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([lg*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 1200px) {
   [xl*="("],
   [xl*=")"] {
     --b: 0;
-    --o: 0;
     --i: 0;
+  }
+  [xl*="("][xl*=")"] {
+    --o: 0;
     --n: 0;
   }
   [xl*="1/"] {
@@ -1101,17 +1169,15 @@ a {
   [xl~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 1600px) {
   [xxl*="("],
   [xxl*=")"] {
     --b: 0;
-    --o: 0;
     --i: 0;
+  }
+  [xxl*="("][xxl*=")"] {
+    --o: 0;
     --n: 0;
   }
   [xxl*="1/"] {
@@ -1275,14 +1341,6 @@ a {
   [xxl~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xxl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-div:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote),
-div:not(:has(*)) {
-  display: block;
 }
 
 /*# sourceMappingURL=deveb.css.map */
