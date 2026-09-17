@@ -23,7 +23,12 @@ $display-values: (
   'flow-root': flow-root
 );
 
-// Döngü ile sınıfların üretilmesi (Örn: .d-block, .d-flex, .d-none)
+
+@mixin utils-display-header(){
+
+}
+
+
 @mixin utils-display-body($breakpoint_name, $flex-mode){
 
     [#{$breakpoint_name}~="flex"]{
@@ -49,8 +54,9 @@ $display-values: (
 @mixin utils-display-footer(){
 
     // Doğruca yazı içeriği barındıran bir div block tanımlanmalıdır.
-    div:has(>h1,>h2,>h3,>h4,>h5,>h6,>p,>ul,>ol,>blockquote,>span,:not(:has(*))){
-        display: block; // Veya metin akışını güvenceye alacak kurallar
-    }
+    // :is(div, header, main, footer):has(>h1,>h2,>h3,>h4,>h5,>h6,>p,>ul,>ol,>blockquote,>span,:not(:has(*))){
+    //     display: block; // Veya metin akışını güvenceye alacak kurallar
+    // }
+
 
 }
