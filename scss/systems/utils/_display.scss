@@ -49,8 +49,7 @@ $display-values: (
 @mixin utils-display-footer(){
 
     // Doğruca yazı içeriği barındıran bir div block tanımlanmalıdır.
-    div:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote),
-    div:not(:has(*)) {
+    div:has(>h1,>h2,>h3,>h4,>h5,>h6,>p,>ul,>ol,>blockquote,>span,:not(:has(*))){
         display: block; // Veya metin akışını güvenceye alacak kurallar
     }
 
