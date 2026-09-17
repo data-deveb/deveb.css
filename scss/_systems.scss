@@ -1,4 +1,5 @@
 @use "settings" as *;
+@use "systems/base/articles" as *;
 @use "systems/core/reset" as *;
 @use "systems/utils/display" as *;
 @use "systems/layouts/grid" as *;
@@ -9,6 +10,7 @@
     // 🫡 CSS Başı
 
     @include core-reset();
+    @include base-article();
 
     //////////////
     // 🙆 CSS Gövdesi

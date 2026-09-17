@@ -1,0 +1,42 @@
+name: Sync CSS to gh-pages-deploy
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - 'css/deveb.css' # Sadece bu dosya değiştiğinde tetiklenir
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    # GitHub Actions'ın başka bir dala push yapabilmesi için yetki tanımı
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Tüm geçmişi ve dalları çekmek için gerekli
+
+      - name: Setup Git Identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Push CSS to gh-pages-deploy
+        run: |
+          # gh-pages-deploy dalına geçiş yap
+          git checkout gh-pages-deploy
+          
+          # develop dalındaki css/deveb.css dosyasını bu dala getir
+          git checkout develop -- css/deveb.css
+          
+          # Değişiklik yoksa hata verip durmasın diye kontrol ekleyebiliriz
+          git status
+          
+          git add css/deveb.css
+          git commit -m "develop dalından deveb.css otomatik güncellendi" || echo "Değişiklik yok"
+          git push origin gh-pages-deploy

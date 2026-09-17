@@ -35,6 +35,10 @@ body {
   line-height: 1.5;
 }
 
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
 // 5. Görsel ve medya elementlerinin esnetilmesi (Responsive görseller)
 img, picture, video, canvas, svg {
   display: block;
