@@ -5,7 +5,7 @@ description: Self-contained, semantic layout structure powered
 categories: ["Getting Started"]
 permalink: /docs/article/
 nav_order: 2
-tags: ["Block", "Article", "UX Design"]
+tags: ["Block", "Article", "UX Design", "Semantic HTML", "Layout"]
 banner-image: "article-system.jfif"
 ---
 
