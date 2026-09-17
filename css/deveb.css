@@ -32,7 +32,8 @@ body {
   line-height: 1.5;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+body, blockquote, address, article, aside, details, div, dd, dl, dt, figcaption, figure, footer,
+form, fieldset, header, hgroup, hr, main, menu, nav, ol, p, pre, search, section, summary, ul {
   display: block;
 }
 
@@ -308,10 +309,6 @@ article footer {
   [class~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([class*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 0px) {
   [xs*="("],
@@ -483,10 +480,6 @@ article footer {
   }
   [xs~=flow-root] {
     display: flow-root;
-  }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xs*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 576px) {
@@ -660,10 +653,6 @@ article footer {
   [sm~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([sm*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 768px) {
   [md*="("],
@@ -835,10 +824,6 @@ article footer {
   }
   [md~=flow-root] {
     display: flow-root;
-  }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([md*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 992px) {
@@ -1012,10 +997,6 @@ article footer {
   [lg~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([lg*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 @media screen and (min-width: 1200px) {
   [xl*="("],
@@ -1187,10 +1168,6 @@ article footer {
   }
   [xl~=flow-root] {
     display: flow-root;
-  }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -1364,13 +1341,6 @@ article footer {
   [xxl~=flow-root] {
     display: flow-root;
   }
-  html:has(link[href$="deveb.css"][mode~=flex]) :is([xxl*="/"], div):not(:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, span), :not(:has(> *))) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-div:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, > span, :not(:has(*))) {
-  display: block;
 }
 
 /*# sourceMappingURL=deveb.css.map */
