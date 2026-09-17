@@ -17,14 +17,15 @@
 @mixin divide-system($breakpoint_name){
 
     // RESET
-    [#{$breakpoint_name}*="("], 
+    [#{$breakpoint_name}*="("],
     [#{$breakpoint_name}*=")"]{
         --b: 0; // Payın birler basamağı
-        --o: 0; // Payın onlar basamağı
         --i: 0; // Paydanın birler basamağı
+    }
+    [#{$breakpoint_name}*="("][#{$breakpoint_name}*=")"]{
+        --o: 0; // Payın onlar basamağı
         --n: 0; // Paydanın onlar basamağı 
     }
-    // [#{$breakpoint_name}*="("][#{$breakpoint_name}*=")"]{--o: 0; --n: 0;}
     
     // PAY
     [#{$breakpoint_name}*="1/"]{--b: 1}
