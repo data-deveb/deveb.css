@@ -1294,8 +1294,7 @@ a {
     flex-wrap: wrap;
   }
 }
-div:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote),
-div:not(:has(*)) {
+div:has(> h1, > h2, > h3, > h4, > h5, > h6, > p, > ul, > ol, > blockquote, > span, :not(:has(*))) {
   display: block;
 }
 
