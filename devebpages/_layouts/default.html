@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <title>{{ page.title }} - {{ site.title }}</title>
@@ -9,54 +10,61 @@
     <!-- Rouge kod renklendirme stil dosyan -->
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
     <style>
+        article {
+            max-width: 700px;
+        }
 
-        article { max-width: 700px; }
-        p{margin-bottom: 30px;}
-
-
+        p {
+            margin-bottom: 30px;
+        }
     </style>
     <script type="application/ld+json">
         {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "deveb.css",
-        "alternateName": "deveb CSS Framework",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "All",
-        "description": "A zero-JS, zero-build pure CSS framework built on semantic HTML and fractional layout ratios.",
-        "url": "https://data-deveb.github.io/deveb.css/",
-        "codeRepository": "https://github.com/data-deveb/deveb.css",
-        "license": "https://opensource.org/licenses/MIT",
-        "author": {
-            "@type": "Organization",
-            "name": "data-deveb",
-            "url": "https://github.com/data-deveb"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "0.00",
-            "priceCurrency": "USD"
-        }
-        }
-    </script>
+            "@context": "https://schema.org",
+            "@type": ["SoftwareApplication", "SoftwareSourceCode"],
+            "name": "deveb.css",
+            "alternateName": "Deveb CSS Framework",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "All",
+            "description": "A zero-JS, zero-build pure CSS framework built on semantic HTML and fractional layout ratios.",
+            "url": "https://data-deveb.github.io/deveb.css/",
+            "codeRepository": "https://github.com/data-deveb/deveb.css",
+            "sameAs": [
+                "https://github.com/data-deveb/deveb.css"
+            ],
+            "license": "https://opensource.org/licenses/MIT",
+            "author": {
+                "@type": "Organization",
+                "name": "data-deveb",
+                "url": "https://github.com/data-deveb"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "USD"
+            }
+    }
+</script>
 </head>
+
 <body xs="(1/1)">
     <header xs="(1/1)">
         <div class="container flex">
             {% include header.html %}
         </div>
     </header>
-    
+
     <main xs="(1/1)">
         <div class="container flex">
             {{ content }}
         </div>
     </main>
-    
+
     <footer xs="(1/1)">
         <div class="container flex">
             {% include footer.html %}
         </div>
     </footer>
 </body>
+
 </html>
