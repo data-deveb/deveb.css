@@ -1,13 +1,13 @@
 <!-- Sol Sütun: Site Hakkında veya Künye -->
 <div class="(12/12)">
-  <h2>{{ site.title }}</h2>
+  <h1>{{ site.title }}</h1>
   <p>{{ site.description }}</p>
 </div>
 
 <!-- Orta Sütun: Hızlı Bağlantılar -->
-<div class="(12/12)">
+<div class="(6/12)">
   <ul class="contact-list flex (12/12)">
-    <li>Hızlı Bağlantılar</li>
+    <li><b>Quick Links:</b></li>
     <li><a href="{{ '/' | relative_url }}">Home Page</a></li>
     <li><a href="{{ '/about/' | relative_url }}">About</a></li>
     <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
@@ -15,12 +15,14 @@
 </div>
 
 <!-- Sağ Sütun: Sosyal Medya ve Telif -->
-<div class="(12/12)">
-  <p>{{ site.time | date: '%Y' }} Tüm hakları saklıdır.</p>
+<div class="(6/12)">  
   {% if site.github_username %}
-  <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub </a>
   {% endif %}
   {% if site.twitter_username %}
-  <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">Twitter</a>
+  <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">Twitter </a>
   {% endif %}
+</div>
+<div>
+  <p>Copyright {{ site.time | date: '%Y' }} </p>
 </div>

@@ -5,17 +5,17 @@
 layout: default
 ---
 
-<div class="hero" xs="(1/1)">
-  <div class="right center" xs="(1/1)" md="(1/2)">
-    <div>
-      <h1>No JS! No Rebuild! Forever Pure CSS</h1>
+<div class="hero flex" xs="(1/1)">
+  <div class="flex right center" xs="(1/1)" md="(1/2)">
+    <article>
+      <h1>No JS & No Rebuild! Forever Only CSS</h1>
       <h2>Create web pages with deveb.css</h2>
       <p>The days of loading a JavaScript bundle for every interaction are over. This approach, which pushes the boundaries of CSS, allows you to build modern websites with pure CSS—without the need for complex state management or bloated libraries.</p>
       <p>Pages load faster, server load is reduced, and users enjoy a seamless experience. Because sometimes, the best code is the code that’s never been written (or hasn’t been tainted by JS).</p>
       <a class="glow-on-hover" href ="./assets/css/deveb.css" download="deveb.css">Download Now</a>
-    </div>
+    </article>
   </div>
-  <div class="center" xs="(1/1)" md="(1/2)">
+  <div class="flex right center" xs="(1/1)" md="(1/2)">
     <div class="center">
       <img src="./assets/img/hero_deveb.css.png">
     </div>

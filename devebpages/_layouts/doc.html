@@ -4,8 +4,8 @@ layout: default
     
 {% assign sorted_docs = site.docs | sort: 'nav_order' %}
 
-<aside xs="(12/12)" md="(1/12)">
-    <nav>
+<aside xs="(12/12)" md="(2/12)">
+    <nav class="docs-menu">
         <ul>
             {% for doc in sorted_docs %}
             <li>
@@ -17,7 +17,7 @@ layout: default
         </ul>
     </nav>
 </aside>
-<main xs="(12/12)" md="(11/12)">
+<main xs="(12/12)" md="(10/12)">
     <article>
         <header>
             <h1>{{ page.title }}</h1>

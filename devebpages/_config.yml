@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: deveb.css - no js forever css
+title: deveb.css | No JS & No Rebuild! Forever Only CSS
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Modern, lightning-fast web experiences built entirely with pure CSS and zero JavaScript. Embracing the No JS Forever philosophy.

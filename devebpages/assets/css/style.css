@@ -261,6 +261,7 @@ ul {
 
 .c6-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   margin-top: 10px;
 }
@@ -399,4 +400,28 @@ ul {
   100% {
     background-position: 0 0;
   }
+}
+
+/* *********************************** */
+.docs-menu ul{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+.docs-menu ul li{
+  height: auto;
+  display: flex;
+  align-content: flex-end;
+}
+.docs-menu ul li a{
+  width: 100%;
+  padding: 10px;
+  border-inline-end: 1px dashed #c5c6e6;
+}
+.docs-menu ul li a:hover{
+  color:var(--text-main);
+}
+.docs-menu ul li a.active{
+  color:var(--text-main);
+  text-decoration: underline dashed #c5c6e6;
 }
