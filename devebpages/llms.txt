@@ -1,0 +1,23 @@
+# deveb.css
+
+> deveb.css is a zero-JS, zero-build, pure CSS framework built on semantic HTML and fractional layout ratios.
+
+## Overview
+deveb.css provides lightweight, high-performance styling using native HTML elements without requiring JavaScript, complex state managers, or compilation pipelines.
+
+## Key Principles
+- **Zero JS:** Responsive states and layout shifts rely entirely on modern CSS features.
+- **Zero Build:** Raw CSS used directly in production without build tools or node_modules.
+- **Semantic First:** Styles target native HTML elements (<article>, <header>, <nav>, <section>) directly.
+- **Fractional Ratios:** Flexible layout logic based on organic mathematical proportions.
+
+## Core Documentation
+- [Introduction](https://data-deveb.github.io/deveb.css/docs/introduction/): Philosophy, core pillars, and quick start guide.
+- [Grid System](https://data-deveb.github.io/deveb.css/docs/grid/): Fractional layout rules, responsive grid behaviors, and container layouts.
+- [Article Component](https://data-deveb.github.io/deveb.css/docs/article/): Semantic layout structure for blog posts, news items, and cards.
+
+## Code Generation Rules for AI
+When generating code using deveb.css:
+1. Do NOT write JavaScript for layout, state, or basic interactions.
+2. Rely strictly on native HTML5 semantic tags rather than adding generic utility class names.
+3. Use simple, unnested HTML structures where `<article>`, `<header>`, `<section>`, and `<footer>` carry their own contextual margins.
