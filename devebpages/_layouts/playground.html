@@ -1,0 +1,125 @@
+---
+layout: default
+---
+
+<style>
+  .playground-container {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    height: calc(100vh - 180px);
+    min-height: 500px;
+  }
+
+  .editor-pane, .preview-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editor-pane h2, .preview-pane h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: inherit;
+  }
+
+  #code-input {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border: none;
+    border-radius: 6px;
+    resize: none;
+    line-height: 1.5;
+  }
+
+  #preview-frame {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  /* Mobil uyumluluk için alt alta geçiş */
+  @media (max-width: 768px) {
+    .playground-container {
+      flex-direction: column;
+      height: auto;
+    }
+    .editor-pane, .preview-pane {
+      height: 400px;
+    }
+  }
+</style>
+
+<div class="container">
+  <header style="margin-bottom: 1rem;">
+    <h1>{{ page.title | default: "deveb.css Live Playground" }}</h1>
+    <p>{{ page.description | default: "Test components live using pure CSS and zero JavaScript overhead." }}</p>
+  </header>
+
+  <main class="playground-container">
+    <!-- Sol Taraf: Kod Yazma Alanı -->
+    <section class="editor-pane">
+      <h2>HTML Editor</h2>
+      <textarea id="code-input" placeholder="HTML kodlarını buraya yaz...">
+<article>
+  <header>
+    <h2>Test Card</h2>
+  </header>
+  <section>
+    <p>This is a live preview using deveb.css!</p>
+  </section>
+</article>
+      </textarea>
+    </section>
+
+    <!-- Sağ Taraf: Canlı Önizleme Alanı -->
+    <section class="preview-pane">
+      <h2>Live Preview</h2>
+      <iframe id="preview-frame"></iframe>
+    </section>
+  </main>
+</div>
+
+<script>
+  const codeInput = document.getElementById('code-input');
+  const previewFrame = document.getElementById('preview-frame');
+
+  function updatePreview() {
+    const userHtml = codeInput.value;
+    
+    // Iframe içerisini güvenli ve izole bir şekilde dolduruyoruz
+    const frameDoc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+    
+    frameDoc.open();
+    frameDoc.write(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8">
+        <!-- Site içi CSS dosyanızın doğru yolu -->
+        <link rel="stylesheet" href="{{ '/assets/css/deveb.css' | relative_url }}">
+        <style>
+          body { padding: 1.5rem; background: #fff; font-family: system-ui, -apple-system, sans-serif; margin: 0; }
+        </style>
+      </head>
+      <body>
+        ${userHtml}
+      </body>
+      </html>
+    `);
+    frameDoc.close();
+  }
+
+  // Kullanıcı her tuşa bastığında önizlemeyi güncelle
+  codeInput.addEventListener('input', updatePreview);
+
+  // Sayfa yüklendiğinde ilk içeriği render et
+  window.addEventListener('DOMContentLoaded', updatePreview);
+</script>
