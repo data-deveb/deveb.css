@@ -425,3 +425,12 @@ ul {
   color:var(--text-main);
   text-decoration: underline dashed #c5c6e6;
 }
+
+article.article-a{
+  margin-block-start: 30px;
+  margin-inline: 30px;
+  padding: 4ch;
+  border: 1px dashed #ddd;
+  border-radius: 20px;
+  background: white;
+}
