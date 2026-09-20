@@ -12,7 +12,10 @@ layout: default
       <h2>Create web pages with deveb.css</h2>
       <p>The days of loading a JavaScript bundle for every interaction are over. This approach, which pushes the boundaries of CSS, allows you to build modern websites with pure CSS—without the need for complex state management or bloated libraries.</p>
       <p>Pages load faster, server load is reduced, and users enjoy a seamless experience. Because sometimes, the best code is the code that’s never been written (or hasn’t been tainted by JS).</p>
+      <p>
       <a class="glow-on-hover" href ="./assets/css/deveb.css" download="deveb.css">Download Now</a>
+      <a class="glow-on-hover" href ="./play">Play Now</a>
+      </p>
     </article>
   </div>
   <div class="flex right center" xs="(1/1)" md="(1/2)">
